@@ -1,0 +1,16 @@
+div.carousel-item img {
+    width: 100vw;
+    margin: auto;
+}
+
+div.carousel-caption {
+    opacity: 70%;
+}
+
+div.carousel-caption * {
+    opacity: 100%;
+}
+
+div.carousel-item {
+    height: 50vh;
+}

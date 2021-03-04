@@ -1,0 +1,25 @@
+<div id="splash-carousel" class="carousel slide mb-2" data-bs-ride="carousel">
+  <div class="carousel-inner">
+    <div *ngFor="let d of getItemData()" class="carousel-item{{(d.active === true) ? ' active' : ''}}" data-bs-interval="30000">
+      <img src="{{d.imgSrc}}" class="d-block" alt="{{d.altTxt}}">
+      <div class="container" *ngIf="d.title || d.description">
+        <div class="carousel-caption text-center bg-dark rounded-3">
+          <h1 *ngIf="d.title">{{d.title}}</h1>
+          <p *ngIf="d.description">{{d.description}}</p>
+          <p>
+              <a *ngIf="d.actionPrimaryTxt" class="btn btn-primary mx-1" href="#">{{d.actionPrimaryTxt}}</a>
+              <a *ngIf="d.actionSecondaryTxt" class="btn btn-secondary mx-1" href="#">{{d.actionSecondaryTxt}}</a>
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <button class="carousel-control-prev" type="button" data-bs-target="#splash-carousel" data-bs-slide="prev">
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Previous</span>
+  </button>
+  <button class="carousel-control-next" type="button" data-bs-target="#splash-carousel" data-bs-slide="next">
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Next</span>
+  </button>
+</div>
