@@ -6,9 +6,8 @@
         <div class="carousel-caption text-center bg-dark rounded-3">
           <h1 *ngIf="d.title">{{d.title}}</h1>
           <p *ngIf="d.description">{{d.description}}</p>
-          <p>
-              <a *ngIf="d.actionPrimaryTxt" class="btn btn-primary mx-1" href="#">{{d.actionPrimaryTxt}}</a>
-              <a *ngIf="d.actionSecondaryTxt" class="btn btn-secondary mx-1" href="#">{{d.actionSecondaryTxt}}</a>
+          <p *ngIf="d.actions">
+              <a *ngFor="let a of d.actions" class="btn mx-1 {{a.class}}" href="#" (click)="(a.onClick) ? a.onClick() : undefined">{{a.text}}</a>
           </p>
         </div>
       </div>
