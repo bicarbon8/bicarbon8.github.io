@@ -6,10 +6,18 @@
       <span class="navbar-toggler-icon"></span>
     </button>
     <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-      <ul class="navbar-nav">
-        <li class="nav-item"><a class="nav-link active" aria-current="page" href="#">Home</a></li>
-        <li class="nav-item"><a class="nav-link" href="#">Web Apps</a></li>
-        <li class="nav-item"><a class="nav-link" href="#">Game Design</a></li>
+      <ul class="navbar-nav" *ngIf="siteMap.pages?.length">
+        <li *ngFor="let m of siteMap.pages" class="nav-item {{(m.childPages?.length) ? 'dropdown' : ''}}">
+          <a *ngIf="m.childPages === undefined" class="nav-link {{m.classes}}" aria-current="page" href="{{m.url || '#'}}" target="{{(m.url && m.url.startsWith('http')) ? '_blank' : '_self'}}">{{m.title}}</a>
+          <div *ngIf="m.childPages?.length">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              {{m.title}}
+            </a>
+            <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+              <li *ngFor="let c of m.childPages"><a class="dropdown-item" href="{{c.url || '#'}}" target="{{(c.url && c.url.startsWith('http')) ? '_blank' : '_self'}}">{{c.title}}</a></li>
+            </ul>
+          </div>
+        </li>
       </ul>
     </div>
   </div>

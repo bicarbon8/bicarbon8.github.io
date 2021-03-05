@@ -1,6 +1,6 @@
 import { ButtonData } from "src/globals/button-data";
 
-export interface ItemData {
+export interface CarouselItemData {
     imgSrc: string;
     altTxt: string;
     active?: boolean;
