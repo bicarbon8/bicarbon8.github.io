@@ -21,7 +21,9 @@
             "aot": true,
             "assets": [
               "src/favicon.ico",
-              "src/assets"
+              "src/assets",
+              {"glob": "*", "input": "../e-d-controls/src/assets/img", "output": "assets/img"},
+              {"glob": "**/*", "input": "../todoTxtWebUi/", "output": "todoTxtWebUi"}
             ],
             "styles": [
               "src/styles.css"

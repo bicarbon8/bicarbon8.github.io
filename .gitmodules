@@ -1,8 +1,8 @@
-[submodule "e-d-controls"]
-	path = e-d-controls
-	url = https://github.com/bicarbon8/e-d-controls.git
-	branch = master
 [submodule "todoTxtWebUi"]
 	path = todoTxtWebUi
 	url = https://github.com/bicarbon8/todoTxtWebUi.git
+	branch = master
+[submodule "e-d-controls"]
+	path = e-d-controls
+	url = https://github.com/bicarbon8/e-d-controls.git
 	branch = master
