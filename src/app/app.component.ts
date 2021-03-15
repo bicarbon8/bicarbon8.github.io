@@ -12,7 +12,6 @@ export class AppComponent {
   siteMap(): SiteMap {
     return {
       pages: [
-        {title: 'Home', url: '/', classes: 'active'},
         {title: 'Web Apps', childPages: [
           {title: 'ToDo Txt Web UI', url: '/todoTxtWebUi/'},
           {title: 'Elite:Dangerous Controls', url: '/e-d-controls/'}

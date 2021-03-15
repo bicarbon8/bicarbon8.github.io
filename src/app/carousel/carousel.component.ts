@@ -16,7 +16,7 @@ export class CarouselComponent {
         title: 'ToDo Txt Web UI',
         description: 'Inspired by the http://www.todotxt.com project this web app provides a simple web-based user interface for interacting with one\'s todo.txt file.',
         actions: [
-          {text: 'Go To App', class: 'btn-primary', onClick: () => window.open('/todoTxtWebUi/', '_blank')},
+          {text: 'Go To App', class: 'btn-primary', onClick: () => window.open('/todoTxtWebUi/', '_self')},
           {text: 'View Code', class: 'btn-secondary', onClick: () => window.open('https://github.com/bicarbon8/todotxtwebui', '_blank')}
         ]
       },
@@ -26,7 +26,7 @@ export class CarouselComponent {
         title: 'Elite:Dangerous Control Bindings Visualiser',
         description: 'A web application that parses your Elite:Dangerous Control Bindings to display them in an easy to read manner',
         actions: [
-          {text: 'Go To App', class: 'btn-primary', onClick: () => window.open('/e-d-controls/', '_blank')},
+          {text: 'Go To App', class: 'btn-primary', onClick: () => window.open('/e-d-controls/', '_self')},
           {text: 'View Code', class: 'btn-secondary', onClick: () => window.open('https://github.com/bicarbon8/e-d-controls', '_blank')}
         ]
       },
