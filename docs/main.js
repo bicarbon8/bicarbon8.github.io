@@ -7,7 +7,7 @@
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! C:\Users\bicar\Documents\code\github\bicarbon8.github.io\src\main.ts */"zUnb");
+module.exports = __webpack_require__(/*! C:\Users\smija8k\Documents\Projects\git\GitHub\bicarbon8.github.io\src\main.ts */"zUnb");
 
 
 /***/ }),
@@ -541,7 +541,8 @@ __webpack_require__.r(__webpack_exports__);
 
 const routes = [
     { path: '', component: _main_main_component__WEBPACK_IMPORTED_MODULE_1__["MainComponent"] },
-    { path: 'e-d-controls', loadChildren: () => __webpack_require__.e(/*! import() | e-d-controls-src-app-e-d-controls-e-d-controls-module */ "e-d-controls-src-app-e-d-controls-e-d-controls-module").then(__webpack_require__.bind(null, /*! e-d-controls/src/app/e-d-controls/e-d-controls.module */ "bgVs")).then((m) => m.EDControlsModule) }
+    { path: 'e-d-controls', loadChildren: () => Promise.all(/*! import() | e-d-controls-src-app-e-d-controls-e-d-controls-module */[__webpack_require__.e("default~e-d-controls-src-app-e-d-controls-e-d-controls-module~todoTxtWebUi-src-app-todo-txt-web-ui-t~f7f3d420"), __webpack_require__.e("e-d-controls-src-app-e-d-controls-e-d-controls-module")]).then(__webpack_require__.bind(null, /*! e-d-controls/src/app/e-d-controls/e-d-controls.module */ "bgVs")).then((m) => m.EDControlsModule) },
+    { path: 'todoTxtWebUi', loadChildren: () => Promise.all(/*! import() | todoTxtWebUi-src-app-todo-txt-web-ui-todo-txt-web-ui-module */[__webpack_require__.e("default~e-d-controls-src-app-e-d-controls-e-d-controls-module~todoTxtWebUi-src-app-todo-txt-web-ui-t~f7f3d420"), __webpack_require__.e("todoTxtWebUi-src-app-todo-txt-web-ui-todo-txt-web-ui-module")]).then(__webpack_require__.bind(null, /*! todoTxtWebUi/src/app/todo-txt-web-ui/todo-txt-web-ui.module */ "I86c")).then((m) => m.TodoTxtWebUiModule) }
 ];
 class AppRoutingModule {
 }
