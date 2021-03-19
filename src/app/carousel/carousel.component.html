@@ -1,6 +1,6 @@
 <div id="splash-carousel" class="carousel slide mb-2" data-bs-ride="carousel">
   <div class="carousel-inner">
-    <div *ngFor="let d of getItemData()" class="carousel-item{{(d.active === true) ? ' active' : ''}}" data-bs-interval="30000">
+    <div *ngFor="let d of getItemData()" class="carousel-item{{(d.active === true) ? ' active' : ''}}" data-bs-interval="10000">
       <img src="{{d.imgSrc}}" class="d-block" alt="{{d.altTxt}}">
       <div class="container" *ngIf="d.title || d.description">
         <div class="carousel-caption text-center bg-dark rounded-3">
