@@ -1,4 +1,4 @@
-import { ButtonData } from "src/globals/button-data";
+import { ButtonData } from "src/app/globals/button-data";
 
 export interface CarouselItemData {
     imgSrc: string;

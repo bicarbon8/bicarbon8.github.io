@@ -33,12 +33,13 @@ export class CarouselComponent {
       {
         imgSrc: './assets/img/Ticknock_Sunrise.jpg',
         altTxt: 'sunrise and mountain in the background',
-        title: 'Game Design in Unity and Web',
+        title: 'Game / Simulation Design in Unity and Web',
         description: 'Games and game components created as learning exercises',
         actions: [
           {text: 'Unity Quadsphere', class: 'btn-secondary', onClick: () => window.open('https://github.com/bicarbon8/QuadSphere', '_blank')},
           {text: 'Spaceship Game', class: 'btn-secondary', onClick: () => window.open('https://github.com/bicarbon8/SpaceSim', '_blank')},
-          {text: 'Wargame', class: 'btn-secondary', onClick: () => window.open('https://github.com/bicarbon8/WargameSimJs', '_blank')}
+          {text: 'War Sim Game', class: 'btn-secondary', onClick: () => window.open('https://github.com/bicarbon8/WargameSimJs', '_blank')},
+          {text: 'Traffic Sim', class: 'btn-primary', onClick: () => window.open('/traffic-sim/', '_self')}
         ]
       },
       {

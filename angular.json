@@ -23,7 +23,8 @@
               "src/favicon.ico",
               "src/assets",
               {"glob": "*", "input": "../e-d-controls/src/assets/img", "output": "assets/img"},
-              {"glob": "**/*", "input": "../todoTxtWebUi/", "output": "todoTxtWebUi"}
+              {"glob": "*", "input": "../JsVehicleTrafficSimulator/src/assets/maps", "output": "assets/maps"},
+              {"glob": "*", "input": "../JsVehicleTrafficSimulator/src/assets/fonts", "output": "assets/fonts"}
             ],
             "styles": [
               "src/styles.css"

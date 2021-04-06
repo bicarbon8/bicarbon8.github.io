@@ -6,3 +6,7 @@
 	path = e-d-controls
 	url = https://github.com/bicarbon8/e-d-controls.git
 	branch = master
+[submodule "JsVehicleTrafficSimulator"]
+	path = JsVehicleTrafficSimulator
+	url = https://github.com/bicarbon8/JsVehicleTrafficSimulator.git
+	branch = master

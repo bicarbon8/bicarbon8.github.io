@@ -1,5 +1,5 @@
 import { Component, Input } from '@angular/core';
-import { SiteMap } from 'src/globals/site-map';
+import { SiteMap } from 'src/app/globals/site-map';
 
 @Component({
   selector: 'app-navigation',
@@ -8,4 +8,9 @@ import { SiteMap } from 'src/globals/site-map';
 })
 export class NavigationComponent {
   @Input() siteMap: SiteMap;
+
+  async goTo(url: string): Promise<void> {
+    let target: string = (url.startsWith('http')) ? '_blank' : '_self';
+    window.open(url, target);
+  }
 }
