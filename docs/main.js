@@ -229,7 +229,7 @@ class AppComponent {
                     ] },
                 { title: 'Games / Simulations', childPages: [
                         { title: 'Unity Quadsphere', codeSourceUrl: 'https://github.com/bicarbon8/QuadSphere' },
-                        { title: 'Traffic Sim', url: '/traffic-sim/', codeSourceUrl: 'https://github.com/bicarbon8/JsVehicleTrafficSimulator' },
+                        { title: 'Traffic Sim', url: '/JsVehicleTrafficSimulator/', codeSourceUrl: 'https://github.com/bicarbon8/JsVehicleTrafficSimulator' },
                         { title: 'Spaceship Game', codeSourceUrl: 'https://github.com/bicarbon8/SpaceSim' },
                         { title: 'War Sim Game', codeSourceUrl: 'https://github.com/bicarbon8/WargameSimJs' }
                     ] },
@@ -502,7 +502,7 @@ const routes = [
     { path: '', component: _carousel_carousel_component__WEBPACK_IMPORTED_MODULE_1__["CarouselComponent"] },
     { path: 'e-d-controls', loadChildren: () => __webpack_require__.e(/*! import() | e-d-controls-src-app-e-d-controls-e-d-controls-module */ "e-d-controls-src-app-e-d-controls-e-d-controls-module").then(__webpack_require__.bind(null, /*! e-d-controls/src/app/e-d-controls/e-d-controls.module */ "bgVs")).then((m) => m.EDControlsModule) },
     { path: 'todoTxtWebUi', loadChildren: () => __webpack_require__.e(/*! import() | todoTxtWebUi-src-app-todo-txt-web-ui-todo-txt-web-ui-module */ "todoTxtWebUi-src-app-todo-txt-web-ui-todo-txt-web-ui-module").then(__webpack_require__.bind(null, /*! todoTxtWebUi/src/app/todo-txt-web-ui/todo-txt-web-ui.module */ "I86c")).then((m) => m.TodoTxtWebUiModule) },
-    { path: 'traffic-sim', loadChildren: () => __webpack_require__.e(/*! import() | JsVehicleTrafficSimulator-src-app-traffic-sim-traffic-sim-module */ "JsVehicleTrafficSimulator-src-app-traffic-sim-traffic-sim-module").then(__webpack_require__.bind(null, /*! JsVehicleTrafficSimulator/src/app/traffic-sim/traffic-sim.module */ "5oT2")).then((m) => m.TrafficSimModule) }
+    { path: 'JsVehicleTrafficSimulator', loadChildren: () => __webpack_require__.e(/*! import() | JsVehicleTrafficSimulator-src-app-traffic-sim-traffic-sim-module */ "JsVehicleTrafficSimulator-src-app-traffic-sim-traffic-sim-module").then(__webpack_require__.bind(null, /*! JsVehicleTrafficSimulator/src/app/traffic-sim/traffic-sim.module */ "5oT2")).then((m) => m.TrafficSimModule) }
 ];
 class AppRoutingModule {
 }
