@@ -14,7 +14,7 @@
               {{m.title}}
             </a>
             <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-              <li *ngFor="let c of m.childPages"><div class="dropdown-item"><button *ngIf="c.url" class="btn btn-sm btn-success" (click)="goTo(c.url)">{{c.title}}</button><span *ngIf="!c.url" class="text-secondary">{{c.title}}</span> &nbsp;<a *ngIf="c.codeSourceUrl" class="bi bi-tools" href="{{c.codeSourceUrl}}" target="_blank"> </a></div></li>
+              <li *ngFor="let c of m.childPages"><div class="dropdown-item"><button *ngIf="c.url" class="btn btn-sm btn-success" (click)="goTo(c.url)">{{c.title}}</button><span *ngIf="!c.url" class="text-secondary">{{c.title}}</span> &nbsp;<a *ngIf="c.codeSourceUrl" class="bi bi-tools" href="{{c.codeSourceUrl}}" target="_blank" aria-label="View Sourcecode" data-bs-toggle="tooltip" data-bs-placement="top" title="View Sourcecode"> </a></div></li>
             </ul>
           </div>
         </li>
