@@ -10,3 +10,7 @@
 	path = JsVehicleTrafficSimulator
 	url = https://github.com/bicarbon8/JsVehicleTrafficSimulator.git
 	branch = master
+[submodule "SpaceSim"]
+	path = SpaceSim
+	url = https://github.com/bicarbon8/SpaceSim.git
+	branch = master

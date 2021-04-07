@@ -19,7 +19,7 @@ export class AppComponent {
         {title: 'Games / Simulations', childPages: [
           {title: 'Unity Quadsphere', codeSourceUrl: 'https://github.com/bicarbon8/QuadSphere'},
           {title: 'Traffic Sim', url: '/JsVehicleTrafficSimulator/', codeSourceUrl: 'https://github.com/bicarbon8/JsVehicleTrafficSimulator'},
-          {title: 'Spaceship Game', codeSourceUrl: 'https://github.com/bicarbon8/SpaceSim'},
+          {title: 'Spaceship Game', url: '/SpaceSim/', codeSourceUrl: 'https://github.com/bicarbon8/SpaceSim'},
           {title: 'War Sim Game', codeSourceUrl: 'https://github.com/bicarbon8/WargameSimJs'}
         ]},
         {title: 'Tool Development', childPages: [

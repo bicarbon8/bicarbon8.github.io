@@ -24,7 +24,10 @@
               "src/assets",
               {"glob": "*", "input": "../e-d-controls/src/assets/img", "output": "assets/img"},
               {"glob": "*", "input": "../JsVehicleTrafficSimulator/src/assets/maps", "output": "assets/maps"},
-              {"glob": "*", "input": "../JsVehicleTrafficSimulator/src/assets/fonts", "output": "assets/fonts"}
+              {"glob": "*", "input": "../JsVehicleTrafficSimulator/src/assets/fonts", "output": "assets/fonts"},
+              {"glob": "*", "input": "../SpaceSim/src/assets/backgrounds", "output": "assets/backgrounds"},
+              {"glob": "*", "input": "../SpaceSim/src/assets/particles", "output": "assets/particles"},
+              {"glob": "*", "input": "../SpaceSim/src/assets/sprites", "output": "assets/sprites"}
             ],
             "styles": [
               "src/styles.css"

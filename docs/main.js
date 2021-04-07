@@ -154,9 +154,9 @@ class CarouselComponent {
                 description: 'Games and game components created as learning exercises',
                 actions: [
                     { text: 'Unity Quadsphere', class: 'btn-secondary', onClick: () => window.open('https://github.com/bicarbon8/QuadSphere', '_blank') },
-                    { text: 'Spaceship Game', class: 'btn-secondary', onClick: () => window.open('https://github.com/bicarbon8/SpaceSim', '_blank') },
+                    { text: 'Spaceship Game', class: 'btn-primary', onClick: () => window.open('/SpaceSim/', '_self') },
                     { text: 'War Sim Game', class: 'btn-secondary', onClick: () => window.open('https://github.com/bicarbon8/WargameSimJs', '_blank') },
-                    { text: 'Traffic Sim', class: 'btn-primary', onClick: () => window.open('/traffic-sim/', '_self') }
+                    { text: 'Traffic Sim', class: 'btn-primary', onClick: () => window.open('/JsVehicleTrafficSimulator/', '_self') }
                 ]
             },
             {
@@ -230,7 +230,7 @@ class AppComponent {
                 { title: 'Games / Simulations', childPages: [
                         { title: 'Unity Quadsphere', codeSourceUrl: 'https://github.com/bicarbon8/QuadSphere' },
                         { title: 'Traffic Sim', url: '/JsVehicleTrafficSimulator/', codeSourceUrl: 'https://github.com/bicarbon8/JsVehicleTrafficSimulator' },
-                        { title: 'Spaceship Game', codeSourceUrl: 'https://github.com/bicarbon8/SpaceSim' },
+                        { title: 'Spaceship Game', url: '/SpaceSim/', codeSourceUrl: 'https://github.com/bicarbon8/SpaceSim' },
                         { title: 'War Sim Game', codeSourceUrl: 'https://github.com/bicarbon8/WargameSimJs' }
                     ] },
                 { title: 'Tool Development', childPages: [
@@ -502,7 +502,8 @@ const routes = [
     { path: '', component: _carousel_carousel_component__WEBPACK_IMPORTED_MODULE_1__["CarouselComponent"] },
     { path: 'e-d-controls', loadChildren: () => __webpack_require__.e(/*! import() | e-d-controls-src-app-e-d-controls-e-d-controls-module */ "e-d-controls-src-app-e-d-controls-e-d-controls-module").then(__webpack_require__.bind(null, /*! e-d-controls/src/app/e-d-controls/e-d-controls.module */ "bgVs")).then((m) => m.EDControlsModule) },
     { path: 'todoTxtWebUi', loadChildren: () => __webpack_require__.e(/*! import() | todoTxtWebUi-src-app-todo-txt-web-ui-todo-txt-web-ui-module */ "todoTxtWebUi-src-app-todo-txt-web-ui-todo-txt-web-ui-module").then(__webpack_require__.bind(null, /*! todoTxtWebUi/src/app/todo-txt-web-ui/todo-txt-web-ui.module */ "I86c")).then((m) => m.TodoTxtWebUiModule) },
-    { path: 'JsVehicleTrafficSimulator', loadChildren: () => __webpack_require__.e(/*! import() | JsVehicleTrafficSimulator-src-app-traffic-sim-traffic-sim-module */ "JsVehicleTrafficSimulator-src-app-traffic-sim-traffic-sim-module").then(__webpack_require__.bind(null, /*! JsVehicleTrafficSimulator/src/app/traffic-sim/traffic-sim.module */ "5oT2")).then((m) => m.TrafficSimModule) }
+    { path: 'JsVehicleTrafficSimulator', loadChildren: () => __webpack_require__.e(/*! import() | JsVehicleTrafficSimulator-src-app-traffic-sim-traffic-sim-module */ "JsVehicleTrafficSimulator-src-app-traffic-sim-traffic-sim-module").then(__webpack_require__.bind(null, /*! JsVehicleTrafficSimulator/src/app/traffic-sim/traffic-sim.module */ "5oT2")).then((m) => m.TrafficSimModule) },
+    { path: 'SpaceSim', loadChildren: () => __webpack_require__.e(/*! import() | SpaceSim-src-app-space-sim-space-sim-module */ "SpaceSim-src-app-space-sim-space-sim-module").then(__webpack_require__.bind(null, /*! SpaceSim/src/app/space-sim/space-sim.module */ "YMcx")).then((m) => m.SpaceSimModule) }
 ];
 class AppRoutingModule {
 }
