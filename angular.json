@@ -27,7 +27,8 @@
               {"glob": "*", "input": "../JsVehicleTrafficSimulator/src/assets/fonts", "output": "assets/fonts"},
               {"glob": "*", "input": "../SpaceSim/src/assets/backgrounds", "output": "assets/backgrounds"},
               {"glob": "*", "input": "../SpaceSim/src/assets/particles", "output": "assets/particles"},
-              {"glob": "*", "input": "../SpaceSim/src/assets/sprites", "output": "assets/sprites"}
+              {"glob": "*", "input": "../SpaceSim/src/assets/sprites", "output": "assets/sprites"},
+              {"glob": "*", "input": "../SpaceSim/src/assets/tiles", "output": "assets/tiles"}
             ],
             "styles": [
               "src/styles.css"
