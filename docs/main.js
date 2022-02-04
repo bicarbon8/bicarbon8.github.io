@@ -1,567 +1,529 @@
-(window["webpackJsonp"] = window["webpackJsonp"] || []).push([["main"],{
+/******/ var __webpack_modules__ = ({
 
-/***/ 0:
-/*!***************************!*\
-  !*** multi ./src/main.ts ***!
-  \***************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-module.exports = __webpack_require__(/*! C:\Users\smija8k\Documents\Projects\git\GitHub\bicarbon8.github.io\src\main.ts */"zUnb");
-
-
-/***/ }),
-
-/***/ "AytR":
-/*!*****************************************!*\
-  !*** ./src/environments/environment.ts ***!
-  \*****************************************/
-/*! exports provided: environment */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "environment", function() { return environment; });
-// This file can be replaced during build by using the `fileReplacements` array.
-// `ng build --prod` replaces `environment.ts` with `environment.prod.ts`.
-// The list of file replacements can be found in `angular.json`.
-const environment = {
-    production: false
-};
-/*
- * For easier debugging in development mode, you can import the following file
- * to ignore zone related error stack frames such as `zone.run`, `zoneDelegate.invokeTask`.
- *
- * This import should be commented out in production mode because it will have a negative impact
- * on performance if an error is thrown.
- */
-// import 'zone.js/dist/zone-error';  // Included with Angular CLI.
-
-
-/***/ }),
-
-/***/ "EfPX":
-/*!************************************************!*\
-  !*** ./src/app/carousel/carousel.component.ts ***!
-  \************************************************/
-/*! exports provided: CarouselComponent */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "CarouselComponent", function() { return CarouselComponent; });
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "fXoL");
-/* harmony import */ var _angular_common__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/common */ "ofXK");
-
-
-function CarouselComponent_div_2_div_2_h1_2_Template(rf, ctx) { if (rf & 1) {
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "h1");
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](1);
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-} if (rf & 2) {
-    const d_r1 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵnextContext"](2).$implicit;
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](1);
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtextInterpolate"](d_r1.title);
-} }
-function CarouselComponent_div_2_div_2_p_3_Template(rf, ctx) { if (rf & 1) {
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "p");
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](1);
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-} if (rf & 2) {
-    const d_r1 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵnextContext"](2).$implicit;
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](1);
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtextInterpolate"](d_r1.description);
-} }
-function CarouselComponent_div_2_div_2_p_4_a_1_Template(rf, ctx) { if (rf & 1) {
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "a", 15);
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵlistener"]("click", function CarouselComponent_div_2_div_2_p_4_a_1_Template_a_click_0_listener() { const a_r9 = ctx.$implicit; return a_r9.onClick ? a_r9.onClick() : undefined; });
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](1);
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-} if (rf & 2) {
-    const a_r9 = ctx.$implicit;
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵclassMapInterpolate1"]("btn m-1 ", a_r9.class, "");
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](1);
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtextInterpolate"](a_r9.text);
-} }
-function CarouselComponent_div_2_div_2_p_4_Template(rf, ctx) { if (rf & 1) {
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "p");
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](1, CarouselComponent_div_2_div_2_p_4_a_1_Template, 2, 4, "a", 14);
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-} if (rf & 2) {
-    const d_r1 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵnextContext"](2).$implicit;
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](1);
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("ngForOf", d_r1.actions);
-} }
-function CarouselComponent_div_2_div_2_Template(rf, ctx) { if (rf & 1) {
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "div", 11);
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](1, "div", 12);
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](2, CarouselComponent_div_2_div_2_h1_2_Template, 2, 1, "h1", 13);
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](3, CarouselComponent_div_2_div_2_p_3_Template, 2, 1, "p", 13);
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](4, CarouselComponent_div_2_div_2_p_4_Template, 2, 1, "p", 13);
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-} if (rf & 2) {
-    const d_r1 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵnextContext"]().$implicit;
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](2);
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("ngIf", d_r1.title);
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](1);
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("ngIf", d_r1.description);
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](1);
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("ngIf", d_r1.actions);
-} }
-function CarouselComponent_div_2_Template(rf, ctx) { if (rf & 1) {
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "div", 8);
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](1, "img", 9);
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](2, CarouselComponent_div_2_div_2_Template, 5, 3, "div", 10);
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-} if (rf & 2) {
-    const d_r1 = ctx.$implicit;
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵclassMapInterpolate1"]("carousel-item", d_r1.active === true ? " active" : "", "");
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](1);
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵpropertyInterpolate"]("src", d_r1.imgSrc, _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵsanitizeUrl"]);
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵpropertyInterpolate"]("alt", d_r1.altTxt);
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](1);
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("ngIf", d_r1.title || d_r1.description);
-} }
-class CarouselComponent {
-    getItemData() {
-        return [
-            {
-                imgSrc: './assets/img/Meadowbrook_BicycleWithSunriseInWheel.jpg',
-                altTxt: 'bicycle with sunrise in background',
-                active: true,
-                title: 'ToDo Txt Web UI',
-                description: 'Inspired by the http://www.todotxt.com project this web app provides a simple web-based user interface for interacting with one\'s todo.txt file.',
-                actions: [
-                    { text: 'Go To App', class: 'btn-primary', onClick: () => window.open('/todoTxtWebUi/', '_self') },
-                    { text: 'View Code', class: 'btn-secondary', onClick: () => window.open('https://github.com/bicarbon8/todotxtwebui', '_blank') }
-                ]
-            },
-            {
-                imgSrc: './assets/img/GlacierBay_SmallIce.jpg',
-                altTxt: 'Irish farmland with mountains in the background',
-                title: 'Elite:Dangerous Control Bindings Visualiser',
-                description: 'A web application that parses your Elite:Dangerous Control Bindings to display them in an easy to read manner',
-                actions: [
-                    { text: 'Go To App', class: 'btn-primary', onClick: () => window.open('/e-d-controls/', '_self') },
-                    { text: 'View Code', class: 'btn-secondary', onClick: () => window.open('https://github.com/bicarbon8/e-d-controls', '_blank') }
-                ]
-            },
-            {
-                imgSrc: './assets/img/Ticknock_Sunrise.jpg',
-                altTxt: 'sunrise and mountain in the background',
-                title: 'Game / Simulation Design in Unity and Web',
-                description: 'Games and game components created as learning exercises',
-                actions: [
-                    { text: 'Unity Quadsphere', class: 'btn-secondary', onClick: () => window.open('https://github.com/bicarbon8/QuadSphere', '_blank') },
-                    { text: 'Spaceship Game', class: 'btn-primary', onClick: () => window.open('/SpaceSim/', '_self') },
-                    { text: 'War Sim Game', class: 'btn-secondary', onClick: () => window.open('https://github.com/bicarbon8/WargameSimJs', '_blank') },
-                    { text: 'Traffic Sim', class: 'btn-primary', onClick: () => window.open('/JsVehicleTrafficSimulator/', '_self') }
-                ]
-            },
-            {
-                imgSrc: './assets/img/BallawleyPark_SunriseThroughTrees.jpg',
-                altTxt: 'sunrise through cluster of trees',
-                title: 'Tool Development',
-                description: 'Tools and code libraries developed for test automation or general use',
-                actions: [
-                    { text: 'Automated Functional Testing', class: 'btn-primary', onClick: () => window.open('https://www.npmjs.com/package/aft-core', '_blank') }
-                ]
-            }
-        ];
-    }
-}
-CarouselComponent.ɵfac = function CarouselComponent_Factory(t) { return new (t || CarouselComponent)(); };
-CarouselComponent.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineComponent"]({ type: CarouselComponent, selectors: [["app-carousel"]], decls: 11, vars: 1, consts: [["id", "splash-carousel", "data-bs-ride", "carousel", 1, "carousel", "slide", "mb-2"], [1, "carousel-inner"], ["data-bs-interval", "10000", 3, "class", 4, "ngFor", "ngForOf"], ["type", "button", "data-bs-target", "#splash-carousel", "data-bs-slide", "prev", 1, "carousel-control-prev"], ["aria-hidden", "true", 1, "carousel-control-prev-icon"], [1, "visually-hidden"], ["type", "button", "data-bs-target", "#splash-carousel", "data-bs-slide", "next", 1, "carousel-control-next"], ["aria-hidden", "true", 1, "carousel-control-next-icon"], ["data-bs-interval", "10000"], [1, "d-block", 3, "src", "alt"], ["class", "container", 4, "ngIf"], [1, "container"], [1, "carousel-caption", "text-center", "bg-dark", "rounded-3"], [4, "ngIf"], ["href", "#", 3, "class", "click", 4, "ngFor", "ngForOf"], ["href", "#", 3, "click"]], template: function CarouselComponent_Template(rf, ctx) { if (rf & 1) {
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "div", 0);
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](1, "div", 1);
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](2, CarouselComponent_div_2_Template, 3, 6, "div", 2);
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](3, "button", 3);
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](4, "span", 4);
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](5, "span", 5);
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](6, "Previous");
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](7, "button", 6);
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](8, "span", 7);
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](9, "span", 5);
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](10, "Next");
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-    } if (rf & 2) {
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](2);
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("ngForOf", ctx.getItemData());
-    } }, directives: [_angular_common__WEBPACK_IMPORTED_MODULE_1__["NgForOf"], _angular_common__WEBPACK_IMPORTED_MODULE_1__["NgIf"]], styles: ["div.carousel-item[_ngcontent-%COMP%]   img[_ngcontent-%COMP%] {\r\n    width: 100vw;\r\n    margin: auto;\r\n}\r\n\r\ndiv.carousel-caption[_ngcontent-%COMP%] {\r\n    opacity: 70%;\r\n}\r\n\r\ndiv.carousel-caption[_ngcontent-%COMP%]   *[_ngcontent-%COMP%] {\r\n    opacity: 100%;\r\n}\r\n\r\ndiv.carousel-item[_ngcontent-%COMP%] {\r\n    height: 80vh;\r\n}\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbImNhcm91c2VsLmNvbXBvbmVudC5jc3MiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBQUE7SUFDSSxZQUFZO0lBQ1osWUFBWTtBQUNoQjs7QUFFQTtJQUNJLFlBQVk7QUFDaEI7O0FBRUE7SUFDSSxhQUFhO0FBQ2pCOztBQUVBO0lBQ0ksWUFBWTtBQUNoQiIsImZpbGUiOiJjYXJvdXNlbC5jb21wb25lbnQuY3NzIiwic291cmNlc0NvbnRlbnQiOlsiZGl2LmNhcm91c2VsLWl0ZW0gaW1nIHtcclxuICAgIHdpZHRoOiAxMDB2dztcclxuICAgIG1hcmdpbjogYXV0bztcclxufVxyXG5cclxuZGl2LmNhcm91c2VsLWNhcHRpb24ge1xyXG4gICAgb3BhY2l0eTogNzAlO1xyXG59XHJcblxyXG5kaXYuY2Fyb3VzZWwtY2FwdGlvbiAqIHtcclxuICAgIG9wYWNpdHk6IDEwMCU7XHJcbn1cclxuXHJcbmRpdi5jYXJvdXNlbC1pdGVtIHtcclxuICAgIGhlaWdodDogODB2aDtcclxufSJdfQ== */"] });
-
-
-/***/ }),
-
-/***/ "Sy1n":
-/*!**********************************!*\
-  !*** ./src/app/app.component.ts ***!
-  \**********************************/
-/*! exports provided: AppComponent */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "AppComponent", function() { return AppComponent; });
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "fXoL");
-/* harmony import */ var _navigation_navigation_component__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./navigation/navigation.component */ "k5x5");
-/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/router */ "tyNb");
-/* harmony import */ var _footer_footer_component__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./footer/footer.component */ "fp1T");
-
-
-
-
-class AppComponent {
-    constructor() {
-        this.title = 'bicarbon8-github-io';
-    }
-    siteMap() {
-        return {
-            pages: [
-                { title: 'Web Apps', childPages: [
-                        { title: 'ToDo Txt Web UI', url: '/todoTxtWebUi/', codeSourceUrl: 'https://github.com/bicarbon8/todoTxtWebUi' },
-                        { title: 'Elite:Dangerous Controls', url: '/e-d-controls/', codeSourceUrl: 'https://github.com/bicarbon8/e-d-controls' }
-                    ] },
-                { title: 'Games / Simulations', childPages: [
-                        { title: 'Unity Quadsphere', codeSourceUrl: 'https://github.com/bicarbon8/QuadSphere' },
-                        { title: 'Traffic Sim', url: '/JsVehicleTrafficSimulator/', codeSourceUrl: 'https://github.com/bicarbon8/JsVehicleTrafficSimulator' },
-                        { title: 'Spaceship Game', url: '/SpaceSim/', codeSourceUrl: 'https://github.com/bicarbon8/SpaceSim' },
-                        { title: 'War Sim Game', codeSourceUrl: 'https://github.com/bicarbon8/WargameSimJs' }
-                    ] },
-                { title: 'Tool Development', childPages: [
-                        { title: 'Automated Functional Testing (AFT)', codeSourceUrl: 'https://www.npmjs.org/package/aft-core' }
-                    ] }
-            ]
-        };
-    }
-}
-AppComponent.ɵfac = function AppComponent_Factory(t) { return new (t || AppComponent)(); };
-AppComponent.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineComponent"]({ type: AppComponent, selectors: [["app-root"]], decls: 6, vars: 1, consts: [[1, "flex-shrink-0"], [3, "siteMap"], [1, "footer", "mt-auto", "py-3", "bg-white"]], template: function AppComponent_Template(rf, ctx) { if (rf & 1) {
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "header", 0);
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](1, "app-navigation", 1);
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](2, "main", 0);
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](3, "router-outlet");
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](4, "footer", 2);
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](5, "app-footer");
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-    } if (rf & 2) {
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](1);
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("siteMap", ctx.siteMap());
-    } }, directives: [_navigation_navigation_component__WEBPACK_IMPORTED_MODULE_1__["NavigationComponent"], _angular_router__WEBPACK_IMPORTED_MODULE_2__["RouterOutlet"], _footer_footer_component__WEBPACK_IMPORTED_MODULE_3__["FooterComponent"]], styles: ["\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiJhcHAuY29tcG9uZW50LmNzcyJ9 */"] });
-
-
-/***/ }),
-
-/***/ "ZAI4":
-/*!*******************************!*\
-  !*** ./src/app/app.module.ts ***!
-  \*******************************/
-/*! exports provided: AppModule */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "AppModule", function() { return AppModule; });
-/* harmony import */ var _angular_platform_browser__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/platform-browser */ "jhN1");
-/* harmony import */ var _app_routing_module__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./app-routing.module */ "vY5A");
-/* harmony import */ var _app_component__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./app.component */ "Sy1n");
-/* harmony import */ var _navigation_navigation_component__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./navigation/navigation.component */ "k5x5");
-/* harmony import */ var _footer_footer_component__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./footer/footer.component */ "fp1T");
-/* harmony import */ var _carousel_carousel_component__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./carousel/carousel.component */ "EfPX");
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @angular/core */ "fXoL");
-
-
-
-
-
-
-
-class AppModule {
-}
-AppModule.ɵmod = _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵdefineNgModule"]({ type: AppModule, bootstrap: [_app_component__WEBPACK_IMPORTED_MODULE_2__["AppComponent"]] });
-AppModule.ɵinj = _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵdefineInjector"]({ factory: function AppModule_Factory(t) { return new (t || AppModule)(); }, providers: [], imports: [[
-            _angular_platform_browser__WEBPACK_IMPORTED_MODULE_0__["BrowserModule"],
-            _app_routing_module__WEBPACK_IMPORTED_MODULE_1__["AppRoutingModule"]
-        ]] });
-(function () { (typeof ngJitMode === "undefined" || ngJitMode) && _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵsetNgModuleScope"](AppModule, { declarations: [_app_component__WEBPACK_IMPORTED_MODULE_2__["AppComponent"],
-        _navigation_navigation_component__WEBPACK_IMPORTED_MODULE_3__["NavigationComponent"],
-        _footer_footer_component__WEBPACK_IMPORTED_MODULE_4__["FooterComponent"],
-        _carousel_carousel_component__WEBPACK_IMPORTED_MODULE_5__["CarouselComponent"]], imports: [_angular_platform_browser__WEBPACK_IMPORTED_MODULE_0__["BrowserModule"],
-        _app_routing_module__WEBPACK_IMPORTED_MODULE_1__["AppRoutingModule"]] }); })();
-
-
-/***/ }),
-
-/***/ "fp1T":
-/*!********************************************!*\
-  !*** ./src/app/footer/footer.component.ts ***!
-  \********************************************/
-/*! exports provided: FooterComponent */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "FooterComponent", function() { return FooterComponent; });
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "fXoL");
-
-class FooterComponent {
-    constructor() {
-        this.year = new Date().getUTCFullYear().toString();
-    }
-}
-FooterComponent.ɵfac = function FooterComponent_Factory(t) { return new (t || FooterComponent)(); };
-FooterComponent.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineComponent"]({ type: FooterComponent, selectors: [["app-footer"]], decls: 8, vars: 1, consts: [[1, "container"], [1, "text-muted"], ["href", "https://www.instagram.com/bicarbon8", "target", "_blank"], [1, "bi", "bi-instagram"], ["href", "https://www.linkedin.com/in/jasonholtsmith", "target", "_blank"], [1, "bi", "bi-linkedin"]], template: function FooterComponent_Template(rf, ctx) { if (rf & 1) {
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "div", 0);
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](1, "span", 1);
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](2);
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](3, "a", 2);
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](4, "i", 3);
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](5, " \u00B7 ");
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](6, "a", 4);
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](7, "i", 5);
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-    } if (rf & 2) {
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](2);
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtextInterpolate1"]("\u00A9 ", ctx.year, " Jason Holt Smith \u00B7 ");
-    } }, styles: ["\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiJmb290ZXIuY29tcG9uZW50LmNzcyJ9 */"] });
-
-
-/***/ }),
-
-/***/ "k5x5":
-/*!****************************************************!*\
-  !*** ./src/app/navigation/navigation.component.ts ***!
-  \****************************************************/
-/*! exports provided: NavigationComponent */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "NavigationComponent", function() { return NavigationComponent; });
-/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "mrSG");
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "fXoL");
-/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/router */ "tyNb");
-/* harmony import */ var _angular_common__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/common */ "ofXK");
-
-
-
-
-function NavigationComponent_ul_7_li_1_a_1_Template(rf, ctx) { if (rf & 1) {
-    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](0, "a", 11);
-    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtext"](1);
-    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
-} if (rf & 2) {
-    const m_r2 = _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵnextContext"]().$implicit;
-    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵclassMapInterpolate1"]("nav-link ", m_r2.classes, "");
-    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵpropertyInterpolate"]("href", m_r2.url || "#", _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵsanitizeUrl"]);
-    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵpropertyInterpolate"]("target", m_r2.url && m_r2.url.startsWith("http") ? "_blank" : "_self");
-    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵadvance"](1);
-    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtextInterpolate"](m_r2.title);
-} }
-function NavigationComponent_ul_7_li_1_div_2_li_4_button_2_Template(rf, ctx) { if (rf & 1) {
-    const _r13 = _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵgetCurrentView"]();
-    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](0, "button", 19);
-    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵlistener"]("click", function NavigationComponent_ul_7_li_1_div_2_li_4_button_2_Template_button_click_0_listener() { _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵrestoreView"](_r13); const c_r7 = _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵnextContext"]().$implicit; const ctx_r11 = _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵnextContext"](4); return ctx_r11.goTo(c_r7.url); });
-    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtext"](1);
-    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
-} if (rf & 2) {
-    const c_r7 = _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵnextContext"]().$implicit;
-    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵadvance"](1);
-    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtextInterpolate"](c_r7.title);
-} }
-function NavigationComponent_ul_7_li_1_div_2_li_4_span_3_Template(rf, ctx) { if (rf & 1) {
-    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](0, "span", 20);
-    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtext"](1);
-    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
-} if (rf & 2) {
-    const c_r7 = _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵnextContext"]().$implicit;
-    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵadvance"](1);
-    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtextInterpolate"](c_r7.title);
-} }
-function NavigationComponent_ul_7_li_1_div_2_li_4_a_5_Template(rf, ctx) { if (rf & 1) {
-    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelement"](0, "a", 21);
-} if (rf & 2) {
-    const c_r7 = _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵnextContext"]().$implicit;
-    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵpropertyInterpolate"]("href", c_r7.codeSourceUrl, _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵsanitizeUrl"]);
-} }
-function NavigationComponent_ul_7_li_1_div_2_li_4_Template(rf, ctx) { if (rf & 1) {
-    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](0, "li");
-    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](1, "div", 15);
-    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtemplate"](2, NavigationComponent_ul_7_li_1_div_2_li_4_button_2_Template, 2, 1, "button", 16);
-    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtemplate"](3, NavigationComponent_ul_7_li_1_div_2_li_4_span_3_Template, 2, 1, "span", 17);
-    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtext"](4, " \u00A0");
-    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtemplate"](5, NavigationComponent_ul_7_li_1_div_2_li_4_a_5_Template, 1, 1, "a", 18);
-    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
-    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
-} if (rf & 2) {
-    const c_r7 = ctx.$implicit;
-    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵadvance"](2);
-    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵproperty"]("ngIf", c_r7.url);
-    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵadvance"](1);
-    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵproperty"]("ngIf", !c_r7.url);
-    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵadvance"](2);
-    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵproperty"]("ngIf", c_r7.codeSourceUrl);
-} }
-function NavigationComponent_ul_7_li_1_div_2_Template(rf, ctx) { if (rf & 1) {
-    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](0, "div");
-    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](1, "a", 12);
-    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtext"](2);
-    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
-    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](3, "ul", 13);
-    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtemplate"](4, NavigationComponent_ul_7_li_1_div_2_li_4_Template, 6, 3, "li", 14);
-    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
-    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
-} if (rf & 2) {
-    const m_r2 = _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵnextContext"]().$implicit;
-    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵadvance"](2);
-    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtextInterpolate1"](" ", m_r2.title, " ");
-    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵadvance"](2);
-    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵproperty"]("ngForOf", m_r2.childPages);
-} }
-function NavigationComponent_ul_7_li_1_Template(rf, ctx) { if (rf & 1) {
-    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](0, "li");
-    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtemplate"](1, NavigationComponent_ul_7_li_1_a_1_Template, 2, 6, "a", 9);
-    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtemplate"](2, NavigationComponent_ul_7_li_1_div_2_Template, 5, 2, "div", 10);
-    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
-} if (rf & 2) {
-    const m_r2 = ctx.$implicit;
-    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵclassMapInterpolate1"]("nav-item ", (m_r2.childPages == null ? null : m_r2.childPages.length) ? "dropdown" : "", "");
-    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵadvance"](1);
-    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵproperty"]("ngIf", m_r2.childPages === undefined);
-    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵadvance"](1);
-    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵproperty"]("ngIf", m_r2.childPages == null ? null : m_r2.childPages.length);
-} }
-function NavigationComponent_ul_7_Template(rf, ctx) { if (rf & 1) {
-    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](0, "ul", 7);
-    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtemplate"](1, NavigationComponent_ul_7_li_1_Template, 3, 5, "li", 8);
-    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
-} if (rf & 2) {
-    const ctx_r0 = _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵnextContext"]();
-    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵadvance"](1);
-    _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵproperty"]("ngForOf", ctx_r0.siteMap.pages);
-} }
-class NavigationComponent {
-    goTo(url) {
-        return Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"])(this, void 0, void 0, function* () {
-            let target = (url.startsWith('http')) ? '_blank' : '_self';
-            window.open(url, target);
-        });
-    }
-}
-NavigationComponent.ɵfac = function NavigationComponent_Factory(t) { return new (t || NavigationComponent)(); };
-NavigationComponent.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵdefineComponent"]({ type: NavigationComponent, selectors: [["app-navigation"]], inputs: { siteMap: "siteMap" }, decls: 8, vars: 1, consts: [[1, "navbar", "navbar-expand-lg", "navbar-dark", "bg-success"], [1, "container-fluid"], ["routerLink", "", 1, "navbar-brand"], ["type", "button", "data-bs-toggle", "collapse", "data-bs-target", "#navbarNavAltMarkup", "aria-controls", "navbarNavAltMarkup", "aria-expanded", "false", "aria-label", "Toggle navigation", 1, "navbar-toggler"], [1, "navbar-toggler-icon"], ["id", "navbarNavAltMarkup", 1, "collapse", "navbar-collapse"], ["class", "navbar-nav", 4, "ngIf"], [1, "navbar-nav"], [3, "class", 4, "ngFor", "ngForOf"], ["aria-current", "page", 3, "class", "href", "target", 4, "ngIf"], [4, "ngIf"], ["aria-current", "page", 3, "href", "target"], ["href", "#", "id", "navbarDropdownMenuLink", "role", "button", "data-bs-toggle", "dropdown", "aria-expanded", "false", 1, "nav-link", "dropdown-toggle"], ["aria-labelledby", "navbarDropdownMenuLink", 1, "dropdown-menu"], [4, "ngFor", "ngForOf"], [1, "dropdown-item"], ["class", "btn btn-sm btn-success", 3, "click", 4, "ngIf"], ["class", "text-secondary", 4, "ngIf"], ["class", "bi bi-tools", "target", "_blank", "aria-label", "View Sourcecode", "data-bs-toggle", "tooltip", "data-bs-placement", "top", "title", "View Sourcecode", 3, "href", 4, "ngIf"], [1, "btn", "btn-sm", "btn-success", 3, "click"], [1, "text-secondary"], ["target", "_blank", "aria-label", "View Sourcecode", "data-bs-toggle", "tooltip", "data-bs-placement", "top", "title", "View Sourcecode", 1, "bi", "bi-tools", 3, "href"]], template: function NavigationComponent_Template(rf, ctx) { if (rf & 1) {
-        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](0, "nav", 0);
-        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](1, "div", 1);
-        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](2, "a", 2);
-        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtext"](3, "JHS");
-        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
-        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](4, "button", 3);
-        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelement"](5, "span", 4);
-        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
-        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](6, "div", 5);
-        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtemplate"](7, NavigationComponent_ul_7_Template, 2, 1, "ul", 6);
-        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
-        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
-        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
-    } if (rf & 2) {
-        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵadvance"](7);
-        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵproperty"]("ngIf", ctx.siteMap.pages == null ? null : ctx.siteMap.pages.length);
-    } }, directives: [_angular_router__WEBPACK_IMPORTED_MODULE_2__["RouterLinkWithHref"], _angular_common__WEBPACK_IMPORTED_MODULE_3__["NgIf"], _angular_common__WEBPACK_IMPORTED_MODULE_3__["NgForOf"]], styles: ["\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiJuYXZpZ2F0aW9uLmNvbXBvbmVudC5jc3MifQ== */"] });
-
-
-/***/ }),
-
-/***/ "vY5A":
-/*!***************************************!*\
-  !*** ./src/app/app-routing.module.ts ***!
-  \***************************************/
-/*! exports provided: AppRoutingModule */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "AppRoutingModule", function() { return AppRoutingModule; });
-/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/router */ "tyNb");
-/* harmony import */ var _carousel_carousel_component__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./carousel/carousel.component */ "EfPX");
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/core */ "fXoL");
-
-
-
-
-const routes = [
-    { path: '', component: _carousel_carousel_component__WEBPACK_IMPORTED_MODULE_1__["CarouselComponent"] },
-    { path: 'e-d-controls', loadChildren: () => __webpack_require__.e(/*! import() | e-d-controls-src-app-e-d-controls-e-d-controls-module */ "e-d-controls-src-app-e-d-controls-e-d-controls-module").then(__webpack_require__.bind(null, /*! e-d-controls/src/app/e-d-controls/e-d-controls.module */ "bgVs")).then((m) => m.EDControlsModule) },
-    { path: 'todoTxtWebUi', loadChildren: () => __webpack_require__.e(/*! import() | todoTxtWebUi-src-app-todo-txt-web-ui-todo-txt-web-ui-module */ "todoTxtWebUi-src-app-todo-txt-web-ui-todo-txt-web-ui-module").then(__webpack_require__.bind(null, /*! todoTxtWebUi/src/app/todo-txt-web-ui/todo-txt-web-ui.module */ "I86c")).then((m) => m.TodoTxtWebUiModule) },
-    { path: 'JsVehicleTrafficSimulator', loadChildren: () => __webpack_require__.e(/*! import() | JsVehicleTrafficSimulator-src-app-traffic-sim-traffic-sim-module */ "JsVehicleTrafficSimulator-src-app-traffic-sim-traffic-sim-module").then(__webpack_require__.bind(null, /*! JsVehicleTrafficSimulator/src/app/traffic-sim/traffic-sim.module */ "5oT2")).then((m) => m.TrafficSimModule) },
-    { path: 'SpaceSim', loadChildren: () => __webpack_require__.e(/*! import() | SpaceSim-src-app-space-sim-space-sim-module */ "SpaceSim-src-app-space-sim-space-sim-module").then(__webpack_require__.bind(null, /*! SpaceSim/src/app/space-sim/space-sim.module */ "YMcx")).then((m) => m.SpaceSimModule) }
-];
-class AppRoutingModule {
-}
-AppRoutingModule.ɵmod = _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵdefineNgModule"]({ type: AppRoutingModule });
-AppRoutingModule.ɵinj = _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵdefineInjector"]({ factory: function AppRoutingModule_Factory(t) { return new (t || AppRoutingModule)(); }, imports: [[_angular_router__WEBPACK_IMPORTED_MODULE_0__["RouterModule"].forRoot(routes)], _angular_router__WEBPACK_IMPORTED_MODULE_0__["RouterModule"]] });
-(function () { (typeof ngJitMode === "undefined" || ngJitMode) && _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵsetNgModuleScope"](AppRoutingModule, { imports: [_angular_router__WEBPACK_IMPORTED_MODULE_0__["RouterModule"]], exports: [_angular_router__WEBPACK_IMPORTED_MODULE_0__["RouterModule"]] }); })();
-
-
-/***/ }),
-
-/***/ "zUnb":
+/***/ 4431:
 /*!*********************!*\
   !*** ./src/main.ts ***!
   \*********************/
-/*! no exports provided */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
+/***/ ((__unused_webpack_module, __unused_webpack_exports, __webpack_require__) => {
 
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _angular_platform_browser__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/platform-browser */ "jhN1");
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "fXoL");
-/* harmony import */ var _app_app_module__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./app/app.module */ "ZAI4");
-/* harmony import */ var _environments_environment__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./environments/environment */ "AytR");
-
-
-
-
-if (_environments_environment__WEBPACK_IMPORTED_MODULE_3__["environment"].production) {
-    Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["enableProdMode"])();
-}
-_angular_platform_browser__WEBPACK_IMPORTED_MODULE_0__["platformBrowser"]().bootstrapModule(_app_app_module__WEBPACK_IMPORTED_MODULE_2__["AppModule"])
+__webpack_require__.e(/*! import() */ "src_bootstrap_ts").then(__webpack_require__.bind(__webpack_require__, /*! ./bootstrap */ 5533))
     .catch(err => console.error(err));
 
 
-/***/ }),
-
-/***/ "zn8P":
-/*!******************************************************!*\
-  !*** ./$$_lazy_route_resource lazy namespace object ***!
-  \******************************************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-function webpackEmptyAsyncContext(req) {
-	// Here Promise.resolve().then() is used instead of new Promise() to prevent
-	// uncaught exception popping up in devtools
-	return Promise.resolve().then(function() {
-		var e = new Error("Cannot find module '" + req + "'");
-		e.code = 'MODULE_NOT_FOUND';
-		throw e;
-	});
-}
-webpackEmptyAsyncContext.keys = function() { return []; };
-webpackEmptyAsyncContext.resolve = webpackEmptyAsyncContext;
-module.exports = webpackEmptyAsyncContext;
-webpackEmptyAsyncContext.id = "zn8P";
-
 /***/ })
 
-},[[0,"runtime","vendor"]]]);
+/******/ });
+/************************************************************************/
+/******/ // The module cache
+/******/ var __webpack_module_cache__ = {};
+/******/ 
+/******/ // The require function
+/******/ function __webpack_require__(moduleId) {
+/******/ 	// Check if module is in cache
+/******/ 	var cachedModule = __webpack_module_cache__[moduleId];
+/******/ 	if (cachedModule !== undefined) {
+/******/ 		return cachedModule.exports;
+/******/ 	}
+/******/ 	// Create a new module (and put it into the cache)
+/******/ 	var module = __webpack_module_cache__[moduleId] = {
+/******/ 		// no module.id needed
+/******/ 		// no module.loaded needed
+/******/ 		exports: {}
+/******/ 	};
+/******/ 
+/******/ 	// Execute the module function
+/******/ 	__webpack_modules__[moduleId](module, module.exports, __webpack_require__);
+/******/ 
+/******/ 	// Return the exports of the module
+/******/ 	return module.exports;
+/******/ }
+/******/ 
+/******/ // expose the modules object (__webpack_modules__)
+/******/ __webpack_require__.m = __webpack_modules__;
+/******/ 
+/******/ // expose the module cache
+/******/ __webpack_require__.c = __webpack_module_cache__;
+/******/ 
+/************************************************************************/
+/******/ /* webpack/runtime/compat get default export */
+/******/ (() => {
+/******/ 	// getDefaultExport function for compatibility with non-harmony modules
+/******/ 	__webpack_require__.n = (module) => {
+/******/ 		var getter = module && module.__esModule ?
+/******/ 			() => (module['default']) :
+/******/ 			() => (module);
+/******/ 		__webpack_require__.d(getter, { a: getter });
+/******/ 		return getter;
+/******/ 	};
+/******/ })();
+/******/ 
+/******/ /* webpack/runtime/define property getters */
+/******/ (() => {
+/******/ 	// define getter functions for harmony exports
+/******/ 	__webpack_require__.d = (exports, definition) => {
+/******/ 		for(var key in definition) {
+/******/ 			if(__webpack_require__.o(definition, key) && !__webpack_require__.o(exports, key)) {
+/******/ 				Object.defineProperty(exports, key, { enumerable: true, get: definition[key] });
+/******/ 			}
+/******/ 		}
+/******/ 	};
+/******/ })();
+/******/ 
+/******/ /* webpack/runtime/ensure chunk */
+/******/ (() => {
+/******/ 	__webpack_require__.f = {};
+/******/ 	// This file contains only the entry chunk.
+/******/ 	// The chunk loading function for additional chunks
+/******/ 	__webpack_require__.e = (chunkId) => {
+/******/ 		return Promise.all(Object.keys(__webpack_require__.f).reduce((promises, key) => {
+/******/ 			__webpack_require__.f[key](chunkId, promises);
+/******/ 			return promises;
+/******/ 		}, []));
+/******/ 	};
+/******/ })();
+/******/ 
+/******/ /* webpack/runtime/get javascript chunk filename */
+/******/ (() => {
+/******/ 	// This function allow to reference async chunks
+/******/ 	__webpack_require__.u = (chunkId) => {
+/******/ 		// return url for filenames based on template
+/******/ 		return "" + chunkId + ".js";
+/******/ 	};
+/******/ })();
+/******/ 
+/******/ /* webpack/runtime/get mini-css chunk filename */
+/******/ (() => {
+/******/ 	// This function allow to reference async chunks
+/******/ 	__webpack_require__.miniCssF = (chunkId) => {
+/******/ 		// return url for filenames based on template
+/******/ 		return undefined;
+/******/ 	};
+/******/ })();
+/******/ 
+/******/ /* webpack/runtime/hasOwnProperty shorthand */
+/******/ (() => {
+/******/ 	__webpack_require__.o = (obj, prop) => (Object.prototype.hasOwnProperty.call(obj, prop))
+/******/ })();
+/******/ 
+/******/ /* webpack/runtime/load script */
+/******/ (() => {
+/******/ 	var inProgress = {};
+/******/ 	var dataWebpackPrefix = "bicarbon8GithubIo:";
+/******/ 	// loadScript function to load a script via script tag
+/******/ 	__webpack_require__.l = (url, done, key, chunkId) => {
+/******/ 		if(inProgress[url]) { inProgress[url].push(done); return; }
+/******/ 		var script, needAttach;
+/******/ 		if(key !== undefined) {
+/******/ 			var scripts = document.getElementsByTagName("script");
+/******/ 			for(var i = 0; i < scripts.length; i++) {
+/******/ 				var s = scripts[i];
+/******/ 				if(s.getAttribute("src") == url || s.getAttribute("data-webpack") == dataWebpackPrefix + key) { script = s; break; }
+/******/ 			}
+/******/ 		}
+/******/ 		if(!script) {
+/******/ 			needAttach = true;
+/******/ 			script = document.createElement('script');
+/******/ 			script.type = "module";
+/******/ 			script.charset = 'utf-8';
+/******/ 			script.timeout = 120;
+/******/ 			if (__webpack_require__.nc) {
+/******/ 				script.setAttribute("nonce", __webpack_require__.nc);
+/******/ 			}
+/******/ 			script.setAttribute("data-webpack", dataWebpackPrefix + key);
+/******/ 			script.src = __webpack_require__.tu(url);
+/******/ 		}
+/******/ 		inProgress[url] = [done];
+/******/ 		var onScriptComplete = (prev, event) => {
+/******/ 			// avoid mem leaks in IE.
+/******/ 			script.onerror = script.onload = null;
+/******/ 			clearTimeout(timeout);
+/******/ 			var doneFns = inProgress[url];
+/******/ 			delete inProgress[url];
+/******/ 			script.parentNode && script.parentNode.removeChild(script);
+/******/ 			doneFns && doneFns.forEach((fn) => (fn(event)));
+/******/ 			if(prev) return prev(event);
+/******/ 		}
+/******/ 		;
+/******/ 		var timeout = setTimeout(onScriptComplete.bind(null, undefined, { type: 'timeout', target: script }), 120000);
+/******/ 		script.onerror = onScriptComplete.bind(null, script.onerror);
+/******/ 		script.onload = onScriptComplete.bind(null, script.onload);
+/******/ 		needAttach && document.head.appendChild(script);
+/******/ 	};
+/******/ })();
+/******/ 
+/******/ /* webpack/runtime/make namespace object */
+/******/ (() => {
+/******/ 	// define __esModule on exports
+/******/ 	__webpack_require__.r = (exports) => {
+/******/ 		if(typeof Symbol !== 'undefined' && Symbol.toStringTag) {
+/******/ 			Object.defineProperty(exports, Symbol.toStringTag, { value: 'Module' });
+/******/ 		}
+/******/ 		Object.defineProperty(exports, '__esModule', { value: true });
+/******/ 	};
+/******/ })();
+/******/ 
+/******/ /* webpack/runtime/sharing */
+/******/ (() => {
+/******/ 	__webpack_require__.S = {};
+/******/ 	var initPromises = {};
+/******/ 	var initTokens = {};
+/******/ 	__webpack_require__.I = (name, initScope) => {
+/******/ 		if(!initScope) initScope = [];
+/******/ 		// handling circular init calls
+/******/ 		var initToken = initTokens[name];
+/******/ 		if(!initToken) initToken = initTokens[name] = {};
+/******/ 		if(initScope.indexOf(initToken) >= 0) return;
+/******/ 		initScope.push(initToken);
+/******/ 		// only runs once
+/******/ 		if(initPromises[name]) return initPromises[name];
+/******/ 		// creates a new share scope if needed
+/******/ 		if(!__webpack_require__.o(__webpack_require__.S, name)) __webpack_require__.S[name] = {};
+/******/ 		// runs all init snippets from all modules reachable
+/******/ 		var scope = __webpack_require__.S[name];
+/******/ 		var warn = (msg) => (typeof console !== "undefined" && console.warn && console.warn(msg));
+/******/ 		var uniqueName = "bicarbon8GithubIo";
+/******/ 		var register = (name, version, factory, eager) => {
+/******/ 			var versions = scope[name] = scope[name] || {};
+/******/ 			var activeVersion = versions[version];
+/******/ 			if(!activeVersion || (!activeVersion.loaded && (!eager != !activeVersion.eager ? eager : uniqueName > activeVersion.from))) versions[version] = { get: factory, from: uniqueName, eager: !!eager };
+/******/ 		};
+/******/ 		var initExternal = (id) => {
+/******/ 			var handleError = (err) => (warn("Initialization of sharing external failed: " + err));
+/******/ 			try {
+/******/ 				var module = __webpack_require__(id);
+/******/ 				if(!module) return;
+/******/ 				var initFn = (module) => (module && module.init && module.init(__webpack_require__.S[name], initScope))
+/******/ 				if(module.then) return promises.push(module.then(initFn, handleError));
+/******/ 				var initResult = initFn(module);
+/******/ 				if(initResult && initResult.then) return promises.push(initResult['catch'](handleError));
+/******/ 			} catch(err) { handleError(err); }
+/******/ 		}
+/******/ 		var promises = [];
+/******/ 		switch(name) {
+/******/ 			case "default": {
+/******/ 				register("@angular/common", "13.2.0", () => (__webpack_require__.e("node_modules_angular_common_fesm2020_common_mjs-_ec491").then(() => (() => (__webpack_require__(/*! ./node_modules/@angular/common/fesm2020/common.mjs */ 4666))))));
+/******/ 				register("@angular/core", "13.2.0", () => (__webpack_require__.e("node_modules_angular_core_fesm2020_core_mjs").then(() => (() => (__webpack_require__(/*! ./node_modules/@angular/core/fesm2020/core.mjs */ 2560))))));
+/******/ 				register("@angular/router", "13.2.0", () => (__webpack_require__.e("node_modules_angular_router_fesm2020_router_mjs-_6f001").then(() => (() => (__webpack_require__(/*! ./node_modules/@angular/router/fesm2020/router.mjs */ 124))))));
+/******/ 			}
+/******/ 			break;
+/******/ 		}
+/******/ 		if(!promises.length) return initPromises[name] = 1;
+/******/ 		return initPromises[name] = Promise.all(promises).then(() => (initPromises[name] = 1));
+/******/ 	};
+/******/ })();
+/******/ 
+/******/ /* webpack/runtime/trusted types policy */
+/******/ (() => {
+/******/ 	var policy;
+/******/ 	__webpack_require__.tt = () => {
+/******/ 		// Create Trusted Type policy if Trusted Types are available and the policy doesn't exist yet.
+/******/ 		if (policy === undefined) {
+/******/ 			policy = {
+/******/ 				createScriptURL: (url) => (url)
+/******/ 			};
+/******/ 			if (typeof trustedTypes !== "undefined" && trustedTypes.createPolicy) {
+/******/ 				policy = trustedTypes.createPolicy("angular#bundler", policy);
+/******/ 			}
+/******/ 		}
+/******/ 		return policy;
+/******/ 	};
+/******/ })();
+/******/ 
+/******/ /* webpack/runtime/trusted types script url */
+/******/ (() => {
+/******/ 	__webpack_require__.tu = (url) => (__webpack_require__.tt().createScriptURL(url));
+/******/ })();
+/******/ 
+/******/ /* webpack/runtime/publicPath */
+/******/ (() => {
+/******/ 	var scriptUrl;
+/******/ 	if (typeof import.meta.url === "string") scriptUrl = import.meta.url
+/******/ 	// When supporting browsers where an automatic publicPath is not supported you must specify an output.publicPath manually via configuration
+/******/ 	// or pass an empty string ("") and set the __webpack_public_path__ variable from your code to use your own logic.
+/******/ 	if (!scriptUrl) throw new Error("Automatic publicPath is not supported in this browser");
+/******/ 	scriptUrl = scriptUrl.replace(/#.*$/, "").replace(/\?.*$/, "").replace(/\/[^\/]+$/, "/");
+/******/ 	__webpack_require__.p = scriptUrl;
+/******/ })();
+/******/ 
+/******/ /* webpack/runtime/consumes */
+/******/ (() => {
+/******/ 	var parseVersion = (str) => {
+/******/ 		// see webpack/lib/util/semver.js for original code
+/******/ 		var p=p=>{return p.split(".").map((p=>{return+p==p?+p:p}))},n=/^([^-+]+)?(?:-([^+]+))?(?:\+(.+))?$/.exec(str),r=n[1]?p(n[1]):[];return n[2]&&(r.length++,r.push.apply(r,p(n[2]))),n[3]&&(r.push([]),r.push.apply(r,p(n[3]))),r;
+/******/ 	}
+/******/ 	var versionLt = (a, b) => {
+/******/ 		// see webpack/lib/util/semver.js for original code
+/******/ 		a=parseVersion(a),b=parseVersion(b);for(var r=0;;){if(r>=a.length)return r<b.length&&"u"!=(typeof b[r])[0];var e=a[r],n=(typeof e)[0];if(r>=b.length)return"u"==n;var t=b[r],f=(typeof t)[0];if(n!=f)return"o"==n&&"n"==f||("s"==f||"u"==n);if("o"!=n&&"u"!=n&&e!=t)return e<t;r++}
+/******/ 	}
+/******/ 	var rangeToString = (range) => {
+/******/ 		// see webpack/lib/util/semver.js for original code
+/******/ 		var r=range[0],n="";if(1===range.length)return"*";if(r+.5){n+=0==r?">=":-1==r?"<":1==r?"^":2==r?"~":r>0?"=":"!=";for(var e=1,a=1;a<range.length;a++){e--,n+="u"==(typeof(t=range[a]))[0]?"-":(e>0?".":"")+(e=2,t)}return n}var g=[];for(a=1;a<range.length;a++){var t=range[a];g.push(0===t?"not("+o()+")":1===t?"("+o()+" || "+o()+")":2===t?g.pop()+" "+g.pop():rangeToString(t))}return o();function o(){return g.pop().replace(/^\((.+)\)$/,"$1")}
+/******/ 	}
+/******/ 	var satisfy = (range, version) => {
+/******/ 		// see webpack/lib/util/semver.js for original code
+/******/ 		if(0 in range){version=parseVersion(version);var e=range[0],r=e<0;r&&(e=-e-1);for(var n=0,i=1,a=!0;;i++,n++){var f,s,g=i<range.length?(typeof range[i])[0]:"";if(n>=version.length||"o"==(s=(typeof(f=version[n]))[0]))return!a||("u"==g?i>e&&!r:""==g!=r);if("u"==s){if(!a||"u"!=g)return!1}else if(a)if(g==s)if(i<=e){if(f!=range[i])return!1}else{if(r?f>range[i]:f<range[i])return!1;f!=range[i]&&(a=!1)}else if("s"!=g&&"n"!=g){if(r||i<=e)return!1;a=!1,i--}else{if(i<=e||s<g!=r)return!1;a=!1}else"s"!=g&&"n"!=g&&(a=!1,i--)}}var t=[],o=t.pop.bind(t);for(n=1;n<range.length;n++){var u=range[n];t.push(1==u?o()|o():2==u?o()&o():u?satisfy(u,version):!o())}return!!o();
+/******/ 	}
+/******/ 	var ensureExistence = (scopeName, key) => {
+/******/ 		var scope = __webpack_require__.S[scopeName];
+/******/ 		if(!scope || !__webpack_require__.o(scope, key)) throw new Error("Shared module " + key + " doesn't exist in shared scope " + scopeName);
+/******/ 		return scope;
+/******/ 	};
+/******/ 	var findVersion = (scope, key) => {
+/******/ 		var versions = scope[key];
+/******/ 		var key = Object.keys(versions).reduce((a, b) => {
+/******/ 			return !a || versionLt(a, b) ? b : a;
+/******/ 		}, 0);
+/******/ 		return key && versions[key]
+/******/ 	};
+/******/ 	var findSingletonVersionKey = (scope, key) => {
+/******/ 		var versions = scope[key];
+/******/ 		return Object.keys(versions).reduce((a, b) => {
+/******/ 			return !a || (!versions[a].loaded && versionLt(a, b)) ? b : a;
+/******/ 		}, 0);
+/******/ 	};
+/******/ 	var getInvalidSingletonVersionMessage = (scope, key, version, requiredVersion) => {
+/******/ 		return "Unsatisfied version " + version + " from " + (version && scope[key][version].from) + " of shared singleton module " + key + " (required " + rangeToString(requiredVersion) + ")"
+/******/ 	};
+/******/ 	var getSingleton = (scope, scopeName, key, requiredVersion) => {
+/******/ 		var version = findSingletonVersionKey(scope, key);
+/******/ 		return get(scope[key][version]);
+/******/ 	};
+/******/ 	var getSingletonVersion = (scope, scopeName, key, requiredVersion) => {
+/******/ 		var version = findSingletonVersionKey(scope, key);
+/******/ 		if (!satisfy(requiredVersion, version)) typeof console !== "undefined" && console.warn && console.warn(getInvalidSingletonVersionMessage(scope, key, version, requiredVersion));
+/******/ 		return get(scope[key][version]);
+/******/ 	};
+/******/ 	var getStrictSingletonVersion = (scope, scopeName, key, requiredVersion) => {
+/******/ 		var version = findSingletonVersionKey(scope, key);
+/******/ 		if (!satisfy(requiredVersion, version)) throw new Error(getInvalidSingletonVersionMessage(scope, key, version, requiredVersion));
+/******/ 		return get(scope[key][version]);
+/******/ 	};
+/******/ 	var findValidVersion = (scope, key, requiredVersion) => {
+/******/ 		var versions = scope[key];
+/******/ 		var key = Object.keys(versions).reduce((a, b) => {
+/******/ 			if (!satisfy(requiredVersion, b)) return a;
+/******/ 			return !a || versionLt(a, b) ? b : a;
+/******/ 		}, 0);
+/******/ 		return key && versions[key]
+/******/ 	};
+/******/ 	var getInvalidVersionMessage = (scope, scopeName, key, requiredVersion) => {
+/******/ 		var versions = scope[key];
+/******/ 		return "No satisfying version (" + rangeToString(requiredVersion) + ") of shared module " + key + " found in shared scope " + scopeName + ".\n" +
+/******/ 			"Available versions: " + Object.keys(versions).map((key) => {
+/******/ 			return key + " from " + versions[key].from;
+/******/ 		}).join(", ");
+/******/ 	};
+/******/ 	var getValidVersion = (scope, scopeName, key, requiredVersion) => {
+/******/ 		var entry = findValidVersion(scope, key, requiredVersion);
+/******/ 		if(entry) return get(entry);
+/******/ 		throw new Error(getInvalidVersionMessage(scope, scopeName, key, requiredVersion));
+/******/ 	};
+/******/ 	var warnInvalidVersion = (scope, scopeName, key, requiredVersion) => {
+/******/ 		typeof console !== "undefined" && console.warn && console.warn(getInvalidVersionMessage(scope, scopeName, key, requiredVersion));
+/******/ 	};
+/******/ 	var get = (entry) => {
+/******/ 		entry.loaded = 1;
+/******/ 		return entry.get()
+/******/ 	};
+/******/ 	var init = (fn) => (function(scopeName, a, b, c) {
+/******/ 		var promise = __webpack_require__.I(scopeName);
+/******/ 		if (promise && promise.then) return promise.then(fn.bind(fn, scopeName, __webpack_require__.S[scopeName], a, b, c));
+/******/ 		return fn(scopeName, __webpack_require__.S[scopeName], a, b, c);
+/******/ 	});
+/******/ 	
+/******/ 	var load = /*#__PURE__*/ init((scopeName, scope, key) => {
+/******/ 		ensureExistence(scopeName, key);
+/******/ 		return get(findVersion(scope, key));
+/******/ 	});
+/******/ 	var loadFallback = /*#__PURE__*/ init((scopeName, scope, key, fallback) => {
+/******/ 		return scope && __webpack_require__.o(scope, key) ? get(findVersion(scope, key)) : fallback();
+/******/ 	});
+/******/ 	var loadVersionCheck = /*#__PURE__*/ init((scopeName, scope, key, version) => {
+/******/ 		ensureExistence(scopeName, key);
+/******/ 		return get(findValidVersion(scope, key, version) || warnInvalidVersion(scope, scopeName, key, version) || findVersion(scope, key));
+/******/ 	});
+/******/ 	var loadSingleton = /*#__PURE__*/ init((scopeName, scope, key) => {
+/******/ 		ensureExistence(scopeName, key);
+/******/ 		return getSingleton(scope, scopeName, key);
+/******/ 	});
+/******/ 	var loadSingletonVersionCheck = /*#__PURE__*/ init((scopeName, scope, key, version) => {
+/******/ 		ensureExistence(scopeName, key);
+/******/ 		return getSingletonVersion(scope, scopeName, key, version);
+/******/ 	});
+/******/ 	var loadStrictVersionCheck = /*#__PURE__*/ init((scopeName, scope, key, version) => {
+/******/ 		ensureExistence(scopeName, key);
+/******/ 		return getValidVersion(scope, scopeName, key, version);
+/******/ 	});
+/******/ 	var loadStrictSingletonVersionCheck = /*#__PURE__*/ init((scopeName, scope, key, version) => {
+/******/ 		ensureExistence(scopeName, key);
+/******/ 		return getStrictSingletonVersion(scope, scopeName, key, version);
+/******/ 	});
+/******/ 	var loadVersionCheckFallback = /*#__PURE__*/ init((scopeName, scope, key, version, fallback) => {
+/******/ 		if(!scope || !__webpack_require__.o(scope, key)) return fallback();
+/******/ 		return get(findValidVersion(scope, key, version) || warnInvalidVersion(scope, scopeName, key, version) || findVersion(scope, key));
+/******/ 	});
+/******/ 	var loadSingletonFallback = /*#__PURE__*/ init((scopeName, scope, key, fallback) => {
+/******/ 		if(!scope || !__webpack_require__.o(scope, key)) return fallback();
+/******/ 		return getSingleton(scope, scopeName, key);
+/******/ 	});
+/******/ 	var loadSingletonVersionCheckFallback = /*#__PURE__*/ init((scopeName, scope, key, version, fallback) => {
+/******/ 		if(!scope || !__webpack_require__.o(scope, key)) return fallback();
+/******/ 		return getSingletonVersion(scope, scopeName, key, version);
+/******/ 	});
+/******/ 	var loadStrictVersionCheckFallback = /*#__PURE__*/ init((scopeName, scope, key, version, fallback) => {
+/******/ 		var entry = scope && __webpack_require__.o(scope, key) && findValidVersion(scope, key, version);
+/******/ 		return entry ? get(entry) : fallback();
+/******/ 	});
+/******/ 	var loadStrictSingletonVersionCheckFallback = /*#__PURE__*/ init((scopeName, scope, key, version, fallback) => {
+/******/ 		if(!scope || !__webpack_require__.o(scope, key)) return fallback();
+/******/ 		return getStrictSingletonVersion(scope, scopeName, key, version);
+/******/ 	});
+/******/ 	var installedModules = {};
+/******/ 	var moduleToHandlerMapping = {
+/******/ 		8802: () => (loadStrictSingletonVersionCheckFallback("default", "@angular/core", [1,13,2,0], () => (__webpack_require__.e("node_modules_angular_core_fesm2020_core_mjs").then(() => (() => (__webpack_require__(/*! @angular/core */ 2560))))))),
+/******/ 		3464: () => (loadStrictSingletonVersionCheckFallback("default", "@angular/router", [1,13,2,0], () => (__webpack_require__.e("node_modules_angular_router_fesm2020_router_mjs-_6f000").then(() => (() => (__webpack_require__(/*! @angular/router */ 124))))))),
+/******/ 		1643: () => (loadStrictSingletonVersionCheckFallback("default", "@angular/common", [1,13,2,0], () => (__webpack_require__.e("node_modules_angular_common_fesm2020_common_mjs-_ec490").then(() => (() => (__webpack_require__(/*! @angular/common */ 4666)))))))
+/******/ 	};
+/******/ 	// no consumes in initial chunks
+/******/ 	var chunkMapping = {
+/******/ 		"src_bootstrap_ts": [
+/******/ 			8802,
+/******/ 			3464,
+/******/ 			1643
+/******/ 		],
+/******/ 		"node_modules_angular_common_fesm2020_common_mjs-_ec491": [
+/******/ 			8802
+/******/ 		],
+/******/ 		"node_modules_angular_router_fesm2020_router_mjs-_6f001": [
+/******/ 			1643,
+/******/ 			8802
+/******/ 		]
+/******/ 	};
+/******/ 	__webpack_require__.f.consumes = (chunkId, promises) => {
+/******/ 		if(__webpack_require__.o(chunkMapping, chunkId)) {
+/******/ 			chunkMapping[chunkId].forEach((id) => {
+/******/ 				if(__webpack_require__.o(installedModules, id)) return promises.push(installedModules[id]);
+/******/ 				var onFactory = (factory) => {
+/******/ 					installedModules[id] = 0;
+/******/ 					__webpack_require__.m[id] = (module) => {
+/******/ 						delete __webpack_require__.c[id];
+/******/ 						module.exports = factory();
+/******/ 					}
+/******/ 				};
+/******/ 				var onError = (error) => {
+/******/ 					delete installedModules[id];
+/******/ 					__webpack_require__.m[id] = (module) => {
+/******/ 						delete __webpack_require__.c[id];
+/******/ 						throw error;
+/******/ 					}
+/******/ 				};
+/******/ 				try {
+/******/ 					var promise = moduleToHandlerMapping[id]();
+/******/ 					if(promise.then) {
+/******/ 						promises.push(installedModules[id] = promise.then(onFactory)['catch'](onError));
+/******/ 					} else onFactory(promise);
+/******/ 				} catch(e) { onError(e); }
+/******/ 			});
+/******/ 		}
+/******/ 	}
+/******/ })();
+/******/ 
+/******/ /* webpack/runtime/jsonp chunk loading */
+/******/ (() => {
+/******/ 	// no baseURI
+/******/ 	
+/******/ 	// object to store loaded and loading chunks
+/******/ 	// undefined = chunk not loaded, null = chunk preloaded/prefetched
+/******/ 	// [resolve, reject, Promise] = chunk loading, 0 = chunk loaded
+/******/ 	var installedChunks = {
+/******/ 		"main": 0
+/******/ 	};
+/******/ 	
+/******/ 	__webpack_require__.f.j = (chunkId, promises) => {
+/******/ 			// JSONP chunk loading for javascript
+/******/ 			var installedChunkData = __webpack_require__.o(installedChunks, chunkId) ? installedChunks[chunkId] : undefined;
+/******/ 			if(installedChunkData !== 0) { // 0 means "already installed".
+/******/ 	
+/******/ 				// a Promise means "currently loading".
+/******/ 				if(installedChunkData) {
+/******/ 					promises.push(installedChunkData[2]);
+/******/ 				} else {
+/******/ 					if(true) { // all chunks have JS
+/******/ 						// setup Promise in chunk cache
+/******/ 						var promise = new Promise((resolve, reject) => (installedChunkData = installedChunks[chunkId] = [resolve, reject]));
+/******/ 						promises.push(installedChunkData[2] = promise);
+/******/ 	
+/******/ 						// start chunk loading
+/******/ 						var url = __webpack_require__.p + __webpack_require__.u(chunkId);
+/******/ 						// create error before stack unwound to get useful stacktrace later
+/******/ 						var error = new Error();
+/******/ 						var loadingEnded = (event) => {
+/******/ 							if(__webpack_require__.o(installedChunks, chunkId)) {
+/******/ 								installedChunkData = installedChunks[chunkId];
+/******/ 								if(installedChunkData !== 0) installedChunks[chunkId] = undefined;
+/******/ 								if(installedChunkData) {
+/******/ 									var errorType = event && (event.type === 'load' ? 'missing' : event.type);
+/******/ 									var realSrc = event && event.target && event.target.src;
+/******/ 									error.message = 'Loading chunk ' + chunkId + ' failed.\n(' + errorType + ': ' + realSrc + ')';
+/******/ 									error.name = 'ChunkLoadError';
+/******/ 									error.type = errorType;
+/******/ 									error.request = realSrc;
+/******/ 									installedChunkData[1](error);
+/******/ 								}
+/******/ 							}
+/******/ 						};
+/******/ 						__webpack_require__.l(url, loadingEnded, "chunk-" + chunkId, chunkId);
+/******/ 					} else installedChunks[chunkId] = 0;
+/******/ 				}
+/******/ 			}
+/******/ 	};
+/******/ 	
+/******/ 	// no prefetching
+/******/ 	
+/******/ 	// no preloaded
+/******/ 	
+/******/ 	// no HMR
+/******/ 	
+/******/ 	// no HMR manifest
+/******/ 	
+/******/ 	// no on chunks loaded
+/******/ 	
+/******/ 	// install a JSONP callback for chunk loading
+/******/ 	var webpackJsonpCallback = (parentChunkLoadingFunction, data) => {
+/******/ 		var [chunkIds, moreModules, runtime] = data;
+/******/ 		// add "moreModules" to the modules object,
+/******/ 		// then flag all "chunkIds" as loaded and fire callback
+/******/ 		var moduleId, chunkId, i = 0;
+/******/ 		if(chunkIds.some((id) => (installedChunks[id] !== 0))) {
+/******/ 			for(moduleId in moreModules) {
+/******/ 				if(__webpack_require__.o(moreModules, moduleId)) {
+/******/ 					__webpack_require__.m[moduleId] = moreModules[moduleId];
+/******/ 				}
+/******/ 			}
+/******/ 			if(runtime) var result = runtime(__webpack_require__);
+/******/ 		}
+/******/ 		if(parentChunkLoadingFunction) parentChunkLoadingFunction(data);
+/******/ 		for(;i < chunkIds.length; i++) {
+/******/ 			chunkId = chunkIds[i];
+/******/ 			if(__webpack_require__.o(installedChunks, chunkId) && installedChunks[chunkId]) {
+/******/ 				installedChunks[chunkId][0]();
+/******/ 			}
+/******/ 			installedChunks[chunkId] = 0;
+/******/ 		}
+/******/ 	
+/******/ 	}
+/******/ 	
+/******/ 	var chunkLoadingGlobal = self["webpackChunkbicarbon8GithubIo"] = self["webpackChunkbicarbon8GithubIo"] || [];
+/******/ 	chunkLoadingGlobal.forEach(webpackJsonpCallback.bind(null, 0));
+/******/ 	chunkLoadingGlobal.push = webpackJsonpCallback.bind(null, chunkLoadingGlobal.push.bind(chunkLoadingGlobal));
+/******/ })();
+/******/ 
+/************************************************************************/
+/******/ 
+/******/ // module cache are used so entry inlining is disabled
+/******/ // startup
+/******/ // Load entry module and return exports
+/******/ var __webpack_exports__ = __webpack_require__(4431);
+/******/ 
+
 //# sourceMappingURL=main.js.map

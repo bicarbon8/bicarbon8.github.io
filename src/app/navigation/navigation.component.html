@@ -6,15 +6,15 @@
       <span class="navbar-toggler-icon"></span>
     </button>
     <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-      <ul class="navbar-nav" *ngIf="siteMap.pages?.length">
-        <li *ngFor="let m of siteMap.pages" class="nav-item {{(m.childPages?.length) ? 'dropdown' : ''}}">
-          <a *ngIf="m.childPages === undefined" class="nav-link {{m.classes}}" aria-current="page" href="{{m.url || '#'}}" target="{{(m.url && m.url.startsWith('http')) ? '_blank' : '_self'}}">{{m.title}}</a>
-          <div *ngIf="m.childPages?.length">
+      <ul class="navbar-nav" *ngIf="siteMap?.pageGroups?.length">
+        <li *ngFor="let m of siteMap?.pageGroups" class="nav-item {{(m.pages?.length) ? 'dropdown' : ''}}">
+          <a *ngIf="m.pages === undefined" class="nav-link {{m.classes}}" aria-current="page" href="{{m.url || '#'}}" target="{{(m.url && m.url.startsWith('http')) ? '_blank' : '_self'}}">{{m.title}}</a>
+          <div *ngIf="m.pages?.length">
             <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
               {{m.title}}
             </a>
             <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-              <li *ngFor="let c of m.childPages"><div class="dropdown-item"><button *ngIf="c.url" class="btn btn-sm btn-success" (click)="goTo(c.url)">{{c.title}}</button><span *ngIf="!c.url" class="text-secondary">{{c.title}}</span> &nbsp;<a *ngIf="c.codeSourceUrl" class="bi bi-tools" href="{{c.codeSourceUrl}}" target="_blank" aria-label="View Sourcecode" data-bs-toggle="tooltip" data-bs-placement="top" title="View Sourcecode"> </a></div></li>
+              <li *ngFor="let c of m.pages"><div class="dropdown-item"><button *ngIf="c.url" class="btn btn-sm btn-success" (click)="goTo(c.url)">{{c.title}}</button><span *ngIf="!c.url" class="text-secondary">{{c.title}}</span> &nbsp;<a *ngIf="c.codeSourceUrl" class="bi bi-tools" href="{{c.codeSourceUrl}}" target="_blank" aria-label="View Sourcecode" data-bs-toggle="tooltip" data-bs-placement="top" title="View Sourcecode"> </a></div></li>
             </ul>
           </div>
         </li>
