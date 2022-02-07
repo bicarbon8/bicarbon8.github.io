@@ -34,7 +34,7 @@ const routes: Routes = [
       .then(m => m.SpaceSimModule) 
   },
   {
-    path: 'jsVehicleTrafficSimulator',
+    path: 'JsVehicleTrafficSimulator',
     loadChildren: () => loadRemoteModule({
       type: 'module',
       remoteEntry: `${environment.trafficSimBaseUrl}/remoteEntry.js`,
