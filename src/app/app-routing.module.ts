@@ -2,6 +2,7 @@ import { loadRemoteModule } from '@angular-architects/module-federation';
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { CarouselComponent } from './carousel/carousel.component';
+import { environment } from '../environments/environment';
 
 const routes: Routes = [
   { path: '', component: CarouselComponent },
@@ -9,7 +10,7 @@ const routes: Routes = [
     path: 'e-d-controls',
     loadChildren: () => loadRemoteModule({
         type: 'module',
-        remoteEntry: 'https://bicarbon8.github.io/e-d-controls/remoteEntry.js',
+        remoteEntry: `${environment.edControlsBaseUrl}/remoteEntry.js`,
         exposedModule: './Module'
       })
       .then(m => m.EDControlsModule) 
@@ -18,7 +19,7 @@ const routes: Routes = [
     path: 'todoTxtWebUi',
     loadChildren: () => loadRemoteModule({
         type: 'module',
-        remoteEntry: 'https://bicarbon8.github.io/todoTxtWebUi/remoteEntry.js',
+        remoteEntry: `${environment.todoTxtBaseUrl}/remoteEntry.js`,
         exposedModule: './Module'
       })
       .then(m => m.TodoTxtWebUiModule) 
@@ -27,10 +28,19 @@ const routes: Routes = [
     path: 'SpaceSim',
     loadChildren: () => loadRemoteModule({
         type: 'module',
-        remoteEntry: 'https://bicarbon8.github.io/SpaceSim/remoteEntry.js',
+        remoteEntry: `${environment.spaceSimBaseUrl}/remoteEntry.js`,
         exposedModule: './Module'
       })
       .then(m => m.SpaceSimModule) 
+  },
+  {
+    path: 'jsVehicleTrafficSimulator',
+    loadChildren: () => loadRemoteModule({
+      type: 'module',
+      remoteEntry: `${environment.trafficSimBaseUrl}/remoteEntry.js`,
+      exposedModule: './Module'
+    })
+    .then(m => m.TrafficSimModule)
   },
   { path: '**', component: CarouselComponent }
 ];
