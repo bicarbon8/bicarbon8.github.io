@@ -3,7 +3,11 @@
 // The list of file replacements can be found in `angular.json`.
 
 export const environment = {
-  production: false
+  production: false,
+  todoTxtBaseUrl: 'http://localhost:4300',
+  edControlsBaseUrl: 'http://localhost:4400',
+  spaceSimBaseUrl: 'http://localhost:4500',
+  trafficSimBaseUrl: 'http://locahost:4600'
 };
 
 /*

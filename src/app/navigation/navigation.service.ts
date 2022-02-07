@@ -33,6 +33,7 @@ export class NavigationService {
             featured: false
           }, {
             title: 'Traffic Sim',
+            url: 'JsVehicleTrafficSimulator',
             codeSourceUrl: 'https://github.com/bicarbon8/JsVehicleTrafficSimulator',
             featured: false,
           }, {
