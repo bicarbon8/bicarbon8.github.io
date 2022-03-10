@@ -1,27 +1,8 @@
 # Bicarbon8GithubIo
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 11.2.0.
+website portfolio for Jason Holt Smith <bicarbon8@gmail.com>
 
-## Development server
-
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
-
-## Code scaffolding
-
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
-
-## Build
-
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
-
-## Running unit tests
-
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+## Publishing to GitHub Pages
+the site uses Webpack Module Federation to load in the Angular modules from external GitHub Pages (previously this was done via Git Submodules) so development locally vs running in production will typically rely on separate URL's for the external modules. These are delineated between the Angular `src/environments`, but it is possible to run locally while referencing the public / production external modules by using `ng serve --configuration production`
+1. build locally using the following command: `ng build --configuration production --output-path ./docs`
+2. push changes to `main` branch

@@ -43,7 +43,8 @@ export class NavigationService {
             codeSourceUrl: 'https://github.com/bicarbon8/SpaceSim',
             featured: true
           }, {
-            title: 'War Sim Game', 
+            title: 'War Sim Game',
+            url: 'WargameSimJs/',
             codeSourceUrl: 'https://github.com/bicarbon8/WargameSimJs',
             featured: false
           }]}, {

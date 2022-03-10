@@ -42,6 +42,15 @@ const routes: Routes = [
     })
     .then(m => m.TrafficSimModule)
   },
+  {
+    path: 'WargameSimJs',
+    loadChildren: () => loadRemoteModule({
+      type: 'module',
+      remoteEntry: `${environment.wargameSimBaseUrl}/remoteEntry.js`,
+      exposedModule: './Module'
+    })
+    .then(m => m.GameModule)
+  },
   { path: '**', component: CarouselComponent }
 ];
 
