@@ -9,14 +9,19 @@ import { NavigationService } from './navigation.service';
 })
 export class NavigationComponent implements OnInit {
   public siteMap: SiteMap;
+  public dataLoaded: boolean = false;
   
   constructor(private _navService: NavigationService) { }
 
-  async ngOnInit(): Promise<void> {
-    this.siteMap = await this._navService.getSiteMap();
+  ngOnInit(): void {
+    this._navService.getSiteMap()
+      .subscribe((smap: SiteMap) => {
+        this.siteMap = smap;
+        this.dataLoaded = true;
+      });
   }
 
-  async goTo(url: string, target: string = '_self'): Promise<void> {
+  goTo(url: string, target: string = '_self'): void {
     window.open(url, target);
   }
 }

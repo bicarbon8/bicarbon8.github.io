@@ -4,5 +4,7 @@ export const environment = {
   edControlsBaseUrl: 'https://bicarbon8.github.io/e-d-controls',
   spaceSimBaseUrl: 'https://bicarbon8.github.io/SpaceSim',
   trafficSimBaseUrl: 'https://bicarbon8.github.io/JsVehicleTrafficSimulator',
-  wargameSimBaseUrl: 'https://bicarbon8.github.io/WargameSimJs'
+  wargameSimBaseUrl: 'https://bicarbon8.github.io/WargameSimJs',
+  siteMapUrl: '/assets/site-map.json',
+  carouselDataUrl: '/assets/image-data.json'
 };

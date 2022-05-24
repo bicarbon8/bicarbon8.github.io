@@ -1,8 +1,12 @@
 import { Component, OnInit } from '@angular/core';
 import { NavigationService } from '../navigation/navigation.service';
-import { CarouselImageData } from './carousel-image-data';
 import { CarouselItemData } from './carousel-item-data';
 import { PageData } from '../navigation/page-data';
+import { PageGroup } from '../navigation/page-group';
+import { SiteMap } from '../navigation/site-map';
+import { ImageItem } from './image-item';
+import { ImageService } from './image.service';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-carousel',
@@ -10,71 +14,54 @@ import { PageData } from '../navigation/page-data';
   styleUrls: ['./carousel.component.css']
 })
 export class CarouselComponent implements OnInit {
-  public carouselItems: CarouselItemData[];
+  private _pages: PageData[] = [];
 
-  private _carouselImages: CarouselImageData[] = [
-    {
-      imgSrc: './assets/img/Meadowbrook_BicycleWithSunriseInWheel.jpg',
-      altTxt: 'bicycle with sunrise in background'
-    },
-    {
-      imgSrc: './assets/img/GlacierBay_SmallIce.jpg',
-      altTxt: 'Glacier bay in Iceland'
-    },
-    {
-      imgSrc: './assets/img/Ticknock_Sunrise.jpg',
-      altTxt: 'sunrise from Ticknock mountain in Ireland with hills and sunrise in the background'
-    },
-    {
-      imgSrc: './assets/img/BallawleyPark_SunriseThroughTrees.jpg',
-      altTxt: 'sunrise through cluster of trees'
-    },
-    {
-      imgSrc: './assets/img/MeadowbrookPitch_Sunrise.jpg',
-      altTxt: 'sunrise over a football pitch in South-Dublin'
-    },
-    {
-      imgSrc: './assets/img/SugarLoaf_ZoomX5.jpg',
-      altTxt: '5x zoom view of SugarLoaf mountain in Ireland'
-    }
-  ];
-  private _currentSelectionIndex: number = 0;
+  public carouselItemData: CarouselItemData[] = [];
+  public dataLoaded: boolean = false;
 
-  constructor(private _navService: NavigationService) { }
+  constructor(private _navService: NavigationService, private _imgSvc: ImageService, private _route: ActivatedRoute) { }
 
-  async ngOnInit(): Promise<void> {
-    let carouselItems: CarouselItemData[] = [];
-    let pages: PageData[] = await this._navService.getFeaturedPages();
-
-    for (var i=0; i<pages.length; i++) {
-      let imgData: CarouselImageData = this._getNextImageData();
-      let page: PageData = pages[i];
-      let data: CarouselItemData = {
-        imgSrc: imgData.imgSrc,
-        altTxt: imgData.altTxt,
-        active: (i == 0) ? true : false,
-        title: page.title,
-        description: page.description,
-        actions: []
-      }
-      if (page.url) {
-        data.actions.push({text: 'Go To App', class: 'btn-primary', onClick: () => window.location.href = page.url});
-      }
-      if (page.codeSourceUrl) {
-        data.actions.push({text: 'View Code', class: 'btn-secondary', onClick: () => window.location.href = page.codeSourceUrl});
-      }
-
-      carouselItems.push(data);
-    }
-
-    this.carouselItems = carouselItems;    
+  get useRemoteImageProvider(): boolean {
+    return (this._route.snapshot.queryParamMap.get('useRemote')?.toLowerCase() === 'true') ? true : false;
   }
 
-  private _getNextImageData(): CarouselImageData {
-    let imgData: CarouselImageData = this._carouselImages[this._currentSelectionIndex++];
-    if (this._currentSelectionIndex > this._carouselImages.length) {
-      this._currentSelectionIndex = 0;
+  ngOnInit(): void {
+    this._navService.getSiteMap().subscribe((smap: SiteMap) => {
+      smap?.pageGroups?.forEach((g: PageGroup) => {
+        g?.pages?.forEach((p: PageData) => {
+          if (p?.featured) {
+            this._pages.push(p);
+          }
+        })
+      });
+      this._createCarouselItemDataArray();
+    });
+  }
+
+  private async _createCarouselItemDataArray(): Promise<void> {
+    const carouselItemData: CarouselItemData[] = [];
+    for (var i=0; i<this._pages.length; i++) {
+      let page: PageData = this._pages[i];
+      let img: ImageItem = await this._imgSvc.getImage(window.innerWidth, window.innerHeight, this.useRemoteImageProvider);
+      if (page) {
+        let data: CarouselItemData = {
+          imgSrc: img?.download_url || '',
+          altTxt: `${img?.description || ''}; ${img?.author || ''}`,
+          active: (i === 0),
+          title: page.title,
+          description: page.description,
+          actions: []
+        }
+        if (page.url) {
+          data.actions.push({text: 'Go To App', class: 'btn-primary', onClick: () => window.location.href = page.url});
+        }
+        if (page.codeSourceUrl) {
+          data.actions.push({text: 'View Code', class: 'btn-secondary', onClick: () => window.location.href = page.codeSourceUrl});
+        }
+        carouselItemData.push(data);
+      }
     }
-    return imgData;
+    this.carouselItemData = carouselItemData;
+    this.dataLoaded = this.carouselItemData.length > 0;
   }
 }
