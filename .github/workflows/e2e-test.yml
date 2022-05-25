@@ -15,7 +15,6 @@ jobs:
       # Install NPM dependencies, cache them correctly
       # and run all Karma and Cypress tests
       - run: npm ci
-      - run: npm test
       - name: Cypress run
         uses: cypress-io/github-action@v2
         with:
