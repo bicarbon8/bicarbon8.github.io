@@ -8,7 +8,9 @@ export const environment = {
   edControlsBaseUrl: 'http://localhost:4400',
   spaceSimBaseUrl: 'http://localhost:4500',
   trafficSimBaseUrl: 'http://locahost:4600',
-  wargameSimBaseUrl: 'http://localhost:4700'
+  wargameSimBaseUrl: 'http://localhost:4700',
+  siteMapUrl: '/assets/site-map.json',
+  carouselDataUrl: '/assets/image-data.json'
 };
 
 /*

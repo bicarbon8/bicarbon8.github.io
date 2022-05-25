@@ -1,0 +1,7 @@
+{
+  "statusCode": 404,
+  "body": "404 Not Found!",
+  "headers": {
+    "x-not-found": "true"
+  }
+}
