@@ -1,6 +1,6 @@
 <nav class="navbar navbar-expand-lg navbar-dark bg-success">
   <div class="container-fluid">
-    <a class="navbar-brand col-sm-1" routerLink="">JHS</a><div *ngIf="!dataLoaded" class="dot-flashing col-sm-11"></div>
+    <a class="navbar-brand col-sm-1" href="/">JHS</a><div *ngIf="!dataLoaded" class="dot-flashing col-sm-11"></div>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup"
       aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
@@ -8,7 +8,7 @@
     <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
       <ul class="navbar-nav" *ngIf="dataLoaded">
         <li *ngFor="let m of siteMap?.pageGroups" class="nav-item {{(m.pages?.length) ? 'dropdown' : ''}}">
-          <a *ngIf="m.pages === undefined" class="nav-link {{m.classes}}" aria-current="page" href="{{m.url || '#'}}" target="{{(m.url && m.url.startsWith('http')) ? '_blank' : '_self'}}">{{m.title}}</a>
+          <a *ngIf="m.pages === undefined" class="nav-link {{m.classes}}" aria-current="page" href="{{m.url || '#'}}" target="{{(m.url?.startsWith('http')) ? '_blank' : '_self'}}">{{m.title}}</a>
           <div *ngIf="m.pages?.length">
             <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
               {{m.title}}

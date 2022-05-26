@@ -1,6 +1,5 @@
-import { HttpClient, HttpResponse } from '@angular/common/http';
+import { HttpClient, HttpErrorResponse } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { ImageListResponse } from './image-list-response';
 import { ImageItem } from './image-item';
 import { environment } from 'src/environments/environment';
 
@@ -20,77 +19,67 @@ export class ImageService {
   async getImage(width: number, height: number): Promise<ImageItem> {
     let imgData: ImageItem;
 
-    imgData = await this._getImageItemFromRemote(width, height)
-      .catch((err: any) => {
-        console.warn(`error in accessing remote image provider. switching to local instead.\n${err}`);
-        return this._getImageItemFromLocal(width, height);
-      });
-
-    return imgData;
-  }
-
-  private async _getImageItemFromLocal(width: number, height: number): Promise<ImageItem> {
-    let imgData: ImageItem;
-
     if (!this._images?.length) {
-      let images: ImageListResponse = await this.http.get<ImageListResponse>(environment.localImagesUrl)
-        .toPromise()
-        .catch((err: any) => {
-          console.warn(err);
-          return {data: []};
-        });
-      for (var i=0; i<images?.data?.length; i++) {
-        this._images.push(images.data[i]);
+      const images: ImageItem[] = await this.getImages(width, height, 20);
+      for (var i=0; i<images.length; i++) {
+        this._images.push(images[i]);
       }
     }
-
     imgData = this._images.shift();
 
     return imgData;
   }
 
-  private async _getImageItemFromRemote(width: number, height: number): Promise<ImageItem> {
-    let imgData: ImageItem;
-
-    const imgSrc: string = await this._getRemoteImage(width, height);
-
-    if (imgSrc) {
-      const matches = imgSrc?.match(/^http[s]?\:\/\/[a-z\.]+\/id\/([0-9]+)\/.*/i);
-      const id: string = (matches) ? matches[1] : null;
-      if (id) {
-        imgData = await this._getRemoteImageMetadata(id);
-        if (imgData) {
-          imgData.download_url = imgSrc;
-        }
-      } else {
-        imgData = {download_url: imgSrc, author: 'unknown', id: -1, height: height, width: width, url: imgSrc};
-      }
-    }
-
-    return imgData;
-  }
-
-  private async _getRemoteImage(width: number, height: number, remainingAttempts: number = this.MAX_RETRIES): Promise<string> {
-    return this.http.get(`${this.svcUrl}/${width}/${height}/?blur`, { observe: 'response', responseType: 'text' })
-      .toPromise()
-      .catch((err: any) => {
-        if (remainingAttempts > 1) {
-          return this._getRemoteImage(width, height, remainingAttempts - 1);
-        } else {
-          Promise.reject(err);
-        }
-      })
-      .then((resp: HttpResponse<any>) => {
-        return resp.url;
+  async getImages(width: number, height: number, count: number): Promise<ImageItem[]> {
+    return await this._getRemoteImageList(width, height, count)
+      .catch((err: HttpErrorResponse) => {
+        console.warn(`'${err?.message}' ocurred when accessing remote image provider. switching to local instead...`);
+        return this._getLocalImageList(count);
       });
   }
 
-  private async _getRemoteImageMetadata(id: string): Promise<ImageItem> {
-    return this.http.get<ImageItem>(`${this.svcUrl}/id/${id}/info`)
+  private async _getRemoteImageList(width: number, height: number, count: number, remainingAttempts: number = this.MAX_RETRIES): Promise<ImageItem[]> {
+    const returnImages: ImageItem[] = [];
+    const images: ImageItem[] = await this.http.get<ImageItem[]>(`${this.svcUrl}/v2/list?page=${this._randInt(0, 30)}&count=${count}`)
+      .toPromise()
+      .catch((err: HttpErrorResponse) => {
+        if (remainingAttempts > 1) {
+          console.warn(`'${err?.message}' occurred during request; retrying...`);
+          return this._getRemoteImageList(width, height, count, remainingAttempts - 1);
+        } else {
+          return Promise.reject(err);
+        }
+      });
+
+    for (var i=0; i<images?.length; i++) {
+      let img: ImageItem = images[i];
+      let url: string = img.download_url.replace(`/${img.width}`, '').replace(`/${img.height}`, '');
+      img.download_url = `${url}/${width}/${height}?blur`;
+      returnImages.push(img);
+    }
+    return returnImages;
+  }
+
+  private async _getLocalImageList(count: number): Promise<ImageItem[]> {
+    const returnImages: ImageItem[] = [];
+    const images: ImageItem[] = await this.http.get<ImageItem[]>(environment.localImagesUrl)
       .toPromise()
       .catch((err: any) => {
         console.warn(err);
-        return null;
+        return [];
       });
+    let index: number = 0;
+    while (returnImages.length < count) {
+      let img: ImageItem = images[index++];
+      returnImages.push(img);
+      if (index >= images.length) {
+        index = 0;
+      }
+    }
+    return returnImages;
+  }
+
+  private _randInt(min: number, max: number): number {
+    return Math.floor(Math.random() * (max - min) + min);
   }
 }

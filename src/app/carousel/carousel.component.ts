@@ -6,7 +6,6 @@ import { PageGroup } from '../navigation/page-group';
 import { SiteMap } from '../navigation/site-map';
 import { ImageItem } from './image-item';
 import { ImageService } from './image.service';
-import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-carousel',
@@ -36,13 +35,14 @@ export class CarouselComponent implements OnInit {
 
   private async _createCarouselItemDataArray(): Promise<void> {
     const carouselItemData: CarouselItemData[] = [];
+    const images: ImageItem[] = await this._imgSvc.getImages(window.innerWidth, window.innerHeight, this._pages.length);
     for (var i=0; i<this._pages.length; i++) {
       let page: PageData = this._pages[i];
-      let img: ImageItem = await this._imgSvc.getImage(window.innerWidth, window.innerHeight);
+      let img: ImageItem = images[i];
       if (page) {
         let data: CarouselItemData = {
           imgSrc: img?.download_url || '',
-          altTxt: `${img?.description || ''}; ${img?.author || ''}`,
+          altTxt: img?.description || img?.author || '',
           active: (i === 0),
           title: page.title,
           description: page.description,
