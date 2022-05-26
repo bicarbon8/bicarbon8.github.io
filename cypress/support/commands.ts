@@ -48,50 +48,20 @@ declare namespace Cypress {
 }
 function disableRemoteAccess(): void {
     /* Stub all the API calls*/
-    cy.intercept(
-        {
-            method: 'GET',
-            path: '*'
-        },
-        (req) => {
-            const hostname = req.headers.host as string;
-            if (hostname.includes('localhost')) {
-                req.continue(); // avoid stubbing localhost directed API calls
-            } else if (req.url.startsWith('https://cdn.jsdelivr.net/npm/bootstrap')) {
-                req.continue();
-            } else {
-                req.reply({ body: [] });
-            }
+    cy.intercept('GET', '*', (req) => {
+        const hostname = req.headers.host as string;
+        if (hostname.includes('localhost')) {
+            req.continue();
+        } else if (req.url.startsWith('https://cdn.jsdelivr.net/npm/')) {
+            req.continue();
+        } else {
+            req.destroy();
         }
-    );
-    cy.intercept(
-        {
-            method: 'POST',
-            path: '*'
-        },
-        { body: [] }
-    );
-    cy.intercept(
-        {
-            method: 'PUT',
-            path: '*'
-        },
-        { body: [] }
-    );
-    cy.intercept(
-        {
-            method: 'PATCH',
-            path: '*'
-        },
-        { body: [] }
-    );
-    cy.intercept(
-        {
-            method: 'DELETE',
-            path: '*'
-        },
-        { body: [] }
-    );
+    });
+    cy.intercept('POST', '*', (req) => req.destroy());
+    cy.intercept('PUT', '*', (req) => req.destroy());
+    cy.intercept('PATCH', '*', (req) => req.destroy());
+    cy.intercept('DELETE', '*', (req) => req.destroy());
 };
 
 Cypress.Commands.add('disableRemoteAccess', disableRemoteAccess);
