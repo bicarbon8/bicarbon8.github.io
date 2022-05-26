@@ -10,7 +10,7 @@ export const environment = {
   trafficSimBaseUrl: 'http://locahost:4600',
   wargameSimBaseUrl: 'http://localhost:4700',
   siteMapUrl: '/assets/site-map.json',
-  carouselDataUrl: '/assets/image-data.json'
+  localImagesUrl: '/assets/image-data.json'
 };
 
 /*

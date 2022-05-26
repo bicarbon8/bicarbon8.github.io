@@ -1,5 +1,10 @@
 describe('bicarbon8.github.io', () => {
+  beforeEach(() => {
+    cy.disableRemoteAccess();
+  })
+
   it('can display the landing page', () => {
+    cy.intercept('/assets/image-data.json', (res) => res.continue()).as('imageData');
     cy.visit('/')
     
     /** check navbar contents */
@@ -9,6 +14,9 @@ describe('bicarbon8.github.io', () => {
     cy.get('a.bi-tools').should('have.length.above', 1);
 
     /** check carousel contents */
+    cy.wait('@imageData').then((interception) => {
+      assert.isNotNull(interception.response.body, 'local image data returned')
+    });
     cy.get('button.carousel-control-prev').should('exist');
     cy.get('button.carousel-control-next').should('exist');
     cy.get('img.d-block').should('exist').and('have.length.above', 1);
@@ -19,7 +27,7 @@ describe('bicarbon8.github.io', () => {
 
   it('displays loading animation on slow data load', () => {
     cy.intercept({
-      url: '/assets/*.json',
+      url: '*/assets/*.json',
       middleware: true,
     }, (req) => {
       req.on('response', (res) => {
@@ -67,9 +75,9 @@ describe('bicarbon8.github.io', () => {
     cy.get('img.d-block').should('exist');
   })
 
-  it('can load images from a remote service', () => {
-    cy.intercept('https://*', (req) => req.continue());
-    cy.visit('/?useRemote=true');
+  it('can load images from remote service', () => {
+    cy.intercept('GET', /^https:\/\/[i\.]*picsum.photos\/.*/, (res) => res.continue());
+    cy.visit('/');
 
     cy.get('button.carousel-control-prev', {timeout: 30000}).should('exist');
     cy.get('button.carousel-control-next').should('exist');

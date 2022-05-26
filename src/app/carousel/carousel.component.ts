@@ -19,11 +19,7 @@ export class CarouselComponent implements OnInit {
   public carouselItemData: CarouselItemData[] = [];
   public dataLoaded: boolean = false;
 
-  constructor(private _navService: NavigationService, private _imgSvc: ImageService, private _route: ActivatedRoute) { }
-
-  get useRemoteImageProvider(): boolean {
-    return (this._route.snapshot.queryParamMap.get('useRemote')?.toLowerCase() === 'true') ? true : false;
-  }
+  constructor(private _navService: NavigationService, private _imgSvc: ImageService) { }
 
   ngOnInit(): void {
     this._navService.getSiteMap().subscribe((smap: SiteMap) => {
@@ -42,7 +38,7 @@ export class CarouselComponent implements OnInit {
     const carouselItemData: CarouselItemData[] = [];
     for (var i=0; i<this._pages.length; i++) {
       let page: PageData = this._pages[i];
-      let img: ImageItem = await this._imgSvc.getImage(window.innerWidth, window.innerHeight, this.useRemoteImageProvider);
+      let img: ImageItem = await this._imgSvc.getImage(window.innerWidth, window.innerHeight);
       if (page) {
         let data: CarouselItemData = {
           imgSrc: img?.download_url || '',
