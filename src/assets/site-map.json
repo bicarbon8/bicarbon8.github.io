@@ -3,7 +3,7 @@
       "title": "Web Apps", 
       "pages": [{
           "title": "ToDo Txt Web UI", 
-          "description": "Inspired by the http://www.todotxt.com project this web app provides a simple web-based user interface for interacting with one\"s todo.txt file.",
+          "description": "Inspired by the http://www.todotxt.com project this web app provides a simple web-based user interface for interacting with one's todo.txt file.",
           "url": "todoTxtWebUi/", 
           "codeSourceUrl": "https://github.com/bicarbon8/todoTxtWebUi",
           "featured": true

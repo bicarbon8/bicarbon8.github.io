@@ -47,7 +47,7 @@ declare namespace Cypress {
     }
 }
 function disableRemoteAccess(): void {
-    /* Stub all the API calls*/
+    /* drop all API calls*/
     cy.intercept('GET', '*', (req) => {
         const hostname = req.headers.host as string;
         if (hostname.includes('localhost')) {
