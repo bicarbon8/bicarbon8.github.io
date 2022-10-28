@@ -3,11 +3,12 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { CarouselComponent } from './carousel/carousel.component';
 import { environment } from '../environments/environment';
+import { ReactComponentWrapper, ReactComponentWrapperData } from './component-wrappers/react-component-wrapper';
 
 const routes: Routes = [
   { path: '', component: CarouselComponent },
   {
-    path: 'e-d-controls',
+    path: 'elite',
     loadChildren: () => loadRemoteModule({
         type: 'module',
         remoteEntry: `${environment.edControlsBaseUrl}/remoteEntry.js`,
@@ -16,7 +17,7 @@ const routes: Routes = [
       .then(m => m.EDControlsModule) 
   },
   {
-    path: 'todoTxtWebUi',
+    path: 'todo',
     loadChildren: () => loadRemoteModule({
         type: 'module',
         remoteEntry: `${environment.todoTxtBaseUrl}/remoteEntry.js`,
@@ -25,7 +26,7 @@ const routes: Routes = [
       .then(m => m.TodoTxtWebUiModule) 
   },
   {
-    path: 'SpaceSim',
+    path: 'space',
     loadChildren: () => loadRemoteModule({
         type: 'module',
         remoteEntry: `${environment.spaceSimBaseUrl}/remoteEntry.js`,
@@ -34,7 +35,7 @@ const routes: Routes = [
       .then(m => m.SpaceSimModule) 
   },
   {
-    path: 'JsVehicleTrafficSimulator',
+    path: 'traffic',
     loadChildren: () => loadRemoteModule({
       type: 'module',
       remoteEntry: `${environment.trafficSimBaseUrl}/remoteEntry.js`,
@@ -43,13 +44,23 @@ const routes: Routes = [
     .then(m => m.TrafficSimModule)
   },
   {
-    path: 'WargameSimJs',
+    path: 'wargame',
     loadChildren: () => loadRemoteModule({
       type: 'module',
       remoteEntry: `${environment.wargameSimBaseUrl}/remoteEntry.js`,
       exposedModule: './Module'
     })
     .then(m => m.GameModule)
+  },
+  {
+    path: 'shortlist',
+    component: ReactComponentWrapper,
+    data: { 
+      remoteEntry: `${environment.shortlistItBaseUrl}/remoteEntry.mjs`, 
+      remoteName: 'shortlistIt', 
+      exposedModule: './ShortlistItModule',
+      elementId: 'shortlist-it'
+    } as ReactComponentWrapperData
   },
   { path: '**', component: CarouselComponent }
 ];

@@ -9,6 +9,7 @@ export const environment = {
   spaceSimBaseUrl: 'http://localhost:4500',
   trafficSimBaseUrl: 'http://locahost:4600',
   wargameSimBaseUrl: 'http://localhost:4700',
+  shortlistItBaseUrl: 'http://localhost:4800',
   siteMapUrl: '/assets/site-map.json',
   localImagesUrl: '/assets/image-data.json'
 };
