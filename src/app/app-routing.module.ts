@@ -8,7 +8,7 @@ import { ReactComponentWrapper, ReactComponentWrapperData } from './component-wr
 const routes: Routes = [
   { path: '', component: CarouselComponent },
   {
-    path: 'e-d-controls',
+    path: 'elite',
     loadChildren: () => loadRemoteModule({
         type: 'module',
         remoteEntry: `${environment.edControlsBaseUrl}/remoteEntry.js`,
@@ -17,7 +17,7 @@ const routes: Routes = [
       .then(m => m.EDControlsModule) 
   },
   {
-    path: 'todoTxtWebUi',
+    path: 'todo',
     loadChildren: () => loadRemoteModule({
         type: 'module',
         remoteEntry: `${environment.todoTxtBaseUrl}/remoteEntry.js`,
@@ -26,7 +26,7 @@ const routes: Routes = [
       .then(m => m.TodoTxtWebUiModule) 
   },
   {
-    path: 'SpaceSim',
+    path: 'space',
     loadChildren: () => loadRemoteModule({
         type: 'module',
         remoteEntry: `${environment.spaceSimBaseUrl}/remoteEntry.js`,
@@ -35,7 +35,7 @@ const routes: Routes = [
       .then(m => m.SpaceSimModule) 
   },
   {
-    path: 'JsVehicleTrafficSimulator',
+    path: 'traffic',
     loadChildren: () => loadRemoteModule({
       type: 'module',
       remoteEntry: `${environment.trafficSimBaseUrl}/remoteEntry.js`,
@@ -44,7 +44,7 @@ const routes: Routes = [
     .then(m => m.TrafficSimModule)
   },
   {
-    path: 'WargameSimJs',
+    path: 'wargame',
     loadChildren: () => loadRemoteModule({
       type: 'module',
       remoteEntry: `${environment.wargameSimBaseUrl}/remoteEntry.js`,
