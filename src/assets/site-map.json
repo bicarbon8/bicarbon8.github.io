@@ -8,6 +8,12 @@
           "codeSourceUrl": "https://github.com/bicarbon8/todoTxtWebUi",
           "featured": true
         }, {
+          "title": "Shortlist It", 
+          "description": "A web application to help you decide which choices you should make based on your own priorities",
+          "url": "shortlist/", 
+          "codeSourceUrl": "https://github.com/bicarbon8/shortlist-it",
+          "featured": true
+        }, {
           "title": "Elite:Dangerous Controls",
           "description": "A web application that parses your Elite:Dangerous Control Bindings to display them in an easy to read manner",
           "url": "e-d-controls/",

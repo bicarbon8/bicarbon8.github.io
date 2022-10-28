@@ -1,4 +1,4 @@
-const ModuleFederationPlugin = require("webpack/lib/container/ModuleFederationPlugin");
+const ModuleFederationPlugin = require("webpack").container.ModuleFederationPlugin;
 const mf = require("@angular-architects/module-federation/webpack");
 const path = require("path");
 const share = mf.share;
@@ -10,28 +10,21 @@ sharedMappings.register(
 
 module.exports = {
   output: {
-    uniqueName: "bicarbon8GithubIo",
     publicPath: "auto"
   },
-  optimization: {
-    runtimeChunk: false
-  },   
+  performance: {
+    hints: false,
+    maxEntrypointSize: 5512000,
+    maxAssetSize: 5512000
+  },
   resolve: {
     alias: {
       ...sharedMappings.getAliases(),
     }
   },
-  experiments: {
-    outputModule: true
-  },
   plugins: [
     new ModuleFederationPlugin({
-        library: { type: "module" },
-
-        // For hosts (please adjust)
-        remotes: {
-            // "mfe1": "http://localhost:3000/remoteEntry.js",
-        },
+        name: 'bicarbon8GithubIo',
 
         shared: share({
           "@angular/core": { singleton: true, strictVersion: true, requiredVersion: 'auto' }, 
