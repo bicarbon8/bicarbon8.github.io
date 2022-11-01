@@ -38,7 +38,6 @@
           "featured": true
         }, {
           "title": "War Sim Game",
-          "url": "wargame/",
           "codeSourceUrl": "https://github.com/bicarbon8/WargameSimJs",
           "featured": false
         }]}, {

@@ -1,27 +1,31 @@
 <div *ngIf="!dataLoaded" class="d-flex flex-column justify-content-center align-items-center">
-  <div class="position-absolute top-50 start-50 dot-flashing"></div>
+  <div class="position-absolute top-50 start-50 spinner-border" style="width: 5rem; height: 5rem;" role="status">
+    <span class="visually-hidden">Loading...</span>
+  </div>
 </div>
-<div *ngIf="dataLoaded" id="splash-carousel" class="carousel slide mb-2" data-bs-ride="carousel">
-  <div class="carousel-inner">
-    <div *ngFor="let d of carouselItemData" class="carousel-item{{(d.active === true) ? ' active' : ''}}" data-bs-interval="10000">
-      <img src="{{d.imgSrc}}" class="d-block" alt="{{d.altTxt}}">
-      <div class="container" *ngIf="d.title || d.description">
-        <div class="carousel-caption text-center bg-dark rounded-3">
+<div class="d-flex my-3 justify-content-center align-items-center">
+  <div *ngIf="dataLoaded" id="splash-carousel" class="carousel slide" data-bs-ride="carousel">
+    <div class="carousel-inner">
+      <div *ngFor="let d of carouselItemData" class="carousel-item{{(d.active === true) ? ' active' : ''}}" data-bs-interval="10000">
+        <img src="{{d.imgSrc}}" class="d-block" alt="{{d.altTxt}}">
+        <div *ngIf="d.title || d.description" class="carousel-caption text-center bg-dark p-0">
           <h1 *ngIf="d.title">{{d.title}}</h1>
           <p *ngIf="d.description">{{d.description}}</p>
           <p *ngIf="d.actions">
-              <a *ngFor="let a of d.actions" class="btn m-1 {{a.class}}" href="#" (click)="(a.onClick) ? a.onClick() : undefined">{{a.text}}</a>
+              <a *ngFor="let a of d.actions" class="btn m-1 {{a.class}}" href="#" (click)="(a.onClick) ? a.onClick() : undefined" data-bs-toggle="tooltip" data-bs-placement="auto" title="{{a.text}}">
+                <i class="bi bi-{{a.icon}}"></i> <span class="ms-1 d-none d-lg-inline">{{a.text}}</span>
+              </a>
           </p>
         </div>
       </div>
     </div>
+    <button class="carousel-control-prev" type="button" data-bs-target="#splash-carousel" data-bs-slide="prev">
+      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Previous</span>
+    </button>
+    <button class="carousel-control-next" type="button" data-bs-target="#splash-carousel" data-bs-slide="next">
+      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Next</span>
+    </button>
   </div>
-  <button class="carousel-control-prev" type="button" data-bs-target="#splash-carousel" data-bs-slide="prev">
-    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-    <span class="visually-hidden">Previous</span>
-  </button>
-  <button class="carousel-control-next" type="button" data-bs-target="#splash-carousel" data-bs-slide="next">
-    <span class="carousel-control-next-icon" aria-hidden="true"></span>
-    <span class="visually-hidden">Next</span>
-  </button>
 </div>

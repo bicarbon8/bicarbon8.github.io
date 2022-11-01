@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, HostListener, OnInit } from '@angular/core';
 import { NavigationService } from '../navigation/navigation.service';
 import { CarouselItemData } from './carousel-item-data';
 import { PageData } from '../navigation/page-data';
@@ -20,6 +20,12 @@ export class CarouselComponent implements OnInit {
 
   constructor(private _navService: NavigationService, private _imgSvc: ImageService) { }
 
+  @HostListener('window:resize', ['$event'])
+  onResize(event: any) {
+    this.dataLoaded = false;
+    this.ngOnInit();
+  }
+
   ngOnInit(): void {
     this._navService.getSiteMap().subscribe((smap: SiteMap) => {
       smap?.pageGroups?.forEach((g: PageGroup) => {
@@ -35,7 +41,7 @@ export class CarouselComponent implements OnInit {
 
   private async _createCarouselItemDataArray(): Promise<void> {
     const carouselItemData: CarouselItemData[] = [];
-    const images: ImageItem[] = await this._imgSvc.getImages(window.innerWidth, window.innerHeight, this._pages.length);
+    const images: ImageItem[] = await this._imgSvc.getImages(this.getAvailableWidth(), this.getAvailableHeight(), this._pages.length);
     for (var i=0; i<this._pages.length; i++) {
       let page: PageData = this._pages[i];
       let img: ImageItem = images[i];
@@ -49,15 +55,25 @@ export class CarouselComponent implements OnInit {
           actions: []
         }
         if (page.url) {
-          data.actions.push({text: 'Go To App', class: 'btn-primary', onClick: () => window.location.href = page.url});
+          data.actions.push({text: 'View App', icon: 'eye', class: 'btn-primary', onClick: () => window.location.href = page.url});
         }
         if (page.codeSourceUrl) {
-          data.actions.push({text: 'View Code', class: 'btn-secondary', onClick: () => window.location.href = page.codeSourceUrl});
+          data.actions.push({text: 'View Code', icon: 'tools', class: 'btn-secondary', onClick: () => window.location.href = page.codeSourceUrl});
         }
         carouselItemData.push(data);
       }
     }
     this.carouselItemData = carouselItemData;
     this.dataLoaded = this.carouselItemData.length > 0;
+  }
+
+  private getAvailableWidth(): number {
+    const width = (window.innerWidth * 0.95).toFixed(0);
+    return +width;
+  }
+
+  private getAvailableHeight(): number {
+    const height = (window.innerHeight * 0.4).toFixed(0);
+    return +height;
   }
 }
