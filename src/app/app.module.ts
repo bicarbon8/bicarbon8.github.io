@@ -8,13 +8,15 @@ import { FooterComponent } from './footer/footer.component';
 import { CarouselComponent } from './carousel/carousel.component';
 import { NavigationService } from './navigation/navigation.service';
 import { ImageService } from './carousel/image.service';
+import { MainComponent } from './main/main.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     NavigationComponent,
     FooterComponent,
-    CarouselComponent
+    CarouselComponent,
+    MainComponent
   ],
   imports: [
     BrowserModule,

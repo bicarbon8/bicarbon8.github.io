@@ -1,7 +1,5 @@
 div.carousel-caption {
     opacity: 70%;
-    padding-left: 20px;
-    padding-right: 20px;
     border-radius: 30px;
 }
 
@@ -11,4 +9,5 @@ div.carousel-caption * {
 
 #splash-carousel img {
     border-radius: 30px;
+    background-color: darkgray;
 }

@@ -1,12 +1,12 @@
 import { loadRemoteModule } from '@angular-architects/module-federation';
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { CarouselComponent } from './carousel/carousel.component';
 import { environment } from '../environments/environment';
 import { ReactComponentWrapper, ReactComponentWrapperData } from './component-wrappers/react-component-wrapper';
+import { MainComponent } from './main/main.component';
 
 const routes: Routes = [
-  { path: '', component: CarouselComponent },
+  { path: '', component: MainComponent },
   {
     path: 'elite',
     loadChildren: () => loadRemoteModule({
@@ -62,7 +62,7 @@ const routes: Routes = [
       elementId: 'shortlist-it'
     } as ReactComponentWrapperData
   },
-  { path: '**', component: CarouselComponent }
+  { path: '**', component: MainComponent }
 ];
 
 @NgModule({

@@ -3,16 +3,16 @@
     <span class="visually-hidden">Loading...</span>
   </div>
 </div>
-<div class="d-flex my-3 justify-content-center align-items-center">
+<div class="d-flex my-1 justify-content-center align-items-center">
   <div *ngIf="dataLoaded" id="splash-carousel" class="carousel slide" data-bs-ride="carousel">
     <div class="carousel-inner">
       <div *ngFor="let d of carouselItemData" class="carousel-item{{(d.active === true) ? ' active' : ''}}" data-bs-interval="10000">
-        <img src="{{d.imgSrc}}" class="d-block" alt="{{d.altTxt}}">
-        <div *ngIf="d.title || d.description" class="carousel-caption text-center bg-dark p-0">
+        <img src="{{d.imgSrc}}" class="mx-auto d-block" alt="{{d.altTxt}}">
+        <div *ngIf="d.title || d.description" class="carousel-caption text-center bg-dark">
           <h1 *ngIf="d.title">{{d.title}}</h1>
           <p *ngIf="d.description">{{d.description}}</p>
           <p *ngIf="d.actions">
-              <a *ngFor="let a of d.actions" class="btn m-1 {{a.class}}" href="#" (click)="(a.onClick) ? a.onClick() : undefined" data-bs-toggle="tooltip" data-bs-placement="auto" title="{{a.text}}">
+              <a *ngFor="let a of d.actions" class="btn mx-1 btn-primary" href="#" (click)="(a.onClick) ? a.onClick() : undefined" data-bs-toggle="tooltip" data-bs-placement="auto" title="{{a.text}}">
                 <i class="bi bi-{{a.icon}}"></i> <span class="ms-1 d-none d-lg-inline">{{a.text}}</span>
               </a>
           </p>

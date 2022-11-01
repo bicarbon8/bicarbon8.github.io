@@ -55,10 +55,10 @@ export class CarouselComponent implements OnInit {
           actions: []
         }
         if (page.url) {
-          data.actions.push({text: 'View App', icon: 'eye', class: 'btn-primary', onClick: () => window.location.href = page.url});
+          data.actions.push({text: 'View App', icon: 'eye', onClick: () => window.location.href = page.url});
         }
         if (page.codeSourceUrl) {
-          data.actions.push({text: 'View Code', icon: 'tools', class: 'btn-secondary', onClick: () => window.location.href = page.codeSourceUrl});
+          data.actions.push({text: 'View Code', icon: 'tools', onClick: () => window.location.href = page.codeSourceUrl});
         }
         carouselItemData.push(data);
       }
@@ -68,7 +68,7 @@ export class CarouselComponent implements OnInit {
   }
 
   private getAvailableWidth(): number {
-    const width = (window.innerWidth * 0.95).toFixed(0);
+    const width = (window.innerWidth * 0.98).toFixed(0);
     return +width;
   }
 
