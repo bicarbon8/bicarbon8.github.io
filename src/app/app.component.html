@@ -1,9 +1,11 @@
-<header class="flex-shrink-0">
-    <app-navigation></app-navigation>
-</header>
-<main class="flex-grow-1">
-    <router-outlet></router-outlet>
-</main>
-<footer class="footer mt-auto py-3 bg-white">
-    <app-footer></app-footer>
-</footer>
+<div class="d-flex flex-column vh-100">
+    <header>
+        <app-navigation></app-navigation>
+    </header>
+    <main>
+        <router-outlet></router-outlet>
+    </main>
+    <footer class="footer mt-auto py-3 bg-white">
+        <app-footer></app-footer>
+    </footer>
+</div>

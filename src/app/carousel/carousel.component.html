@@ -1,8 +1,5 @@
-<div *ngIf="!dataLoaded" class="d-flex align-items-center">
-  <div class="p-2 w-50"></div>
-  <div class="p-2 flex-grow-1">
-    <div class="dot-flashing"></div>
-  </div>
+<div *ngIf="!dataLoaded" class="d-flex flex-column justify-content-center align-items-center">
+  <div class="position-absolute top-50 start-50 dot-flashing"></div>
 </div>
 <div *ngIf="dataLoaded" id="splash-carousel" class="carousel slide mb-2" data-bs-ride="carousel">
   <div class="carousel-inner">
