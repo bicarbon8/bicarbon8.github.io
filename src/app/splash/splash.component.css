@@ -1,0 +1,35 @@
+img {
+    border-radius: 30px;
+    background-color: darkgray;
+    object-fit: cover;
+}
+
+.splash-container {
+    text-align: center;
+    position: relative;
+}
+
+.overlay-text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    opacity: 75%;
+}
+
+.overlay-text * {
+    opacity: 100%;
+}
+
+#cursor {
+    animation: blink 1s linear infinite;
+}
+
+@keyframes blink {
+    0% {
+        opacity: 100%;;
+    }
+    50% {
+        opacity: 0%;
+    }
+}

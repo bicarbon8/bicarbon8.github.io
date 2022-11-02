@@ -11,5 +11,4 @@ div.carousel-caption * {
     border-radius: 30px;
     background-color: darkgray;
     object-fit: cover;
-    /* clip-path: content-box inset(20px round 20px); */
 }

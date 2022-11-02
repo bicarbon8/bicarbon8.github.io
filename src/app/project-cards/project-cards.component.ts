@@ -39,4 +39,8 @@ export class ProjectCardsComponent implements OnInit {
                 this.dataLoaded = true;
             });
     }
+
+    goTo(url: string, target: string = '_self'): void {
+        window.open(url, target);
+    }
 }

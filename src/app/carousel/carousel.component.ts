@@ -2,7 +2,6 @@ import { Component, HostListener, OnInit } from '@angular/core';
 import { NavigationService } from '../navigation/navigation.service';
 import { CarouselItemData } from './carousel-item-data';
 import { PageData } from '../navigation/page-data';
-import { PageGroup } from '../navigation/page-group';
 import { SiteMap } from '../navigation/site-map';
 import { ImageItem } from './image-item';
 import { ImageService } from './image.service';

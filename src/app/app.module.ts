@@ -10,6 +10,7 @@ import { NavigationService } from './navigation/navigation.service';
 import { ImageService } from './carousel/image.service';
 import { MainComponent } from './main/main.component';
 import { ProjectCardsComponent } from './project-cards/project-cards.component';
+import { SplashComponent } from './splash/splash.component';
 
 @NgModule({
   declarations: [
@@ -18,7 +19,8 @@ import { ProjectCardsComponent } from './project-cards/project-cards.component';
     FooterComponent,
     CarouselComponent,
     MainComponent,
-    ProjectCardsComponent
+    ProjectCardsComponent,
+    SplashComponent
   ],
   imports: [
     BrowserModule,
