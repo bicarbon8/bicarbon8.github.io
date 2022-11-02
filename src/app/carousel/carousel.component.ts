@@ -67,12 +67,12 @@ export class CarouselComponent implements OnInit {
     this.dataLoaded = this.carouselItemData.length > 0;
   }
 
-  private getAvailableWidth(): number {
+  getAvailableWidth(): number {
     const width = (window.innerWidth * 0.98).toFixed(0);
     return +width;
   }
 
-  private getAvailableHeight(): number {
+  getAvailableHeight(): number {
     const height = (window.innerHeight * 0.4).toFixed(0);
     return (+height < 300) ? 300 : +height;
   }

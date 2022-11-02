@@ -39,6 +39,7 @@ export class ImageService {
   }
 
   private async _getRemoteImageList(width: number, height: number, count: number, remainingAttempts: number = this.MAX_RETRIES): Promise<ImageItem[]> {
+    return Promise.reject('use local');
     const returnImages: ImageItem[] = [];
     const images: ImageItem[] = await this.http.get<ImageItem[]>(`${this.svcUrl}/v2/list?page=${this._randInt(0, 30)}&count=${count}`)
       .toPromise()

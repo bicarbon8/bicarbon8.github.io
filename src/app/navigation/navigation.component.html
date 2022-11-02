@@ -11,7 +11,7 @@
           <a *ngIf="m.pages === undefined" class="nav-link {{m.classes}}" aria-current="page" href="{{m.url || '#'}}" target="{{(m.url?.startsWith('http')) ? '_blank' : '_self'}}">{{m.title}}</a>
           <div *ngIf="m.pages?.length">
             <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-              {{m.title}}
+              {{m.groupTitle}}
             </a>
             <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
               <li *ngFor="let c of m.pages"><div class="dropdown-item d-flex"><span class="flex-grow-1">{{c.title}}</span><button *ngIf="c.url" class="btn btn-sm btn-outline-primary mx-1" (click)="goTo(c.url)" data-bs-toggle="tooltip" data-bs-placement="auto" title="View App"><i class="bi bi-eye"></i><span class="d-none d-md-inline ms-1">View App</span></button><button *ngIf="c.codeSourceUrl" class="btn btn-sm btn-outline-primary mx-1" (click)="goTo(c.codeSourceUrl, '_blank')" data-bs-toggle="tooltip" data-bs-placement="auto" title="View Code"><i class="bi bi-tools"></i><span class="d-none d-md-inline ms-1">View Code</span></button></div></li>

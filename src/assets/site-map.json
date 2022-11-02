@@ -1,6 +1,6 @@
 {
     "pageGroups": [{
-      "title": "Web Apps", 
+      "groupTitle": "Web Apps", 
       "pages": [{
           "title": "ToDo Txt Web UI", 
           "description": "Inspired by the http://www.todotxt.com project this web app provides a simple web-based user interface for interacting with one's todo.txt file.",
@@ -18,9 +18,9 @@
           "description": "A web application that parses your Elite:Dangerous Control Bindings to display them in an easy to read manner",
           "url": "elite/",
           "codeSourceUrl": "https://github.com/bicarbon8/e-d-controls",
-          "featured": true
+          "featured": false
         }]}, {
-      "title": "Games / Simulations", 
+      "groupTitle": "Games / Simulations", 
       "pages": [{
           "title": "Unity Quadsphere",
           "codeSourceUrl": "https://github.com/bicarbon8/QuadSphere",
@@ -41,7 +41,7 @@
           "codeSourceUrl": "https://github.com/bicarbon8/WargameSimJs",
           "featured": false
         }]}, {
-      "title": "Tool Development", 
+      "groupTitle": "Tool Development", 
       "pages": [{
           "title": "Automated Functional Testing (AFT)",
           "description": "an extensible test framework written in Typescript for performing Functional / End-2-End testing of UI and API components",

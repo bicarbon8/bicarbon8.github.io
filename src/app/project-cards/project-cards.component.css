@@ -1,0 +1,13 @@
+.card {
+    background-color: #2E5266;
+    color: #E2C044;
+    max-width: min-content;
+    min-width: 350;
+}
+
+@media (width <= 576px) {
+    .card {
+        max-width: 100vw;
+        min-width: unset;
+    }
+}

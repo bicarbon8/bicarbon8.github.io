@@ -7,7 +7,7 @@
   <div *ngIf="dataLoaded" id="splash-carousel" class="carousel slide" data-bs-ride="carousel">
     <div class="carousel-inner">
       <div *ngFor="let d of carouselItemData" class="carousel-item{{(d.active === true) ? ' active' : ''}}" data-bs-interval="10000">
-        <img src="{{d.imgSrc}}" class="mx-auto d-block" alt="{{d.altTxt}}">
+        <img src="{{d.imgSrc}}" height="{{getAvailableHeight()}}" width="{{getAvailableWidth()}}" class="mx-auto d-block" alt="{{d.altTxt}}">
         <div *ngIf="d.title || d.description" class="carousel-caption text-center bg-dark">
           <h1 *ngIf="d.title">{{d.title}}</h1>
           <p *ngIf="d.description">{{d.description}}</p>
