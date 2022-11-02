@@ -74,6 +74,6 @@ export class CarouselComponent implements OnInit {
 
   private getAvailableHeight(): number {
     const height = (window.innerHeight * 0.4).toFixed(0);
-    return +height;
+    return (+height < 300) ? 300 : +height;
   }
 }
