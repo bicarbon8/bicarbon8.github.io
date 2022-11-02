@@ -39,7 +39,7 @@ export class ImageService {
   }
 
   private async _getRemoteImageList(width: number, height: number, count: number, remainingAttempts: number = this.MAX_RETRIES): Promise<ImageItem[]> {
-    return Promise.reject('use local');
+    // return Promise.reject('use local');
     const returnImages: ImageItem[] = [];
     const images: ImageItem[] = await this.http.get<ImageItem[]>(`${this.svcUrl}/v2/list?page=${this._randInt(0, 30)}&count=${count}`)
       .toPromise()
@@ -54,8 +54,7 @@ export class ImageService {
 
     for (var i=0; i<images?.length; i++) {
       let img: ImageItem = images[i];
-      let url: string = img.download_url.replace(`/${img.width}`, '').replace(`/${img.height}`, '');
-      img.download_url = `${url}/${width}/${height}?blur`;
+      img.download_url = `${img.download_url}?blur`;
       returnImages.push(img);
     }
     return returnImages;

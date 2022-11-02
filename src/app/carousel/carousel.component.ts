@@ -13,37 +13,35 @@ import { ImageService } from './image.service';
   styleUrls: ['./carousel.component.css']
 })
 export class CarouselComponent implements OnInit {
-  private _pages: PageData[] = [];
-
   public carouselItemData: CarouselItemData[] = [];
   public dataLoaded: boolean = false;
+  public width: number;
+  public height: number;
 
   constructor(private _navService: NavigationService, private _imgSvc: ImageService) { }
 
   @HostListener('window:resize', ['$event'])
   onResize(event: any) {
-    this.dataLoaded = false;
-    this.ngOnInit();
+    this.width = this.getAvailableWidth();
+    this.height = this.getAvailableHeight();
   }
 
   ngOnInit(): void {
+    this.width = this.getAvailableWidth();
+    this.height = this.getAvailableHeight();
     this._navService.getSiteMap().subscribe((smap: SiteMap) => {
-      smap?.pageGroups?.forEach((g: PageGroup) => {
-        g?.pages?.forEach((p: PageData) => {
-          if (p?.featured) {
-            this._pages.push(p);
-          }
-        })
-      });
-      this._createCarouselItemDataArray();
+      this._createCarouselItemDataArray(smap?.pageGroups
+          .map(g => g.pages)
+          .reduce((prev, current) => prev.concat(current))
+          .filter(p => p.featured));
     });
   }
 
-  private async _createCarouselItemDataArray(): Promise<void> {
+  private async _createCarouselItemDataArray(pages: Array<PageData>): Promise<void> {
     const carouselItemData: CarouselItemData[] = [];
-    const images: ImageItem[] = await this._imgSvc.getImages(this.getAvailableWidth(), this.getAvailableHeight(), this._pages.length);
-    for (var i=0; i<this._pages.length; i++) {
-      let page: PageData = this._pages[i];
+    const images: ImageItem[] = await this._imgSvc.getImages(this.getAvailableWidth(), this.getAvailableHeight(), pages.length);
+    for (var i=0; i<pages.length; i++) {
+      let page: PageData = pages[i];
       let img: ImageItem = images[i];
       if (page) {
         let data: CarouselItemData = {
@@ -54,12 +52,6 @@ export class CarouselComponent implements OnInit {
           description: page.description,
           actions: []
         }
-        if (page.url) {
-          data.actions.push({text: 'View App', icon: 'eye', onClick: () => window.location.href = page.url});
-        }
-        if (page.codeSourceUrl) {
-          data.actions.push({text: 'View Code', icon: 'tools', onClick: () => window.location.href = page.codeSourceUrl});
-        }
         carouselItemData.push(data);
       }
     }
@@ -68,8 +60,8 @@ export class CarouselComponent implements OnInit {
   }
 
   getAvailableWidth(): number {
-    const width = (window.innerWidth * 0.98).toFixed(0);
-    return +width;
+    const width = window.innerWidth - 32;
+    return width;
   }
 
   getAvailableHeight(): number {
