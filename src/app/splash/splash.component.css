@@ -14,22 +14,6 @@ img {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    opacity: 75%;
-}
-
-.overlay-text * {
-    opacity: 100%;
-}
-
-#cursor {
-    animation: blink 1s linear infinite;
-}
-
-@keyframes blink {
-    0% {
-        opacity: 100%;;
-    }
-    50% {
-        opacity: 0%;
-    }
+    background: rgba(0, 0, 0, 0.6);
+    color: #E2C044;
 }

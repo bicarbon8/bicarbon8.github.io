@@ -18,18 +18,21 @@ export class SplashComponent implements OnInit, OnDestroy {
     public imageUrl: string;
     public alt: string;
     public pageGroups: Array<string> = new Array<string>();
-    public currentGroupTitle: string;
+    public splashText: string;
+    public splashSubtext: string;
 
     private readonly viewportChange = this.viewportRuler
         .change(500)
         .subscribe(() => this.refresh && this.ngZone.run(() => this.setSize()));
 
     constructor(
-        private readonly _imgSvc: ImageService, 
+        private readonly _imgSvc: ImageService,
         private readonly _splashSvc: SplashService,
         private readonly viewportRuler: ViewportRuler,
         private readonly ngZone: NgZone
-    ) { }
+    ) {
+        this.splashText = `Jason's Dev Portfolio`;
+    }
 
     ngOnInit(): void {
         this.setSize();
@@ -45,7 +48,7 @@ export class SplashComponent implements OnInit, OnDestroy {
             .subscribe((smap: SiteMap) => {
                 this.pageGroups = [...new Set(smap.pageGroups
                     .map(g => g.groupTitle))]
-                this.updateGroupTitle();
+                this.splashSubtext = this.pageGroups.join(' | ');
             });
     }
 
@@ -70,16 +73,20 @@ export class SplashComponent implements OnInit, OnDestroy {
     }
 
     private async updateGroupTitle(): Promise<void> {
-        while(this.keepRunningGroupTitleUpdates) {
-            for (var i=0; i<this.pageGroups.length; i++) {
-                const title = this.pageGroups[i];
-                for (var j=0; j<=title.length; j++) {
-                    this.currentGroupTitle = title.substring(0, j);
-                    await this.sleep(100);
-                }
-                await this.sleep(2000);
-            }
-        }
+        // for (var i=0; i<this.pageGroups.length; i++) {
+        //     const title = this.pageGroups[i];
+        //     for (var j=0; j<=title.length; j++) {
+        //         this.currentGroupTitle = title.substring(0, j);
+        //         await this.sleep(100);
+        //     }
+        //     await this.sleep(500);
+        // }
+
+        // const final = 'Me...';
+        // for (var j=0; j<=final.length; j++) {
+        //     this.currentGroupTitle = final.substring(0, j);
+        //     await this.sleep(100);
+        // }
     }
 
     private async sleep(ms: number): Promise<void> {
