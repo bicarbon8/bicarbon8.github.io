@@ -22,7 +22,7 @@ export class SplashComponent implements OnInit, OnDestroy {
     public splashSubtext: string;
 
     private readonly viewportChange = this.viewportRuler
-        .change(500)
+        .change(200)
         .subscribe(() => this.refresh && this.ngZone.run(() => this.setSize()));
 
     constructor(
