@@ -10,70 +10,25 @@
   --bs-info: #E2C044;
   --bs-dark: #212529;
 }
-
-.bg-primary {
-  background-color: var(--bs-primary);
+.theme-forest {
+  --bs-primary: #395144;
+  --bs-secondary: #4E6C50;
+  --bs-light: #F0EBCE;
+  --bs-info: #AA8B56;
+  --bs-dark: #0c120f;
 }
-
-.bg-secondary {
-  background-color: var(--bs-secondary);
-}
-
-.bg-light {
-  background-color: var(--bs-light);
-}
-
-.bg-accent {
-  background-color: var(--bs-info);
-}
-
-.bg-dark {
-  background-color: var(--bs-dark);
-}
-
-.text-primary {
-  color: var(--bs-primary);
-}
-
-.text-secondary {
-  color: var(--bs-secondary);
-}
-
-.text-light {
-  color: var(--bs-light);
-}
-
-.text-accent {
-  color: var(--bs-info);
-}
-
-.text-dark {
-  color: var(--bs-dark);
+.theme-ice {
+  --bs-primary: #5DA7DB;
+  --bs-secondary: #81C6E8;
+  --bs-light: #7DE5ED;
+  --bs-info: #00eaff;
+  --bs-dark: #0d171f;
 }
 
 body {
   min-height: 100vh;
 }
 body *::selection {
-  color: var(--bs-dark);
-  background-color: var(--bs-light);
-}
-
-.btn-outline-primary {
-  border-color: var(--bs-primary);
-  color: var(--bs-primary);
-}
-.btn-outline-primary:hover {
-  border-color: var(--bs-dark);
-  color: var(--bs-dark);
-  background-color: var(--bs-info);
-}
-.btn-outline-light {
-  border-color: var(--bs-light);
-  color: var(--bs-light);
-}
-.btn-outline-light:hover {
-  border-color: var(--bs-dark);
   color: var(--bs-dark);
   background-color: var(--bs-light);
 }
@@ -88,7 +43,6 @@ body *::selection {
   animation: dotFlashing 1s infinite linear alternate;
   animation-delay: .5s;
 }
-
 .dot-flashing::before,
 .dot-flashing::after {
   content: '';
@@ -96,7 +50,6 @@ body *::selection {
   position: absolute;
   top: 0;
 }
-
 .dot-flashing::before {
   left: -15px;
   width: 10px;
@@ -107,7 +60,6 @@ body *::selection {
   animation: dotFlashing 1s infinite alternate;
   animation-delay: 0s;
 }
-
 .dot-flashing::after {
   left: 15px;
   width: 10px;
@@ -118,7 +70,6 @@ body *::selection {
   animation: dotFlashing 1s infinite alternate;
   animation-delay: 1s;
 }
-
 @keyframes dotFlashing {
   0% {
     background-color: var(--bs-default-accent);
