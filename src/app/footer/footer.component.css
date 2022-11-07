@@ -1,0 +1,7 @@
+span, a {
+    color: var(--bs-light);
+}
+
+a:hover {
+    color: var(--bs-info);
+}

@@ -1,0 +1,14 @@
+div {
+    background-color: var(--bs-secondary);
+}
+
+footer {
+    color: var(--bs-light);
+    background-color: var(--bs-dark);
+}
+footer a {
+    color: var(--bs-light);
+}
+footer a:hover {
+    color: var(--bs-info);
+}

@@ -1,6 +1,6 @@
 img {
     border-radius: 30px;
-    background-color: darkgray;
+    background-color: var(--bs-primary);
     object-fit: cover;
 }
 
@@ -15,5 +15,5 @@ img {
     left: 50%;
     transform: translate(-50%, -50%);
     background: rgba(0, 0, 0, 0.6);
-    color: #E2C044;
+    color: var(--bs-info);
 }

@@ -1,8 +1,19 @@
 .card {
-    background-color: #2E5266;
-    color: #E2C044;
+    background-color: var(--bs-primary);
+    color: var(--bs-secondary);
     max-width: min-content;
     min-width: 350;
+}
+.card::selection {
+    background-color: var(--bs-light);
+    color: var(--bs-dark)
+}
+.card-title {
+    color: var(--bs-info);
+}
+.card-description {
+    background-color: var(--bs-dark);
+    color: var(--bs-secondary);
 }
 
 @media (width <= 576px) {

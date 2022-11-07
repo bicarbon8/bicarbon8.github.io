@@ -1,12 +1,31 @@
-nav * {
-    color: #E2C044;
+.navbar-dark {
+    color: var(--bs-light);
+    background-color: var(--bs-dark);
+}
+
+.navbar-dark .navbar-brand {
+    color: var(--bs-info);
+}
+
+.navbar-toggler {
+    color: var(--bs-info);
+}
+
+.navbar-toggler * {
+    color: var(--bs-info);
+}
+
+.navlink .dropdown-toggle {
+    color: var(--bs-light);
 }
 
 nav .dropdown-menu {
-    background-color: #2E5266;
+    background-color: var(--bs-light);
 }
-nav .dropdown-menu li:hover * {
-    color: #2E5266;
-    background-color: #9FB1BC;
-    -webkit-tap-highlight-color: #9FB1BC;
+nav .dropdown-menu .dropdown-item {
+    color: var(--bs-dark);
+}
+nav .dropdown-menu .dropdown-item:hover {
+    color: var(--bs-info);
+    background-color: var(--bs-secondary);
 }
