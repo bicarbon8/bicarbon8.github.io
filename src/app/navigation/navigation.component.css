@@ -18,7 +18,6 @@
 .navlink .dropdown-toggle {
     color: var(--bs-light);
 }
-
 nav .dropdown-menu {
     background-color: var(--bs-light);
 }
@@ -28,4 +27,8 @@ nav .dropdown-menu .dropdown-item {
 nav .dropdown-menu .dropdown-item:hover {
     color: var(--bs-info);
     background-color: var(--bs-secondary);
+}
+nav select {
+    color: var(--bs-primary);
+    background-color: var(--bs-light);
 }

@@ -1,6 +1,6 @@
-<div class="d-flex flex-column theme-default" style="min-height: 100vh;">
+<div id="app-container" class="d-flex flex-column" style="min-height: 100vh;">
     <header>
-        <app-navigation></app-navigation>
+        <app-navigation (themeUpdated)="onThemeUpdated($event)"></app-navigation>
     </header>
     <main>
         <router-outlet></router-outlet>

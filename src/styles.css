@@ -17,12 +17,19 @@
   --bs-info: #AA8B56;
   --bs-dark: #0c120f;
 }
-.theme-ice {
-  --bs-primary: #5DA7DB;
-  --bs-secondary: #81C6E8;
-  --bs-light: #7DE5ED;
-  --bs-info: #00eaff;
-  --bs-dark: #0d171f;
+.theme-glacier {
+  --bs-primary: #B2B2B2;
+  --bs-secondary: #EAEAEA;
+  --bs-light: #FFFFFF;
+  --bs-info: #00ABB3;
+  --bs-dark: #3C4048;
+}
+.theme-watermelon {
+  --bs-primary: #FF8787;
+  --bs-secondary: #F8C4B4;
+  --bs-light: #E5EBB2;
+  --bs-info: #BCE29E;
+  --bs-dark: #0f0b01;
 }
 
 body {
