@@ -22,10 +22,7 @@
         <li class="nav-item">
           <select id="theme-select" class="form-select ps-2" (change)="handleThemeChange($event)" aria-label="Select the website theme">
             <option value="" disabled selected>Choose theme...</option>
-            <option value="default">Default</option>
-            <option value="forest">Forest</option>
-            <option value="glacier">Glacier</option>
-            <option value="watermelon">Watermelon</option>
+            <option *ngFor="let theme of themes" value="{{theme}}">{{theme}}</option>
           </select>
         </li>
       </ul>

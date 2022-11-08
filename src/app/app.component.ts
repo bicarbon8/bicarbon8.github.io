@@ -21,7 +21,14 @@ export class AppComponent implements AfterContentInit {
 
   setTheme() {
     const el = document.getElementById('app-container');
-    el.classList.remove('theme-default', 'theme-forest', 'theme-glacier', 'theme-watermelon');
+    const remove = new Array<string>();
+    for (var i=0; i<el.classList.length; i++) {
+      const className = el.classList[i];
+      if (className.includes('theme-')) {
+        remove.push(className);
+      }
+    }
+    remove.forEach(r => el.classList.remove(r));
     el.classList.add(`theme-${this.theme}`);
   }
 }

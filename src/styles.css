@@ -31,6 +31,13 @@
   --bs-info: #BCE29E;
   --bs-dark: #0f0b01;
 }
+.theme-dark {
+  --bs-primary: #2B2B2B;
+  --bs-secondary: #423F3E;
+  --bs-light: #6b6665;
+  --bs-info: #571313;
+  --bs-dark: #171010;
+}
 
 body {
   min-height: 100vh;
@@ -38,6 +45,26 @@ body {
 body *::selection {
   color: var(--bs-dark);
   background-color: var(--bs-light);
+}
+
+.btn-outline-primary {
+  color: var(--bs-primary);
+  border-color: var(--bs-primary);
+}
+.btn-outline-primary:hover {
+  color: var(--bs-light);
+  background-color: var(--bs-primary);
+  border-color: var(--bs-light);
+}
+
+.btn-outline-light {
+  color: var(--bs-light);
+  border-color: var(--bs-light);
+}
+.btn-outline-light:hover {
+  color: var(--bs-dark);
+  background-color: var(--bs-light);
+  border-color: var(--bs-dark);
 }
 
 .dot-flashing {
