@@ -6,14 +6,14 @@
                 <div class="d-flex flex-row">
                     <h5 class="card-title text-uppercase flex-grow-1 text-nowrap me-2 text-truncate" data-bs-toggle="tooltip" data-bs-placement="auto" title="{{card.title}}">{{card.title}}</h5>
                 </div>
-                <h6 class="card-subtitle mb-2 text-muted">{{card.groupTitle}}</h6>
-                <div *ngIf="card.description" class="d-flex flex-row bg-dark text-light text-muted rounded">
+                <h6 class="card-subtitle mb-2">{{card.groupTitle}}</h6>
+                <div *ngIf="card.description" class="d-flex flex-row rounded card-description">
                     <i class="bi bi-chevron-right pe-2"></i>
                     <p class="card-text flex-grow-1">{{card.description}}</p>
                 </div>
                 <div class="d-flex flex-row justify-content-end mt-2">
-                    <button *ngIf="card.url" class="btn btn-sm btn-outline-primary mx-1 text-nowrap" (click)="goTo(card.url)" data-bs-toggle="tooltip" data-bs-placement="auto" title="View App"><i class="bi bi-eye"></i> View App</button>
-                    <button *ngIf="card.codeSourceUrl" class="btn btn-sm btn-outline-primary mx-1 text-nowrap" (click)="goTo(card.codeSourceUrl, '_blank')" data-bs-toggle="tooltip" data-bs-placement="auto" title="View Code"><i class="bi bi-tools"></i> View Code</button>
+                    <button *ngIf="card.url" class="btn btn-sm btn-outline-light mx-1 text-nowrap" (click)="goTo(card.url)" data-bs-toggle="tooltip" data-bs-placement="auto" title="View App"><i class="bi bi-eye"></i> View App</button>
+                    <button *ngIf="card.codeSourceUrl" class="btn btn-sm btn-outline-light mx-1 text-nowrap" (click)="goTo(card.codeSourceUrl, '_blank')" data-bs-toggle="tooltip" data-bs-placement="auto" title="View Code"><i class="bi bi-tools"></i> View Code</button>
                 </div>
             </div>
         </div>

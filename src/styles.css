@@ -2,56 +2,88 @@
 @import url("https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css");
 @import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css");
 
+.theme-default {
+  /* default theme colours */
+  --bs-primary: #2E5266;
+  --bs-secondary: #6E8898;
+  --bs-light: #D3D0CB;
+  --bs-info: #E2C044;
+  --bs-dark: #212529;
+}
+.theme-forest {
+  --bs-primary: #395144;
+  --bs-secondary: #4E6C50;
+  --bs-light: #F0EBCE;
+  --bs-info: #AA8B56;
+  --bs-dark: #0c120f;
+}
+.theme-glacier {
+  --bs-primary: #B2B2B2;
+  --bs-secondary: #EAEAEA;
+  --bs-light: #FFFFFF;
+  --bs-info: #00ABB3;
+  --bs-dark: #3C4048;
+}
+.theme-watermelon {
+  --bs-primary: #FF8787;
+  --bs-secondary: #F8C4B4;
+  --bs-light: #E5EBB2;
+  --bs-info: #BCE29E;
+  --bs-dark: #0f0b01;
+}
+
 body {
-    min-height: 100vh;
+  min-height: 100vh;
+}
+body *::selection {
+  color: var(--bs-dark);
+  background-color: var(--bs-light);
 }
 
 .dot-flashing {
-    position: relative;
-    width: 10px;
-    height: 10px;
+  position: relative;
+  width: 10px;
+  height: 10px;
+  border-radius: 5px;
+  background-color: var(--bs-default-hightligh);
+  color: var(--bs-default-hightligh);
+  animation: dotFlashing 1s infinite linear alternate;
+  animation-delay: .5s;
+}
+.dot-flashing::before,
+.dot-flashing::after {
+  content: '';
+  display: inline-block;
+  position: absolute;
+  top: 0;
+}
+.dot-flashing::before {
+  left: -15px;
+  width: 10px;
+  height: 10px;
     border-radius: 5px;
-    background-color: #9880ff;
-    color: #9880ff;
-    animation: dotFlashing 1s infinite linear alternate;
-    animation-delay: .5s;
-  }
-  
-  .dot-flashing::before, .dot-flashing::after {
-    content: '';
-    display: inline-block;
-    position: absolute;
-    top: 0;
-  }
-  
-  .dot-flashing::before {
-    left: -15px;
-    width: 10px;
-    height: 10px;
+    background-color: var(--bs-default-accent);
+    color: var(--bs-default-accent);
+  animation: dotFlashing 1s infinite alternate;
+  animation-delay: 0s;
+}
+.dot-flashing::after {
+  left: 15px;
+  width: 10px;
+  height: 10px;
     border-radius: 5px;
-    background-color: #9880ff;
-    color: #9880ff;
-    animation: dotFlashing 1s infinite alternate;
-    animation-delay: 0s;
+    background-color: var(--bs-default-accent);
+    color: var(--bs-default-accent);
+  animation: dotFlashing 1s infinite alternate;
+  animation-delay: 1s;
+}
+@keyframes dotFlashing {
+  0% {
+    background-color: var(--bs-default-accent);
   }
-  
-  .dot-flashing::after {
-    left: 15px;
-    width: 10px;
-    height: 10px;
-    border-radius: 5px;
-    background-color: #9880ff;
-    color: #9880ff;
-    animation: dotFlashing 1s infinite alternate;
-    animation-delay: 1s;
+
+  50%,
+  100% {
+    background-color: var(--bs-default-dark);
   }
-  
-  @keyframes dotFlashing {
-    0% {
-      background-color: #9880ff;
-    }
-    50%,
-    100% {
-      background-color: #ebe6ff;
-    }
-  }
+}
