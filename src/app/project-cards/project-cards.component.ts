@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { SiteMap } from '../navigation/site-map';
-import { CardData } from './card-data';
+import { SiteMap } from '../types/site-map';
+import { CardData } from '../types/card-data';
 import { ProjectCardsService } from './project-cards.service';
 
 @Component({
@@ -30,7 +30,8 @@ export class ProjectCardsComponent implements OnInit {
                             description: p.description,
                             url: p.url,
                             codeSourceUrl: p.codeSourceUrl,
-                            featured: p.featured
+                            featured: p.featured,
+                            technologies: p.technologies
                         };
                         data.push(card);
                     }

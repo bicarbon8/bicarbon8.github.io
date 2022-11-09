@@ -1,5 +1,5 @@
-import { AfterViewInit, Component, EventEmitter, OnChanges, OnInit, Output, SimpleChanges } from '@angular/core';
-import { SiteMap } from './site-map';
+import { AfterViewInit, Component, EventEmitter, OnInit, Output } from '@angular/core';
+import { SiteMap } from '../types/site-map';
 import { NavigationService } from './navigation.service';
 import { Theme, ThemeValues } from '../theme';
 import { utils } from '../utils';

@@ -1,6 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { SiteMap } from './site-map';
+import { SiteMap } from '../types/site-map';
 import { Observable } from 'rxjs';
 import { environment } from 'src/environments/environment';
 import { retryWithBackoff } from '../operators/retry-with-backoff';

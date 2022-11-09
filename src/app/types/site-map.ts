@@ -1,5 +1,5 @@
 import { PageGroup } from './page-group';
 
-export interface SiteMap {
+export type SiteMap = {
     pageGroups: PageGroup[]
-}
+};

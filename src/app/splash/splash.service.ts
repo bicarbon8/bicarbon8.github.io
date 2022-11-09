@@ -2,7 +2,7 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { environment } from 'src/environments/environment';
-import { SiteMap } from '../navigation/site-map';
+import { SiteMap } from '../types/site-map';
 import { retryWithBackoff } from '../operators/retry-with-backoff';
 
 @Injectable({
