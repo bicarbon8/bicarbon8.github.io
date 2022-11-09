@@ -1,7 +1,7 @@
 import { PageData } from "./page-data";
 
-export interface PageGroup {
+export type PageGroup = {
     groupTitle: string;
     groupDescripton?: string;
     pages: PageData[];
-}
+};

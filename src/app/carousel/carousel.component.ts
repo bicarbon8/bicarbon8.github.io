@@ -1,8 +1,8 @@
 import { Component, HostListener, OnInit } from '@angular/core';
 import { NavigationService } from '../navigation/navigation.service';
 import { CarouselItemData } from './carousel-item-data';
-import { PageData } from '../navigation/page-data';
-import { SiteMap } from '../navigation/site-map';
+import { PageData } from '../types/page-data';
+import { SiteMap } from '../types/site-map';
 import { ImageItem } from './image-item';
 import { ImageService } from './image.service';
 

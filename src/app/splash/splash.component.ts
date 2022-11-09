@@ -3,7 +3,7 @@ import { ViewportRuler } from '@angular/cdk/scrolling';
 import { ImageItem } from '../carousel/image-item';
 import { ImageService } from '../carousel/image.service';
 import { SplashService } from './splash.service';
-import { SiteMap } from '../navigation/site-map';
+import { SiteMap } from '../types/site-map';
 
 @Component({
     selector: 'app-splash',
