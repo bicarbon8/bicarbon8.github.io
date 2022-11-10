@@ -34,7 +34,7 @@ export class ImageService {
     async getImages(width: number, height: number, count: number): Promise<ImageItem[]> {
         return await this._getRemoteImageList(width, height, count)
             .catch((err: HttpErrorResponse) => {
-                console.warn(`'${err?.message}' ocurred when accessing remote image provider. switching to local instead...`);
+                // console.warn(`'${err}' ocurred when accessing remote image provider. switching to local instead...`);
                 return this._getLocalImageList(count);
             });
     }
@@ -46,7 +46,7 @@ export class ImageService {
             .toPromise()
             .catch((err: HttpErrorResponse) => {
                 if (remainingAttempts > 1) {
-                    console.warn(`'${err?.message}' occurred during request; retrying...`);
+                    console.warn(`'${err}' occurred during request; retrying...`);
                     return this._getRemoteImageList(width, height, count, remainingAttempts - 1);
                 } else {
                     return Promise.reject(err);
