@@ -14,6 +14,11 @@ img {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    background: rgba(0, 0, 0, 0.6);
+    background: rgba(0, 0, 0, 0.8);
     color: var(--bs-info);
+}
+
+.technologies-block {
+    color: var(--bs-dark);
+    background: var(--bs-light);
 }

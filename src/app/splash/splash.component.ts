@@ -20,6 +20,7 @@ export class SplashComponent implements OnInit, OnDestroy {
     public pageGroups: Array<string> = new Array<string>();
     public splashText: string;
     public splashSubtext: string;
+    public technologies: Array<string>;
 
     private readonly viewportChange = this.viewportRuler
         .change(200)
@@ -32,6 +33,7 @@ export class SplashComponent implements OnInit, OnDestroy {
         private readonly ngZone: NgZone
     ) {
         this.splashText = `Jason's Dev Portfolio`;
+        this.technologies = new Array<string>();
     }
 
     ngOnInit(): void {
@@ -49,6 +51,12 @@ export class SplashComponent implements OnInit, OnDestroy {
                 this.pageGroups = [...new Set(smap.pageGroups
                     .map(g => g.groupTitle))]
                 this.splashSubtext = this.pageGroups.join(' | ');
+                const techs = new Set<string>();
+                smap.pageGroups
+                    .forEach(g => g.pages
+                        .forEach(p => p.technologies
+                            .forEach(t => techs.add(t))));
+                this.technologies = Array.from(techs.values());
             });
     }
 

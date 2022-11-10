@@ -69,8 +69,8 @@
       "groupTitle": "Tool Development", 
       "pages": [{
           "title": "Automated Functional Testing (AFT)",
-          "description": "an extensible test framework written in Typescript for performing Functional / End-2-End testing of UI and API components",
-          "codeSourceUrl": "https://www.npmjs.org/package/aft-core",
+          "description": "a NodeJs test framework written in Typescript for performing Functional / End-2-End testing of UI and API components",
+          "codeSourceUrl": "https://github.com/bicarbon8/automated-functional-testing",
           "featured": true,
           "technologies": [
             "nodejs",

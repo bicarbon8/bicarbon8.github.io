@@ -3,5 +3,8 @@
     <div class="overlay-text rounded-3 p-3">
         <h1 class="text-nowrap">{{splashText}}</h1>
         <h6>{{splashSubtext}}</h6>
+        <div class="technologies-block rounded-3">
+            <span *ngFor="let tech of technologies" class="text-nowrap m-1" style="width: 1em;"><i class="icon icon-{{tech}}">&nbsp;</i> {{tech}}</span>
+        </div>
     </div>
 </div>

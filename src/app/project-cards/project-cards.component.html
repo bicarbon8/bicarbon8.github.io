@@ -9,15 +9,23 @@
                 <div class="card-subtitle d-flex flex-row">
                     <h6 class="text-nowrap">{{card.groupTitle}}</h6>
                     <div class="mx-1 flex-grow-1"></div>
-                    <i *ngFor="let tech of card.technologies" class="mx-1 icon-{{tech}}" style="width: 1em;" data-bs-toggle="tooltip" data-bs-placement="auto" title="{{tech}}"></i>
+                    <i *ngFor="let tech of card.technologies" class="mx-1 icon icon-{{tech}}" data-bs-toggle="tooltip" data-bs-placement="auto" title="{{tech}}"></i>
                 </div>
                 <div *ngIf="card.description" class="d-flex flex-row rounded card-description">
                     <i class="bi bi-chevron-right pe-2"></i>
                     <p class="card-text flex-grow-1">{{card.description}}</p>
                 </div>
                 <div class="d-flex flex-row justify-content-end mt-2">
-                    <button *ngIf="card.url" class="btn btn-sm btn-outline-light mx-1 text-nowrap" (click)="goTo(card.url)" data-bs-toggle="tooltip" data-bs-placement="auto" title="View App"><i class="bi bi-eye"></i> View App</button>
-                    <button *ngIf="card.codeSourceUrl" class="btn btn-sm btn-outline-light mx-1 text-nowrap" (click)="goTo(card.codeSourceUrl, '_blank')" data-bs-toggle="tooltip" data-bs-placement="auto" title="View Code"><i class="bi bi-tools"></i> View Code</button>
+                    <button *ngIf="card.url" 
+                        class="btn btn-sm btn-outline-light mx-1 text-nowrap" 
+                        (click)="goTo(card.url)">
+                        <i class="bi bi-eye"></i> View App
+                    </button>
+                    <button *ngIf="card.codeSourceUrl" 
+                        class="btn btn-sm btn-outline-light mx-1 text-nowrap" 
+                        (click)="goTo(card.codeSourceUrl, '_blank')">
+                        <i class="bi bi-tools"></i> View Code
+                    </button>
                 </div>
             </div>
         </div>
