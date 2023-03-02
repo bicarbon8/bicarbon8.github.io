@@ -23,9 +23,11 @@ export class ReactComponentWrapper implements AfterContentInit {
   }
 
   ngAfterContentInit(): void {
-    const element = document.createElement('div');
-    element.id = this.data.elementId;
-    this.vc.nativeElement.appendChild(element);
+    if (this.data.elementId) {
+      const element = document.createElement('div');
+      element.id = this.data.elementId;
+      this.vc.nativeElement.appendChild(element);
+    }
     
     loadRemoteModule({
         type: 'module',

@@ -6,6 +6,7 @@ export const environment = {
   trafficSimBaseUrl: 'https://bicarbon8.github.io/JsVehicleTrafficSimulator',
   wargameSimBaseUrl: 'https://bicarbon8.github.io/WargameSimJs',
   shortlistItBaseUrl: 'https://bicarbon8.github.io/shortlist-it',
+  quadsphereBaseUrl: 'https://bicarbon8.github.io/QuadSphere/assets',
   siteMapUrl: '/assets/site-map.json',
   localImagesUrl: '/assets/image-data.json'
 };

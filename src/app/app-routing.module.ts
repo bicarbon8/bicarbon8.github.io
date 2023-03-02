@@ -62,6 +62,16 @@ const routes: Routes = [
       elementId: 'shortlist-it'
     } as ReactComponentWrapperData
   },
+  {
+    path: 'quad',
+    component: ReactComponentWrapper,
+    data: { 
+      remoteEntry: `${environment.quadsphereBaseUrl}/remoteEntry.js`, 
+      remoteName: 'QuadSphere', 
+      exposedModule: './QuadSphereModule',
+      elementId: 'quad-sphere'
+    } as ReactComponentWrapperData
+  },
   { path: '**', component: MainComponent }
 ];
 

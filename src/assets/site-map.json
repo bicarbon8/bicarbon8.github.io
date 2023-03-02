@@ -32,12 +32,14 @@
         }]}, {
       "groupTitle": "Games / Simulations", 
       "pages": [{
-          "title": "Unity Quadsphere",
+          "title": "LoD Quadsphere",
+          "description": "A QuadSphere (six-sided sphere) implementation with Level of Detail (LoD) support (can increase or decrease mesh density on demand)",
+          "url": "quad",
           "codeSourceUrl": "https://github.com/bicarbon8/QuadSphere",
           "featured": false,
           "technologies": [
-            "unity",
-            "c-sharp"
+            "threejs",
+            "react"
           ]
         }, {
           "title": "Traffic Sim",

@@ -39,10 +39,15 @@
 
 body {
   min-height: 100vh;
+  min-width: 100vw;
 }
 body *::selection {
   color: var(--bs-dark);
   background-color: var(--bs-light);
+}
+
+app-root {
+  min-width: 100vw
 }
 
 .btn-outline-primary {
