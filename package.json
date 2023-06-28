@@ -18,7 +18,7 @@
   "dependencies": {
     "@angular-architects/module-federation": "^15.0.3",
     "@angular/animations": "16.1.2",
-    "@angular/cdk": "^15.2.9",
+    "@angular/cdk": "^16.1.2",
     "@angular/common": "16.1.2",
     "@angular/compiler": "16.1.2",
     "@angular/core": "16.1.2",
