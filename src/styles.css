@@ -39,7 +39,9 @@
 
 body {
   min-height: 100vh;
-  min-width: 100vw;
+  width: 100svw;
+  max-width: 100%;
+  margin: 0px;
 }
 body *::selection {
   color: var(--bs-dark);
@@ -47,7 +49,9 @@ body *::selection {
 }
 
 app-root {
-  min-width: 100vw
+  width: 100svw;
+  max-width: 100%;
+  margin: 0px;
 }
 
 .btn-outline-primary {
