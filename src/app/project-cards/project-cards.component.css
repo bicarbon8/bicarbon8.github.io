@@ -18,7 +18,8 @@
 
 @media (width <= 576px) {
     .card {
-        width: 90svw;
         max-width: unset;
+        min-width: unset;
+        width: 90svw;
     }
 }
