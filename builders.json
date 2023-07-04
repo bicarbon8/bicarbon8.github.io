@@ -2,7 +2,7 @@
   "$schema": "./node_modules/@angular-devkit/architect/src/builders-schema.json",
   "builders": {
     "jasmine": {
-      "implementation": "./dist/builders/jasmine-builder.mjs",
+      "implementation": "./dist/builders/jasmine-builder.js",
       "schema": "./builders/schema.json",
       "description": "runs jasmine-browser-runner tests"
     }

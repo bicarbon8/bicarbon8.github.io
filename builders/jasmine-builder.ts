@@ -3,10 +3,9 @@ import * as path from 'path';
 import * as cp from 'child_process';
 import { BuilderContext, BuilderOutput, createBuilder } from '@angular-devkit/architect';
 import { JsonObject } from '@angular-devkit/core';
-import * as jbr from 'jasmine-browser-runner';
-import { buildEsbuildBrowser } from '@angular-devkit/build-angular/src/builders/browser-esbuild/index.js';
+import { buildEsbuildBrowser } from '@angular-devkit/build-angular/src/builders/browser-esbuild';
 import { OutputHashing } from '@angular-devkit/build-angular';
-import { findTestFiles } from './test-files.mjs';
+import { findTestFiles } from './test-files';
 
 // Custom builder options interface
 interface JasmineBuilderOptions extends JsonObject {
@@ -15,11 +14,12 @@ interface JasmineBuilderOptions extends JsonObject {
 }
 
 /** Safely resolves the given Node module string. */
-function resolveModule(module) {
+async function resolveModule(module: string) {
     try {
-        return require.resolve(module);
-    }
-    catch {
+        const modulesDir = path.resolve(process.cwd(), 'node_modules', module);
+        return require.resolve(modulesDir);
+    } catch(e) {
+        console.warn(`module not found: ${module}`);
         return undefined;
     }
 }
@@ -35,9 +35,14 @@ async function build(context: BuilderContext, options): Promise<BuilderOutput> {
     }
 }
 
+async function wait(duration: number): Promise<void> {
+    return await new Promise(resolve => setTimeout(resolve, duration));
+}
+
 // Custom builder implementation
 export async function jasmineBuilder(options: JasmineBuilderOptions, context: BuilderContext): Promise<BuilderOutput> {
     const specs = await findTestFiles(path.resolve(process.cwd()), options.testFiles);
+    console.log('building tests...');
     const buildResult = await build(context, {
         // Build all the test files and also the `jest-global` and `init-test-bed` scripts.
         entryPoints: new Set([...specs]),
@@ -60,18 +65,40 @@ export async function jasmineBuilder(options: JasmineBuilderOptions, context: Bu
     if (!buildResult.success) {
         return buildResult; // exit if failure detected
     }
-    
-    const config = options.configFilePath;
-    // let cfg: any;
-    // try {
-    //     const cfgPath = path.resolve(process.cwd(), config);
-    //     cfg = await import(cfgPath);
-    // } catch (e) {
-    //     return { success: false, error: e?.message };
+    // console.log('starting test execution...');
+    // const jbr = await resolveModule('jasmine-browser-runner/bin/jasmine-browser-runner');
+    // if (!jbr) {
+    //     return { success: false, error: `unable to locate 'jasmine-browser-runner' binary`};
     // }
-
-    // // Run the Jasmine specs
-    // await jbr.default.runSpecs(config);
+    // const jbrProc = cp.execFile(process.execPath, [
+    //     jbr,
+    //     `--config="${options.configFilePath}"`
+    // ]);
+    // let exitCode: number;
+    // let doneTesting: boolean = false;
+    // // Stream test output to the terminal.
+    // jbrProc.stdout?.on('data', (chunk) => {
+    //     context.logger.info(chunk);
+    // });
+    // jbrProc.stderr?.on('data', (chunk) => {
+    //     // Write to stderr directly instead of `context.logger.error(chunk)`
+    //     process.stderr.write(chunk);
+    // });
+    // jbrProc.on('exit', (code: number, signal: NodeJS.Signals) => {
+    //     exitCode = code;
+    //     doneTesting = true;
+    // });
+    // try {
+    //     while (!doneTesting) {
+    //         await wait(1000);
+    //     }
+    // } catch (error) {
+    //     // No need to propagate error message, already piped to terminal output.
+    //     return { success: false };
+    // }
+    // if (exitCode != 0) {
+    //     return { success: false, error: `non-zero exit code returned from tests: '${exitCode}'`};
+    // }
     return { success: true };
 }
 
