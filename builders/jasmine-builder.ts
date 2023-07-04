@@ -65,40 +65,41 @@ export async function jasmineBuilder(options: JasmineBuilderOptions, context: Bu
     if (!buildResult.success) {
         return buildResult; // exit if failure detected
     }
-    // console.log('starting test execution...');
-    // const jbr = await resolveModule('jasmine-browser-runner/bin/jasmine-browser-runner');
-    // if (!jbr) {
-    //     return { success: false, error: `unable to locate 'jasmine-browser-runner' binary`};
-    // }
-    // const jbrProc = cp.execFile(process.execPath, [
-    //     jbr,
-    //     `--config="${options.configFilePath}"`
-    // ]);
-    // let exitCode: number;
-    // let doneTesting: boolean = false;
-    // // Stream test output to the terminal.
-    // jbrProc.stdout?.on('data', (chunk) => {
-    //     context.logger.info(chunk);
-    // });
-    // jbrProc.stderr?.on('data', (chunk) => {
-    //     // Write to stderr directly instead of `context.logger.error(chunk)`
-    //     process.stderr.write(chunk);
-    // });
-    // jbrProc.on('exit', (code: number, signal: NodeJS.Signals) => {
-    //     exitCode = code;
-    //     doneTesting = true;
-    // });
-    // try {
-    //     while (!doneTesting) {
-    //         await wait(1000);
-    //     }
-    // } catch (error) {
-    //     // No need to propagate error message, already piped to terminal output.
-    //     return { success: false };
-    // }
-    // if (exitCode != 0) {
-    //     return { success: false, error: `non-zero exit code returned from tests: '${exitCode}'`};
-    // }
+    console.log('starting test execution...');
+    const jbr = await resolveModule('jasmine-browser-runner/bin/jasmine-browser-runner');
+    if (!jbr) {
+        return { success: false, error: `unable to locate 'jasmine-browser-runner' binary`};
+    }
+    const jbrProc = cp.execFile(process.execPath, [
+        jbr,
+        'runSpecs',
+        `--config=${options.configFilePath}`
+    ]);
+    let exitCode: number;
+    let doneTesting: boolean = false;
+    // Stream test output to the terminal.
+    jbrProc.stdout?.on('data', (chunk) => {
+        context.logger.info(chunk);
+    });
+    jbrProc.stderr?.on('data', (chunk) => {
+        // Write to stderr directly instead of `context.logger.error(chunk)`
+        process.stderr.write(chunk);
+    });
+    jbrProc.on('exit', (code: number, signal: NodeJS.Signals) => {
+        exitCode = code;
+        doneTesting = true;
+    });
+    try {
+        while (!doneTesting) {
+            await wait(1000);
+        }
+    } catch (error) {
+        // No need to propagate error message, already piped to terminal output.
+        return { success: false };
+    }
+    if (exitCode != 0) {
+        return { success: false, error: `non-zero exit code returned from tests: '${exitCode}'`};
+    }
     return { success: true };
 }
 

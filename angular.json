@@ -108,7 +108,7 @@
             "testOut": "./dist/spec",
             "tsConfig": "./tsconfig.spec.json",
             "polyfills": "./src/polyfills.ts",
-            "configFilePath": "./jasmine-browser.js"
+            "configFilePath": "jasmine-browser.js"
           }
         },
         "cypress-run": {
