@@ -1,0 +1,21 @@
+{
+    "$schema": "http://json-schema.org/schema",
+    "type": "object",
+    "properties": {
+        "testFiles": {
+            "type": "array"
+        },
+        "testOut": {
+            "type": "string"
+        },
+        "configFilePath": {
+            "type": "string"
+        },
+        "tsConfig": {
+            "type": "string"
+        },
+        "polyfills": {
+            "type": "string"
+        }
+    }
+}
