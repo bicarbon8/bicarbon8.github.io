@@ -5,12 +5,13 @@ import { BuilderContext, BuilderOutput, createBuilder } from '@angular-devkit/ar
 import { JsonObject } from '@angular-devkit/core';
 import { buildEsbuildBrowser } from '@angular-devkit/build-angular/src/builders/browser-esbuild';
 import { OutputHashing } from '@angular-devkit/build-angular';
-import { findTestFiles } from './test-files';
+import FastGlob from 'fast-glob';
 
 // Custom builder options interface
 interface JasmineBuilderOptions extends JsonObject {
     testFiles: Array<string>; // The paths to spec files to build
-    configFilePath: string; // The path to your jasmine-browser.json file
+    polyfills: Array<string>; // The additional resources reqired for testing
+    configFilePaths: Array<string>; // The paths to your `jasmine-browser.json` files
 }
 
 /** Safely resolves the given Node module string. */
@@ -39,12 +40,60 @@ async function wait(duration: number): Promise<void> {
     return await new Promise(resolve => setTimeout(resolve, duration));
 }
 
+async function test(configFile: string, jbr: string, context: BuilderContext): Promise<number> {
+    let exitCode: number;
+    const jbrProc = cp.execFile(process.execPath, [
+        jbr,
+        'runSpecs',
+        `--config=${configFile}`
+    ]);
+    // Stream test output to the terminal.
+    jbrProc.stdout?.on('data', (chunk) => {
+        context.logger.info(chunk);
+    });
+    jbrProc.stderr?.on('data', (chunk) => {
+        // Write to stderr directly instead of `context.logger.error(chunk)`
+        process.stderr.write(chunk);
+    });
+    jbrProc.on('exit', (code: number, signal: NodeJS.Signals) => {
+        exitCode = code;
+    });
+    try {
+        while (exitCode === null || exitCode === undefined) {
+            await wait(1000);
+        }
+    } catch (error) {
+        return 1;
+    }
+    return exitCode;
+}
+
+/**
+ * Finds all test files in the project.
+ *
+ * @param workspaceRoot The path to the root directory of the workspace.
+ * @param include an Array of file patterns to match
+ * @param exclude an optional Array of file patterns to exclude
+ * @returns A set of all test files in the project.
+ */
+async function findTestFiles(workspaceRoot: string, include: Array<string>, exclude = new Array<string>()): Promise<Set<any>> {
+    const globOptions = {
+        cwd: workspaceRoot ?? path.resolve(process.cwd()),
+        ignore: ['node_modules/**'].concat(exclude),
+        braceExpansion: false,
+        extglob: false, // Disable "extglob" patterns.
+    };
+    const included = await Promise.all(include.map((pattern) => (pattern != null) ? FastGlob(pattern, globOptions) : null));
+    // Flatten and deduplicate any files found in multiple include patterns.
+    return new Set(included.flat().filter(i => i != null));
+}
+
 // Custom builder implementation
 export async function jasmineBuilder(options: JasmineBuilderOptions, context: BuilderContext): Promise<BuilderOutput> {
     const specs = await findTestFiles(path.resolve(process.cwd()), options.testFiles);
     console.log('building tests...');
     const buildResult = await build(context, {
-        // Build all the test files and also the `jest-global` and `init-test-bed` scripts.
+        // Build all the test files.
         entryPoints: new Set([...specs]),
         tsConfig: options.tsConfig,
         polyfills: options.polyfills ?? ['zone.js', 'zone.js/testing'],
@@ -70,35 +119,10 @@ export async function jasmineBuilder(options: JasmineBuilderOptions, context: Bu
     if (!jbr) {
         return { success: false, error: `unable to locate 'jasmine-browser-runner' binary`};
     }
-    const jbrProc = cp.execFile(process.execPath, [
-        jbr,
-        'runSpecs',
-        `--config=${options.configFilePath}`
-    ]);
-    let exitCode: number;
-    let doneTesting: boolean = false;
-    // Stream test output to the terminal.
-    jbrProc.stdout?.on('data', (chunk) => {
-        context.logger.info(chunk);
-    });
-    jbrProc.stderr?.on('data', (chunk) => {
-        // Write to stderr directly instead of `context.logger.error(chunk)`
-        process.stderr.write(chunk);
-    });
-    jbrProc.on('exit', (code: number, signal: NodeJS.Signals) => {
-        exitCode = code;
-        doneTesting = true;
-    });
-    try {
-        while (!doneTesting) {
-            await wait(1000);
-        }
-    } catch (error) {
-        // No need to propagate error message, already piped to terminal output.
-        return { success: false };
-    }
-    if (exitCode != 0) {
-        return { success: false, error: `non-zero exit code returned from tests: '${exitCode}'`};
+    const exitCodes = await Promise.all(options.configFilePaths.map(c => test(c, jbr, context)));
+    
+    if (exitCodes.some(c => c != 0)) {
+        return { success: false, error: `non-zero exit code returned from tests: [${exitCodes}]`};
     }
     return { success: true };
 }

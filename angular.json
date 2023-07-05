@@ -103,12 +103,14 @@
           "builder": ".:jasmine",
           "options": {
             "testFiles": [
+              "src/test.ts",
               "src/**/*.spec.ts"
             ],
             "testOut": "./dist/spec",
             "tsConfig": "./tsconfig.spec.json",
-            "polyfills": "./src/polyfills.ts",
-            "configFilePath": "jasmine-browser.js"
+            "configFilePaths": [
+              "jasmine-browser.js"
+            ]
           }
         },
         "cypress-run": {

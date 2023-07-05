@@ -8,14 +8,14 @@
         "testOut": {
             "type": "string"
         },
-        "configFilePath": {
-            "type": "string"
+        "configFilePaths": {
+            "type": "array"
         },
         "tsConfig": {
             "type": "string"
         },
         "polyfills": {
-            "type": "string"
+            "type": "array"
         }
     }
 }
