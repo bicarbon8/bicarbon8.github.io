@@ -1,6 +1,7 @@
 // This file is required by karma.conf.js and loads recursively all the .spec and framework files
 
-import 'zone.js/testing';
+import 'zone.js/bundles/zone.umd.js';
+import 'zone.js/bundles/zone-testing.umd.js';
 import { getTestBed } from '@angular/core/testing';
 import {
   BrowserDynamicTestingModule,

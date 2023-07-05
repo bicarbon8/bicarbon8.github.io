@@ -9,9 +9,10 @@ import FastGlob from 'fast-glob';
 
 // Custom builder options interface
 interface JasmineBuilderOptions extends JsonObject {
-    testFiles: Array<string>; // The paths to spec files to build
+    testFiles: Array<string>; // The paths to spec files to run
     polyfills: Array<string>; // The additional resources reqired for testing
     configFilePaths: Array<string>; // The paths to your `jasmine-browser.json` files
+    testOut: string; // The output path for transpiling
 }
 
 /** Safely resolves the given Node module string. */
@@ -44,7 +45,8 @@ async function test(configFile: string, jbr: string, context: BuilderContext): P
     let exitCode: number;
     const jbrProc = cp.execFile(process.execPath, [
         jbr,
-        'runSpecs',
+        'serve', // use this command to keep the test session open (doesn't open browser automatically)
+        // 'runSpecs', // use this command to open the browser, run the tests and close the browser
         `--config=${configFile}`
     ]);
     // Stream test output to the terminal.

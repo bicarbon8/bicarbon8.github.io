@@ -4,6 +4,9 @@ module.exports = {
     specFiles: [
         "**/*[sS]pec.?(m)js"
     ],
+    helpers: [
+        "**/test.?(m)js"
+    ],
     browser: {
         name: 'chrome'
     }
