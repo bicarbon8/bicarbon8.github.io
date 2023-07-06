@@ -8,6 +8,7 @@ module.exports = {
         "**/polyfills.?(m)js",
         "**/test.?(m)js"
     ],
+    // esmFilenameExtension: ".js",
     browser: {
         name: 'chrome'
     }

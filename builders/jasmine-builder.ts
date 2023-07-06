@@ -28,10 +28,11 @@ async function resolveModule(module: string) {
 
 async function build(context: BuilderContext, options): Promise<BuilderOutput> {
     try {
+        let success = true;
         for await (let result of buildEsbuildBrowser(options, context)) { 
-            /* do nothing */
+            success = success && result.success;
         };
-        return { success: true };
+        return { success };
     } catch (err) {
         return { success: false, error: err.message };
     }
@@ -45,8 +46,8 @@ async function test(configFile: string, jbr: string, context: BuilderContext): P
     let exitCode: number;
     const jbrProc = cp.execFile(process.execPath, [
         jbr,
-        'serve', // use this command to keep the test session open (doesn't open browser automatically)
-        // 'runSpecs', // use this command to open the browser, run the tests and close the browser
+        // 'serve', // use this command to keep the test session open (doesn't open browser automatically)
+        'runSpecs', // use this command to open the browser, run the tests and close the browser
         `--config=${configFile}`
     ]);
     // Stream test output to the terminal.
