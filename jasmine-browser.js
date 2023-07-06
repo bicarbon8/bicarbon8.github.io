@@ -6,8 +6,7 @@ module.exports = {
     ],
     helpers: [
         "**/polyfills.?(m)js",
-        "**/init-test-bed.?(m)js",
-        "**/test.?(m)js"
+        "**/init-test-bed.?(m)js"
     ],
     // esmFilenameExtension: ".js",
     browser: {
