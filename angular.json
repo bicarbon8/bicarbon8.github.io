@@ -103,7 +103,6 @@
           "builder": ".:jasmine",
           "options": {
             "testFiles": [
-              "src/test.ts",
               "src/**/*.spec.ts"
             ],
             "testOut": "./dist/spec",

@@ -10,9 +10,9 @@ import FastGlob from 'fast-glob';
 // Custom builder options interface
 interface JasmineBuilderOptions extends JsonObject {
     testFiles: Array<string>; // The paths to spec files to run
-    polyfills: Array<string>; // The additional resources reqired for testing
     configFilePaths: Array<string>; // The paths to your `jasmine-browser.json` files
     testOut: string; // The output path for transpiling
+    tsConfig: string; // The tsconfig.json file to use as part of compiling the tests
 }
 
 /** Safely resolves the given Node module string. */
@@ -94,12 +94,13 @@ async function findTestFiles(workspaceRoot: string, include: Array<string>, excl
 // Custom builder implementation
 export async function jasmineBuilder(options: JasmineBuilderOptions, context: BuilderContext): Promise<BuilderOutput> {
     const specs = await findTestFiles(path.resolve(process.cwd()), options.testFiles);
+    const testBed = path.resolve(process.cwd(), 'builders', 'init-test-bed.mjs');
     console.log('building tests...');
     const buildResult = await build(context, {
         // Build all the test files.
-        entryPoints: [...specs],
+        entryPoints: [...specs, testBed],
         tsConfig: options.tsConfig ?? 'tsconfig.json',
-        polyfills: options.polyfills ?? ['zone.js', 'zone.js/testing'],
+        polyfills: ['zone.js', 'zone.js/testing'],
         outputPath: options.testOut ?? 'dist',
         aot: false,
         index: null,
@@ -107,11 +108,10 @@ export async function jasmineBuilder(options: JasmineBuilderOptions, context: Bu
         outExtension: 'mjs', // Force native ESM.
         optimization: false,
         deleteOutputPath: true,
-        sourceMap: {
-            scripts: true,
-            styles: false,
-            vendor: false,
-        },
+        budgets: undefined,
+        sourceMap: false,
+        commonChunk: true,
+        namedChunks: true,
     });
     if (!buildResult.success) {
         return buildResult; // exit if failure detected

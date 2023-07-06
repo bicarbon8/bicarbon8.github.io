@@ -13,9 +13,6 @@
         },
         "tsConfig": {
             "type": "string"
-        },
-        "polyfills": {
-            "type": "array"
         }
     }
 }
