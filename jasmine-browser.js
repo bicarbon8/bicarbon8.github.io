@@ -5,6 +5,7 @@ module.exports = {
         "**/*[sS]pec.?(m)js"
     ],
     helpers: [
+        "**/polyfills.?(m)js",
         "**/test.?(m)js"
     ],
     browser: {

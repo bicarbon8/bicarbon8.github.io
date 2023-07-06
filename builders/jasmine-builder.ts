@@ -78,7 +78,7 @@ async function test(configFile: string, jbr: string, context: BuilderContext): P
  * @param exclude an optional Array of file patterns to exclude
  * @returns A set of all test files in the project.
  */
-async function findTestFiles(workspaceRoot: string, include: Array<string>, exclude = new Array<string>()): Promise<Set<any>> {
+async function findTestFiles(workspaceRoot: string, include: Array<string>, exclude = new Array<string>()): Promise<Array<string>> {
     const globOptions = {
         cwd: workspaceRoot ?? path.resolve(process.cwd()),
         ignore: ['node_modules/**'].concat(exclude),
@@ -87,7 +87,7 @@ async function findTestFiles(workspaceRoot: string, include: Array<string>, excl
     };
     const included = await Promise.all(include.map((pattern) => (pattern != null) ? FastGlob(pattern, globOptions) : null));
     // Flatten and deduplicate any files found in multiple include patterns.
-    return new Set(included.flat().filter(i => i != null));
+    return Array.from(new Set(included.flat().filter(i => i != null)).values());
 }
 
 // Custom builder implementation
@@ -96,17 +96,16 @@ export async function jasmineBuilder(options: JasmineBuilderOptions, context: Bu
     console.log('building tests...');
     const buildResult = await build(context, {
         // Build all the test files.
-        entryPoints: new Set([...specs]),
-        tsConfig: options.tsConfig,
+        entryPoints: [...specs],
+        tsConfig: options.tsConfig ?? 'tsconfig.json',
         polyfills: options.polyfills ?? ['zone.js', 'zone.js/testing'],
-        outputPath: options.testOut,
+        outputPath: options.testOut ?? 'dist',
         aot: false,
         index: null,
         outputHashing: OutputHashing.None,
-        outExtension: 'mjs',
-        commonChunk: false,
+        outExtension: 'mjs', // Force native ESM.
         optimization: false,
-        buildOptimizer: false,
+        deleteOutputPath: true,
         sourceMap: {
             scripts: true,
             styles: false,
