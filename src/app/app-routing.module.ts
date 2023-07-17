@@ -35,13 +35,6 @@ const routes: Routes = [
   },
   {
     path: 'space',
-    // component: AngularComponentWrapper,
-    // data: {
-    //   remoteEntry: `${environment.spaceSimBaseUrl}/remoteEntry.js`,
-    //   remoteName: 'SpaceSim',
-    //   exposedModule: './loadRemote',
-    //   selector: 'app-root-space'
-    // } as AngularComponentWrapperData
     component: AngularComponentWrapper,
     data: {
       remoteEntry: `${environment.spaceSimBaseUrl}/remoteEntry.js`,
@@ -58,13 +51,6 @@ const routes: Routes = [
   },
   {
     path: 'traffic',
-    // component: AngularComponentWrapper,
-    // data: {
-    //   remoteEntry: `${environment.trafficSimBaseUrl}/remoteEntry.js`,
-    //   remoteName: 'jsVehicleTrafficSimulator',
-    //   exposedModule: './loadRemote',
-    //   selector: 'app-root-traffic'
-    // } as AngularComponentWrapperData
     component: AngularComponentWrapper,
     data: {
       remoteEntry: `${environment.trafficSimBaseUrl}/remoteEntry.js`,
