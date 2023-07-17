@@ -4,6 +4,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { environment } from '../environments/environment';
 import { ReactComponentWrapper, ReactComponentWrapperData } from './component-wrappers/react-component-wrapper';
 import { MainComponent } from './main/main.component';
+import { AngularComponentWrapper, AngularComponentWrapperData } from './component-wrappers/angular-component-wrapper';
 
 const routes: Routes = [
   { path: '', component: MainComponent },
@@ -18,12 +19,19 @@ const routes: Routes = [
   },
   {
     path: 'todo',
-    loadChildren: () => loadRemoteModule({
-        type: 'module',
-        remoteEntry: `${environment.todoTxtBaseUrl}/remoteEntry.js`,
-        exposedModule: './Module'
-      })
-      .then(m => m.TodoTxtWebUiModule) 
+    component: AngularComponentWrapper,
+    data: {
+      remoteEntry: `${environment.todoTxtBaseUrl}/remoteEntry.js`,
+      remoteName: 'todoTxtWebUi',
+      exposedModule: './loadRemote',
+      selector: 'app-root-todo'
+    } as AngularComponentWrapperData
+    // loadChildren: () => loadRemoteModule({
+    //     type: 'module',
+    //     remoteEntry: `${environment.todoTxtBaseUrl}/remoteEntry.js`,
+    //     exposedModule: './Module'
+    //   })
+    //   .then(m => m.TodoTxtWebUiModule) 
   },
   {
     path: 'space',
