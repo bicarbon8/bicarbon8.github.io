@@ -13,12 +13,12 @@ module.exports = {
     new ModuleFederationPlugin({
         name: 'bicarbon8GithubIo',
         shared: {
-          "@angular/core": { singleton: true }, 
-          "@angular/common": { singleton: true }, 
-          "@angular/common/http": { singleton: true }, 
-          "@angular/router": { singleton: true },
-          bootstrap: { singleton: true },
-          "bootstrap-icons": { singleton: true }
+          "@angular/core": { requiredVersion: "^16.0.0" }, 
+          "@angular/common": { requiredVersion: "^16.0.0" }, 
+          "@angular/common/http": { requiredVersion: "^16.0.0" }, 
+          "@angular/router": { requiredVersion: "^16.0.0" },
+          bootstrap: { requiredVersion: "^5.0.0" },
+          "bootstrap-icons": { requiredVersion: "^1.0.0" }
         }
     })
   ],

@@ -4,6 +4,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { environment } from '../environments/environment';
 import { ReactComponentWrapper, ReactComponentWrapperData } from './component-wrappers/react-component-wrapper';
 import { MainComponent } from './main/main.component';
+import { AngularComponentWrapper, AngularComponentWrapperData } from './component-wrappers/angular-component-wrapper';
 
 const routes: Routes = [
   { path: '', component: MainComponent },
@@ -27,12 +28,13 @@ const routes: Routes = [
   },
   {
     path: 'space',
-    loadChildren: () => loadRemoteModule({
-        type: 'module',
-        remoteEntry: `${environment.spaceSimBaseUrl}/remoteEntry.js`,
-        exposedModule: './Module'
-      })
-      .then(m => m.SpaceSimModule) 
+    component: AngularComponentWrapper,
+    data: {
+      remoteEntry: `${environment.spaceSimBaseUrl}/remoteEntry.js`, 
+      remoteName: 'SpaceSim', 
+      exposedModule: './Module',
+      selector: 'app-root-space'
+    } as AngularComponentWrapperData
   },
   {
     path: 'traffic',
