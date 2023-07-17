@@ -19,19 +19,19 @@ const routes: Routes = [
   },
   {
     path: 'todo',
-    component: AngularComponentWrapper,
-    data: {
-      remoteEntry: `${environment.todoTxtBaseUrl}/remoteEntry.js`,
-      remoteName: 'todoTxtWebUi',
-      exposedModule: './loadRemote',
-      selector: 'app-root-todo'
-    } as AngularComponentWrapperData
-    // loadChildren: () => loadRemoteModule({
-    //     type: 'module',
-    //     remoteEntry: `${environment.todoTxtBaseUrl}/remoteEntry.js`,
-    //     exposedModule: './Module'
-    //   })
-    //   .then(m => m.TodoTxtWebUiModule) 
+    // component: AngularComponentWrapper,
+    // data: {
+    //   remoteEntry: `${environment.todoTxtBaseUrl}/remoteEntry.js`,
+    //   remoteName: 'todoTxtWebUi',
+    //   exposedModule: './Module',
+    //   selector: 'app-root-todo'
+    // } as AngularComponentWrapperData
+    loadChildren: () => loadRemoteModule({
+        type: 'module',
+        remoteEntry: `${environment.todoTxtBaseUrl}/remoteEntry.js`,
+        exposedModule: './Module'
+      })
+      .then(m => m.TodoTxtWebUiModule) 
   },
   {
     path: 'space',

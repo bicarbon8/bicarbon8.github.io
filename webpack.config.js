@@ -1,4 +1,5 @@
 const ModuleFederationPlugin = require("webpack").container.ModuleFederationPlugin;
+const deps = require('./package.json').dependencies;
 
 module.exports = {
   output: {
@@ -11,14 +12,15 @@ module.exports = {
   },
   plugins: [
     new ModuleFederationPlugin({
-        name: 'bicarbon8GithubIo',
-        shared: {
-          "@angular/core": { requiredVersion: 'auto' }, 
-          "@angular/common": { requiredVersion: 'auto' }, 
-          "@angular/common/http": { requiredVersion: 'auto' }, 
-          "@angular/router": { requiredVersion: 'auto' },
-          bootstrap: { requiredVersion: 'auto' }
-        }
+      name: 'bicarbon8GithubIo',
+      shared: {
+        "@angular/core": { requiredVersion: '^13.0.0' },
+        "@angular/common": { requiredVersion: '^13.0.0' },
+        "@angular/common/http": { requiredVersion: '^13.0.0' },
+        "@angular/router": { requiredVersion: '^13.0.0' },
+        bootstrap: { requiredVersion: '^5.0.0' },
+        "bootstrap-icons": { requiredVersion: '^1.0.0' }
+      }
     })
   ],
 };
