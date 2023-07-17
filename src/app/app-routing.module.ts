@@ -38,12 +38,19 @@ const routes: Routes = [
   },
   {
     path: 'traffic',
-    loadChildren: () => loadRemoteModule({
-      type: 'module',
+    component: AngularComponentWrapper,
+    data: {
       remoteEntry: `${environment.trafficSimBaseUrl}/remoteEntry.js`,
-      exposedModule: './Module'
-    })
-    .then(m => m.TrafficSimModule)
+      remoteName: 'jsVehicleTrafficSimulator',
+      exposedModule: './loadRemote',
+      selector: 'app-root-traffic'
+    } as AngularComponentWrapperData
+    // loadChildren: () => loadRemoteModule({
+    //   type: 'module',
+    //   remoteEntry: `${environment.trafficSimBaseUrl}/remoteEntry.js`,
+    //   exposedModule: './Module'
+    // })
+    // .then(m => m.TrafficSimModule)
   },
   {
     path: 'wargame',
