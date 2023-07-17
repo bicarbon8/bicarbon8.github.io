@@ -23,7 +23,6 @@
         }, {
           "title": "Elite:Dangerous Controls",
           "description": "A web application that parses your Elite:Dangerous Control Bindings to display them in an easy to read manner",
-          "url": "elite/",
           "codeSourceUrl": "https://github.com/bicarbon8/e-d-controls",
           "featured": false,
           "technologies": [
@@ -43,6 +42,7 @@
           ]
         }, {
           "title": "Traffic Sim",
+          "description": "A road construction traffic app that uses THREE.js to simulate traffic conditions based on road design",
           "url": "traffic",
           "codeSourceUrl": "https://github.com/bicarbon8/JsVehicleTrafficSimulator",
           "featured": false,
@@ -62,6 +62,7 @@
           ]
         }, {
           "title": "War Sim Game",
+          "description": "A turn-based game based off the Games Workshop Hobbit series",
           "codeSourceUrl": "https://github.com/bicarbon8/WargameSimJs",
           "featured": false,
           "technologies": [
