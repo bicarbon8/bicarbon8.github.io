@@ -19,37 +19,51 @@ const routes: Routes = [
   },
   {
     path: 'todo',
-    // component: AngularComponentWrapper,
-    // data: {
-    //   remoteEntry: `${environment.todoTxtBaseUrl}/remoteEntry.js`,
-    //   remoteName: 'todoTxtWebUi',
-    //   exposedModule: './Module',
-    //   selector: 'app-root-todo'
-    // } as AngularComponentWrapperData
-    loadChildren: () => loadRemoteModule({
-        type: 'module',
-        remoteEntry: `${environment.todoTxtBaseUrl}/remoteEntry.js`,
-        exposedModule: './Module'
-      })
-      .then(m => m.TodoTxtWebUiModule) 
+    component: AngularComponentWrapper,
+    data: {
+      remoteEntry: `${environment.todoTxtBaseUrl}/remoteEntry.js`,
+      remoteName: 'todoTxtWebUi',
+      exposedModule: './loadRemote',
+      selector: 'app-root-todo'
+    } as AngularComponentWrapperData
+    // loadChildren: () => loadRemoteModule({
+    //     type: 'module',
+    //     remoteEntry: `${environment.todoTxtBaseUrl}/remoteEntry.js`,
+    //     exposedModule: './Module'
+    //   })
+    //   .then(m => m.TodoTxtWebUiModule) 
   },
   {
     path: 'space',
-    loadChildren: () => loadRemoteModule({
-        type: 'module',
-        remoteEntry: `${environment.spaceSimBaseUrl}/remoteEntry.js`,
-        exposedModule: './Module'
-      })
-      .then(m => m.SpaceSimModule) 
+    component: AngularComponentWrapper,
+    data: {
+      remoteEntry: `${environment.spaceSimBaseUrl}/remoteEntry.js`,
+      remoteName: 'SpaceSim',
+      exposedModule: './loadRemote',
+      selector: 'app-root-space'
+    } as AngularComponentWrapperData
+    // loadChildren: () => loadRemoteModule({
+    //     type: 'module',
+    //     remoteEntry: `${environment.spaceSimBaseUrl}/remoteEntry.js`,
+    //     exposedModule: './Module'
+    //   })
+    //   .then(m => m.SpaceSimModule) 
   },
   {
     path: 'traffic',
-    loadChildren: () => loadRemoteModule({
-      type: 'module',
+    component: AngularComponentWrapper,
+    data: {
       remoteEntry: `${environment.trafficSimBaseUrl}/remoteEntry.js`,
-      exposedModule: './Module'
-    })
-    .then(m => m.TrafficSimModule)
+      remoteName: 'jsVehicleTrafficSimulator',
+      exposedModule: './loadRemote',
+      selector: 'app-root-traffic'
+    } as AngularComponentWrapperData
+    // loadChildren: () => loadRemoteModule({
+    //   type: 'module',
+    //   remoteEntry: `${environment.trafficSimBaseUrl}/remoteEntry.js`,
+    //   exposedModule: './Module'
+    // })
+    // .then(m => m.TrafficSimModule)
   },
   {
     path: 'wargame',

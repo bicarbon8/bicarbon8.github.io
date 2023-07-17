@@ -7,7 +7,7 @@ export const environment = {
   todoTxtBaseUrl: 'http://localhost:4300',
   edControlsBaseUrl: 'http://localhost:4400',
   spaceSimBaseUrl: 'http://localhost:4500',
-  trafficSimBaseUrl: 'http://locahost:4600',
+  trafficSimBaseUrl: 'http://localhost:4600',
   wargameSimBaseUrl: 'http://localhost:4700',
   shortlistItBaseUrl: 'http://localhost:4800',
   quadsphereBaseUrl: 'http://localhost:8080',

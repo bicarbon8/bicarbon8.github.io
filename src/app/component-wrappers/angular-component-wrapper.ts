@@ -13,8 +13,8 @@ export type AngularComponentWrapperData = {
   template: '<div class="angular-component-wrapper" #vc></div>',
 })
 export class AngularComponentWrapper implements AfterContentInit {
-  @ViewChild('vc', {read: ElementRef, static: true})
-  vc: ElementRef;
+  @ViewChild('vc', {read: ElementRef<HTMLDivElement>, static: true})
+  vc: ElementRef<HTMLDivElement>;
 
   private data: AngularComponentWrapperData;
 
@@ -31,8 +31,7 @@ export class AngularComponentWrapper implements AfterContentInit {
       type: 'module',
       remoteEntry: this.data.remoteEntry,
       exposedModule: this.data.exposedModule
-    })
-      .then(m => console.log(`loaded module '${this.data.exposedModule}' from '${this.data.remoteEntry}'`))
+    }).then(m => console.log(`loaded module '${this.data.exposedModule}' from '${this.data.remoteEntry}'`))
       .catch(err => console.error(`unable to load remote module '${this.data.exposedModule}' from '${this.data.remoteEntry}'`, err));
   }
 }
