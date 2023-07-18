@@ -6,7 +6,19 @@ export type WrapperData = {
     remoteEntry: string;
     remoteName: string;
     exposedModule: string;
+    /**
+     * use this to set the root element used by your Angular app. Ex:
+     * `app-root-my-remote-app` which will render an element like:
+     * `<app-root-my-remote-app></app-root-my-remote-app>` into which
+     * your Angular app will load
+     */
     selector?: string;
+    /**
+     * use this to set the element ID used by your React app. Ex:
+     * `my-remote-app` which will render an element like:
+     * `<div id="my-remote-app"></div>` into which your React app will
+     * render
+     */
     elementId?: string;
 };
 
