@@ -21,16 +21,8 @@
           "codeSourceUrl": "https://github.com/bicarbon8/shortlist-it",
           "featured": true,
           "technologies": [
-            "react"
-          ]
-        },
-        {
-          "title": "Elite:Dangerous Controls",
-          "description": "A web application that parses your Elite:Dangerous Control Bindings to display them in an easy to read manner",
-          "codeSourceUrl": "https://github.com/bicarbon8/e-d-controls",
-          "featured": false,
-          "technologies": [
-            "angular"
+            "react",
+            "cypress"
           ]
         }
       ]
@@ -69,6 +61,17 @@
           "technologies": [
             "phaser",
             "angular"
+          ]
+        },
+        {
+          "title": "Phaser Game Server",
+          "description": "an extensible Phaser.io authoritative game server implementation in two packages: server and engine",
+          "codeSourceUrl": "https://github.com/bicarbon8/phaser-game-server",
+          "featured": false,
+          "technologies": [
+            "phaser",
+            "nodejs",
+            "expressjs"
           ]
         },
         {
@@ -111,9 +114,18 @@
           "title": "Phaser UI Components",
           "description": "A Bootstrap-like UI component library for use in browser games and apps that use the Phaser3 game engine",
           "codeSourceUrl": "https://github.com/bicarbon8/phaser-ui-components",
-          "featured": true,
+          "featured": false,
           "technologies": [
             "phaser"
+          ]
+        },
+        {
+          "title": "Elite:Dangerous Controls",
+          "description": "A web application that parses your Elite:Dangerous Control Bindings to display them in an easy to read manner",
+          "codeSourceUrl": "https://github.com/bicarbon8/e-d-controls",
+          "featured": false,
+          "technologies": [
+            "angular"
           ]
         }
       ]
