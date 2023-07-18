@@ -2,9 +2,8 @@ import { loadRemoteModule } from '@angular-architects/module-federation';
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { environment } from '../environments/environment';
-import { ReactComponentWrapper, ReactComponentWrapperData } from './component-wrappers/react-component-wrapper';
 import { MainComponent } from './main/main.component';
-import { AngularComponentWrapper, AngularComponentWrapperData } from './component-wrappers/angular-component-wrapper';
+import { WrapperComponent, WrapperData } from './component-wrappers/wrapper.component';
 
 const routes: Routes = [
   { path: '', component: MainComponent },
@@ -19,13 +18,13 @@ const routes: Routes = [
   },
   {
     path: 'todo',
-    component: AngularComponentWrapper,
+    component: WrapperComponent,
     data: {
       remoteEntry: `${environment.todoTxtBaseUrl}/remoteEntry.js`,
       remoteName: 'todoTxtWebUi',
       exposedModule: './loadRemote',
       selector: 'app-root-todo'
-    } as AngularComponentWrapperData
+    } as WrapperData
     // loadChildren: () => loadRemoteModule({
     //     type: 'module',
     //     remoteEntry: `${environment.todoTxtBaseUrl}/remoteEntry.js`,
@@ -35,13 +34,13 @@ const routes: Routes = [
   },
   {
     path: 'space',
-    component: AngularComponentWrapper,
+    component: WrapperComponent,
     data: {
       remoteEntry: `${environment.spaceSimBaseUrl}/remoteEntry.js`,
       remoteName: 'SpaceSim',
       exposedModule: './loadRemote',
       selector: 'app-root-space'
-    } as AngularComponentWrapperData
+    } as WrapperData
     // loadChildren: () => loadRemoteModule({
     //     type: 'module',
     //     remoteEntry: `${environment.spaceSimBaseUrl}/remoteEntry.js`,
@@ -51,13 +50,13 @@ const routes: Routes = [
   },
   {
     path: 'traffic',
-    component: AngularComponentWrapper,
+    component: WrapperComponent,
     data: {
       remoteEntry: `${environment.trafficSimBaseUrl}/remoteEntry.js`,
       remoteName: 'jsVehicleTrafficSimulator',
       exposedModule: './loadRemote',
       selector: 'app-root-traffic'
-    } as AngularComponentWrapperData
+    } as WrapperData
     // loadChildren: () => loadRemoteModule({
     //   type: 'module',
     //   remoteEntry: `${environment.trafficSimBaseUrl}/remoteEntry.js`,
@@ -76,23 +75,23 @@ const routes: Routes = [
   },
   {
     path: 'shortlist',
-    component: ReactComponentWrapper,
+    component: WrapperComponent,
     data: { 
       remoteEntry: `${environment.shortlistItBaseUrl}/remoteEntry.mjs`, 
       remoteName: 'shortlistIt', 
       exposedModule: './ShortlistItModule',
       elementId: 'shortlist-it'
-    } as ReactComponentWrapperData
+    } as WrapperData
   },
   {
     path: 'quad',
-    component: ReactComponentWrapper,
+    component: WrapperComponent,
     data: { 
       remoteEntry: `${environment.quadsphereBaseUrl}/remoteEntry.js`, 
       remoteName: 'QuadSphere', 
       exposedModule: './QuadSphereModule',
       elementId: 'quad-sphere'
-    } as ReactComponentWrapperData
+    } as WrapperData
   },
   { path: '**', component: MainComponent }
 ];
