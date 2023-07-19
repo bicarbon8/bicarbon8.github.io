@@ -1,36 +1,36 @@
 {
-    "pageGroups": [{
-      "groupTitle": "Web Apps", 
-      "pages": [{
-          "title": "ToDo Txt Web UI", 
+  "pageGroups": [
+    {
+      "groupTitle": "Web Apps",
+      "pages": [
+        {
+          "title": "ToDo Txt Web UI",
           "description": "Inspired by the http://www.todotxt.com project this web app provides a simple web-based user interface for interacting with one's todo.txt file.",
-          "url": "todo/", 
+          "url": "todo/",
           "codeSourceUrl": "https://github.com/bicarbon8/todoTxtWebUi",
           "featured": true,
           "technologies": [
             "angular",
             "cypress"
           ]
-        }, {
-          "title": "Shortlist It", 
+        },
+        {
+          "title": "Shortlist It",
           "description": "A web application to help you decide which choices you should make based on your own priorities",
-          "url": "shortlist/", 
+          "url": "shortlist/",
           "codeSourceUrl": "https://github.com/bicarbon8/shortlist-it",
           "featured": true,
           "technologies": [
-            "react"
+            "react",
+            "cypress"
           ]
-        }, {
-          "title": "Elite:Dangerous Controls",
-          "description": "A web application that parses your Elite:Dangerous Control Bindings to display them in an easy to read manner",
-          "codeSourceUrl": "https://github.com/bicarbon8/e-d-controls",
-          "featured": false,
-          "technologies": [
-            "angular"
-          ]
-        }]}, {
-      "groupTitle": "Games / Simulations", 
-      "pages": [{
+        }
+      ]
+    },
+    {
+      "groupTitle": "Games / Simulations",
+      "pages": [
+        {
           "title": "LoD Quadsphere",
           "description": "A QuadSphere (six-sided sphere) implementation with Level of Detail (LoD) support (can increase or decrease mesh density on demand)",
           "url": "quad",
@@ -40,7 +40,8 @@
             "threejs",
             "react"
           ]
-        }, {
+        },
+        {
           "title": "Traffic Sim",
           "description": "A road construction traffic app that uses THREE.js to simulate traffic conditions based on road design",
           "url": "traffic",
@@ -50,17 +51,30 @@
             "threejs",
             "angular"
           ]
-        }, {
+        },
+        {
           "title": "Spaceship Game",
           "description": "side-scrolling space combat game written using the PhaserJs framework",
-          "url": "space/", 
+          "url": "space/",
           "codeSourceUrl": "https://github.com/bicarbon8/SpaceSim",
           "featured": true,
           "technologies": [
             "phaser",
             "angular"
           ]
-        }, {
+        },
+        {
+          "title": "Phaser Game Server",
+          "description": "an extensible Phaser.io authoritative game server implementation in two packages: server and engine",
+          "codeSourceUrl": "https://github.com/bicarbon8/phaser-game-server",
+          "featured": false,
+          "technologies": [
+            "phaser",
+            "nodejs",
+            "expressjs"
+          ]
+        },
+        {
           "title": "War Sim Game",
           "description": "A turn-based game based off the Games Workshop Hobbit series",
           "codeSourceUrl": "https://github.com/bicarbon8/WargameSimJs",
@@ -69,9 +83,13 @@
             "phaser",
             "angular"
           ]
-        }]}, {
-      "groupTitle": "Tool Development", 
-      "pages": [{
+        }
+      ]
+    },
+    {
+      "groupTitle": "Tool Development",
+      "pages": [
+        {
           "title": "Automated Functional Testing (AFT)",
           "description": "a NodeJs test framework written in Typescript for performing Functional / End-2-End testing of UI and API components",
           "codeSourceUrl": "https://github.com/bicarbon8/automated-functional-testing",
@@ -82,6 +100,35 @@
             "mocha",
             "cypress"
           ]
-      }]}
-    ]
+        },
+        {
+          "title": "Dynamic Data Store",
+          "description": "a no-sql data storage solution supporting dynamic primary key designation and hashmap storage as well as partial object based query filters and a value matching lookup system",
+          "codeSourceUrl": "https://github.com/bicarbon8/dynamic-data-store",
+          "featured": false,
+          "technologies": [
+            "nodejs"
+          ]
+        },
+        {
+          "title": "Phaser UI Components",
+          "description": "A Bootstrap-like UI component library for use in browser games and apps that use the Phaser3 game engine",
+          "codeSourceUrl": "https://github.com/bicarbon8/phaser-ui-components",
+          "featured": false,
+          "technologies": [
+            "phaser"
+          ]
+        },
+        {
+          "title": "Elite:Dangerous Controls",
+          "description": "A web application that parses your Elite:Dangerous Control Bindings to display them in an easy to read manner",
+          "codeSourceUrl": "https://github.com/bicarbon8/e-d-controls",
+          "featured": false,
+          "technologies": [
+            "angular"
+          ]
+        }
+      ]
+    }
+  ]
 }

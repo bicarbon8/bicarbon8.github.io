@@ -11,6 +11,8 @@ import { ImageService } from './carousel/image.service';
 import { MainComponent } from './main/main.component';
 import { ProjectCardsComponent } from './project-cards/project-cards.component';
 import { SplashComponent } from './splash/splash.component';
+import { WrapperComponent } from './component-wrappers/wrapper.component';
+import { CommonModule } from '@angular/common';
 
 @NgModule({
   declarations: [
@@ -20,12 +22,14 @@ import { SplashComponent } from './splash/splash.component';
     CarouselComponent,
     MainComponent,
     ProjectCardsComponent,
-    SplashComponent
+    SplashComponent,
+    WrapperComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    CommonModule
   ],
   providers: [NavigationService, ImageService],
   bootstrap: [AppComponent]
